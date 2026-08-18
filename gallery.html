@@ -34,13 +34,21 @@
 
   /* ---------- Header (matches homepage) ---------- */
   header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
-    border-bottom:1px solid var(--line);
-  }
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
 
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
   .wordmark{
     font-family:'Cormorant Garamond', serif;
     font-weight:600;
