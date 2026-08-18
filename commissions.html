@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Commissions — George Denver</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Commission an original painting by George Denver, painter based in Kent, UK." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #efe9df;
+    --ink: #211d19;
+    --ink-soft: #56504a;
+    --line: #cabfae;
+    --ochre: #a8531f;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{
+    color:inherit;
+  }
+
+  /* ---------- Header ---------- */
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+    border-bottom:1px solid var(--line);
+  }
+
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:1.35rem;
+    text-decoration:none;
+    font-style:normal;
+  }
+
+  .wordmark span{
+    color:var(--ink);
+    font-style:normal;
+  }
+
+  nav{
+    display:flex;
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
+
+  nav a{
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:2px;
+  }
+
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0;
+    height:1px;
+    background:var(--ochre);
+    transition:width 0.25s ease;
+  }
+
+  nav a:hover{
+    color:var(--ink);
+  }
+
+  nav a:hover::after{
+    width:100%;
+  }
+
+  nav a.current{
+    color:var(--ink);
+  }
+
+  nav a.current::after{
+    width:100%;
+  }
+
+  /* ---------- Commissions ---------- */
+
+  .commission-intro{
+    max-width:720px;
+    margin:0 auto;
+    padding:
+      clamp(4rem, 9vw, 7rem)
+      clamp(1.5rem, 5vw, 3rem)
+      clamp(3rem, 6vw, 5rem);
+  }
+
+  .commission-intro h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(2.5rem, 6vw, 4rem);
+    line-height:1.05;
+    margin:0 0 2.5rem;
+  }
+
+  .commission-copy{
+    display:flex;
+    flex-direction:column;
+    gap:1.4rem;
+  }
+
+  .commission-copy p{
+    margin:0;
+    font-size:clamp(1rem, 2vw, 1.15rem);
+    line-height:1.65;
+    color:var(--ink-soft);
+    max-width:52ch;
+  }
+
+  .commission-copy .question{
+    color:var(--ink);
+  }
+
+  .commission-link{
+    display:inline-block;
+    width:max-content;
+    margin-top:0.8rem;
+    padding-bottom:0.25rem;
+    border-bottom:1px solid var(--ink);
+    text-decoration:none;
+    color:var(--ink);
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .commission-link:hover{
+    color:var(--ochre);
+    border-color:var(--ochre);
+  }
+
+  /* ---------- Feature Image ---------- */
+
+  .commission-image{
+    width:calc(100% - clamp(2.4rem, 8vw, 6rem));
+    margin:0 auto clamp(4rem, 8vw, 6rem);
+    max-height:75vh;
+    overflow:hidden;
+    background:#d8cfbc;
+  }
+
+  .commission-image img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:75vh;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:2rem clamp(1.2rem, 4vw, 3rem);
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 2rem;
+    justify-content:space-between;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+  }
+
+  footer a{
+    text-decoration:none;
+  }
+
+  footer a:hover{
+    color:var(--ochre);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width:640px){
+
+    header{
+      flex-wrap:wrap;
+      gap:0.9rem;
+    }
+
+    nav{
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .commission-intro{
+      padding-top:3.5rem;
+    }
+
+    .commission-intro h1{
+      margin-bottom:2rem;
+    }
+
+    .commission-image{
+      width:calc(100% - 2.4rem);
+      margin-bottom:3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{
+      scroll-behavior:auto;
+    }
+
+    nav a::after{
+      transition:none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <header>
+
+    <a class="wordmark" href="/ArtPortfolio/index.html">
+      George <span>Denver</span>
+    </a>
+
+    <nav>
+      <a href="/ArtPortfolio/gallery.html">Gallery</a>
+      <a class="current" href="/ArtPortfolio/commissions.html">Commissions</a>
+      <a href="/ArtPortfolio/contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="commission-intro">
+
+      <h1>Commissions</h1>
+
+      <div class="commission-copy">
+
+        <p class="question">
+          See a painting you love that is no longer available?
+        </p>
+
+        <p>
+          Do you have an idea for a particular landscape, colour palette, or subject?
+        </p>
+
+        <p>
+          Would you like a painting created in a specific size?
+        </p>
+
+        <p>
+          I welcome enquiries for original paintings made specifically for you.
+        </p>
+
+        <a
+          class="commission-link"
+          href="mailto:hello@georgedenver.art?subject=Commission%20Enquiry"
+        >
+          Get in touch →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="commission-image">
+
+      <img
+        src="landingimage.JPG"
+        alt="Original painting by George Denver"
+      />
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <span>Kent, United Kingdom</span>
+
+    <a href="mailto:hello@georgedenver.art">
+      hello@georgedenver.art
+    </a>
+
+  </footer>
+
+</body>
+</html>
