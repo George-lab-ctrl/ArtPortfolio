@@ -1,221 +1,251 @@
-<!-- rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>George Denver</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.4rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    header nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1rem;
-      font-size: 0.95rem;
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      height: 60vh;
-      margin: 20px;
-      border: 5px solid #111;
+<meta charset="UTF-8" />
+<title>Gallery — George Denver</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Browse original paintings and prints by George Denver, painter based in Kent, UK." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:      #efe9df;
+    --ink:        #211d19;
+    --ink-soft:   #56504a;
+    --line:       #cabfae;
+    --ochre:      #a8531f;
+  }
 
-      background-image: url('landingimage.JPG';
-      background-size: cover;
-      background-position: 70% center;
+  *{ box-sizing:border-box; }
 
-      display: flex;
-      align-items: center;
-      justify-content; flex-start;
+  html{ scroll-behavior:smooth; }
 
-      padding: 3rem;
-      box-sizing:border-box:
-    }
-    .hero h2 {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0.5rem auto 1.5rem;
-    }
-    .hero button {
-      padding: 0.7rem 1.4rem;
-      border: none;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      font-size: 0.95rem;
-      border-radius: 3px;
-    }
-    .hero button:hover {
-      background: #333;
-    }
-    .section {
-      padding: 2.5rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .section h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 1rem;
-      flex: 1;
-    }
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-    .card-price {
-      color: #444;
-      margin-bottom: 0.8rem;
-    }
-    .card button {
-      padding: 0.6rem 1rem;
-      border: none;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      font-size: 0.9rem;
-      border-radius: 3px;
-      width: 100%;
-    }
-    .card button:hover {
-      background: #333;
-    }
-    .about, .contact {
-      max-width: 700px;
-    }
-    .contact a {
-      color: #111;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      color: #666;
-    }
-  </style>
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; }
+
+  /* ---------- Header (matches homepage) ---------- */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+    border-bottom:1px solid var(--line);
+  }
+
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.35rem;
+    letter-spacing:0.01em;
+    text-decoration:none;
+  }
+
+  .wordmark span{
+    color:var(--ochre);
+    font-style:italic;
+  }
+
+  nav{
+    display:flex;
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
+
+  nav a{
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:2px;
+  }
+
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:-3px;
+    width:0; height:1px;
+    background:var(--ochre);
+    transition:width 0.25s ease;
+  }
+
+  nav a:hover{ color:var(--ink); }
+  nav a:hover::after{ width:100%; }
+  nav a.current{ color:var(--ink); }
+  nav a.current::after{ width:100%; }
+
+  /* ---------- Page intro ---------- */
+  .page-intro{
+    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.2rem, 4vw, 3rem) 1rem;
+    max-width:720px;
+  }
+
+  .page-intro h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.9rem, 4.5vw, 2.5rem);
+    margin:0 0 0.6rem;
+  }
+
+  .page-intro p{
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin:0;
+    max-width:56ch;
+  }
+
+  /* ---------- Gallery grid ---------- */
+  .gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.6rem, 3vw, 2.6rem);
+    padding: 1.5rem clamp(1.2rem, 4vw, 3rem) 4rem;
+  }
+
+  .piece{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .piece-image{
+    aspect-ratio: 4 / 5;
+    width:100%;
+    background:
+      linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
+    background-size: cover;
+    background-position: center;
+    overflow:hidden;
+    margin-bottom:0.9rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .piece-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .piece:hover .piece-image{ opacity:0.88; }
+
+  .piece-title{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:1.05rem;
+    margin-bottom:0.2rem;
+  }
+
+  .piece-meta{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:0.7rem;
+  }
+
+  .piece button{
+    align-self:flex-start;
+    background:none;
+    border:none;
+    border-bottom:1px solid var(--ink);
+    padding:0 0 2px;
+    font-size:0.8rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--ink);
+    cursor:pointer;
+    font-family:inherit;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .piece button:hover{
+    color:var(--ochre);
+    border-color:var(--ochre);
+  }
+
+  /* ---------- Footer (matches homepage) ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding: 2rem clamp(1.2rem, 4vw, 3rem);
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 2rem;
+    justify-content:space-between;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+  }
+
+  footer a{ text-decoration:none; }
+  footer a:hover{ color:var(--ochre); }
+
+  @media (max-width: 640px){
+    header{ flex-wrap:wrap; gap:0.9rem; }
+    nav{ gap:1rem; flex-wrap:wrap; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    nav a::after{ transition:none; }
+  }
+</style>
 </head>
 <body>
+
   <header>
-   <h1>
-    <a href="/ArtPortfolio/index.html" style="text-decoration:none; color:#fff;">
-      George Denver
-    </a>
-  </h1>
-  <nav>
-    <a href="/ArtPortfolio/gallery.html" style="color:#fff; margin-left:1rem;">Gallery</a>
-    <a href="#about" style="color:#fff; margin-left:1rem;">About</a>
-    <a href="#contact" style="color:#fff; margin-left:1rem;">Contact</a>
-  </nav>
-</header>
+    <a class="wordmark" href="/ArtPortfolio/index.html">George <span>Denver</span></a>
+    <nav>
+      <a class="current" href="/ArtPortfolio/gallery.html">Gallery</a>
+      <a href="/ArtPortfolio/commissions.html">Commissions</a>
+      <a href="/ArtPortfolio/contact.html">Contact</a>
+    </nav>
+  </header>
 
-
-  <section class="hero">
-    <h2>Original artwork for sale</h2>
-    <p>Browse a curated selection of my paintings and prints. Each piece is available to purchase—worldwide shipping on request.</p>
-    <button onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-      View gallery
-    </button>
+  <section class="page-intro">
+    <h1>Gallery</h1>
+    <p>A curated selection of original paintings and prints. Each piece is available to purchase, with worldwide shipping on request.</p>
   </section>
 
-  <section id="gallery" class="section">
-    <h3>Gallery</h3>
-    <div class="grid">
-      <!-- Artwork card 1 -->
-      <div class="card">
-        <img src="images/sunrise.jpg" alt="Sunrise over the city" />
-        <div class="card-content">
-          <div class="card-title">Morning</div>
-          <div class="card-price">£120 · Acrylic on canvas</div>
-          <button onclick="window.location.href='mailto:youremail@example.com?subject=Artwork%20Enquiry%20-%20Sunrise%20Over%20the%20City'">
-            Enquire / Purchase
-          </button>
-        </div>
-      </div>
+  <section class="gallery">
 
-      <!-- Artwork card 2 -->
-      <div class="card">
-        <img src="images/forest.jpg" alt="Misty forest" />
-        <div class="card-content">
-          <div class="card-title">Misty Forest</div>
-          <div class="card-price">£90 · Print, limited edition</div>
-          <button onclick="window.location.href='mailto:youremail@example.com?subject=Artwork%20Enquiry%20-%20Misty%20Forest'">
-            Enquire / Purchase
-          </button>
-        </div>
+    <div class="piece">
+      <div class="piece-image">
+        <img src="images/sunrise.jpg" alt="Morning — sunrise over the city" loading="lazy" />
       </div>
-
-      <!-- Add more cards as needed -->
+      <div class="piece-title">Morning</div>
+      <div class="piece-meta">£120 · Acrylic on canvas</div>
+      <button onclick="window.location.href='mailto:youremail@example.com?subject=Artwork%20Enquiry%20-%20Morning'">
+        Enquire / Purchase
+      </button>
     </div>
-  </section>
 
-  <section id="about" class="section about">
-    <h3>About the artist</h3>
-    <p>
-      I’m George, a painter based in Kent, UK. My work explores light, memory,
-      and everyday urban landscapes. Each piece is created by hand and shipped
-      with a signed certificate of authenticity.
-    </p>
-  </section>
+    <div class="piece">
+      <div class="piece-image">
+        <img src="images/forest.jpg" alt="Misty Forest" loading="lazy" />
+      </div>
+      <div class="piece-title">Misty Forest</div>
+      <div class="piece-meta">£90 · Print, limited edition</div>
+      <button onclick="window.location.href='mailto:youremail@example.com?subject=Artwork%20Enquiry%20-%20Misty%20Forest'">
+        Enquire / Purchase
+      </button>
+    </div>
 
-  <section id="contact" class="section contact">
-    <h3>Contact & commissions</h3>
-    <p>
-      For purchases, commissions, or gallery enquiries, email
-      <a href="mailto:youremail@example.com">youremail@example.com</a>
-      or message me on Instagram at
-      <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a>.
-    </p>
+    <!-- Add more pieces by copying a .piece block -->
+
   </section>
 
   <footer>
-    © <span id="year"></span> George Denver · All rights reserved
+    <span>Kent, United Kingdom</span>
+    <a href="mailto:hello@georgedenver.art">hello@georgedenver.art</a>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+   
