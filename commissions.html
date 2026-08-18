@@ -108,50 +108,49 @@
 
   /* ---------- Commissions ---------- */
 
-  .commission-intro{
-    max-width:720px;
-    margin:0 auto;
-    padding:
-      clamp(4rem, 9vw, 7rem)
-      clamp(1.5rem, 5vw, 3rem)
-      clamp(3rem, 6vw, 5rem);
+  .commission-section{
+    min-height:calc(100vh - 90px);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:clamp(3rem, 8vw, 7rem);
+    padding:clamp(3rem, 7vw, 6rem) clamp(1.5rem, 8vw, 8rem);
   }
 
-  .commission-intro h1{
+  .commission-content{
+    max-width:440px;
+  }
+
+  .commission-content h1{
     font-family:'Fraunces', serif;
     font-weight:500;
-    font-size:clamp(2.5rem, 6vw, 4rem);
-    line-height:1.05;
-    margin:0 0 2.5rem;
+    font-size:clamp(2rem, 4vw, 3rem);
+    line-height:1.1;
+    margin:0 0 2rem;
   }
 
   .commission-copy{
     display:flex;
     flex-direction:column;
-    gap:1.4rem;
+    gap:1rem;
   }
 
   .commission-copy p{
     margin:0;
-    font-size:clamp(1rem, 2vw, 1.15rem);
+    font-size:0.95rem;
     line-height:1.65;
     color:var(--ink-soft);
-    max-width:52ch;
-  }
-
-  .commission-copy .question{
-    color:var(--ink);
   }
 
   .commission-link{
     display:inline-block;
     width:max-content;
-    margin-top:0.8rem;
+    margin-top:0.7rem;
     padding-bottom:0.25rem;
     border-bottom:1px solid var(--ink);
     text-decoration:none;
     color:var(--ink);
-    font-size:0.85rem;
+    font-size:0.78rem;
     letter-spacing:0.06em;
     text-transform:uppercase;
     transition:
@@ -164,13 +163,12 @@
     border-color:var(--ochre);
   }
 
-  /* ---------- Feature Image ---------- */
+  /* ---------- Commission Image ---------- */
 
   .commission-image{
-    width:calc(100% - clamp(2.4rem, 8vw, 6rem));
-    margin:0 auto clamp(4rem, 8vw, 6rem);
-    max-height:75vh;
-    overflow:hidden;
+    width:100%;
+    max-width:480px;
+    justify-self:center;
     background:#d8cfbc;
   }
 
@@ -178,9 +176,6 @@
     display:block;
     width:100%;
     height:auto;
-    max-height:75vh;
-    object-fit:cover;
-    object-position:center;
   }
 
   /* ---------- Footer ---------- */
@@ -207,7 +202,7 @@
 
   /* ---------- Responsive ---------- */
 
-  @media (max-width:640px){
+  @media (max-width:700px){
 
     header{
       flex-wrap:wrap;
@@ -219,21 +214,24 @@
       flex-wrap:wrap;
     }
 
-    .commission-intro{
-      padding-top:3.5rem;
+    .commission-section{
+      grid-template-columns:1fr;
+      gap:3rem;
+      padding:3.5rem 1.5rem 4rem;
     }
 
-    .commission-intro h1{
-      margin-bottom:2rem;
+    .commission-content{
+      max-width:500px;
     }
 
     .commission-image{
-      width:calc(100% - 2.4rem);
-      margin-bottom:3rem;
+      max-width:500px;
+      justify-self:start;
     }
   }
 
   @media (prefers-reduced-motion:reduce){
+
     html{
       scroll-behavior:auto;
     }
@@ -242,6 +240,7 @@
       transition:none;
     }
   }
+
 </style>
 </head>
 
@@ -264,46 +263,51 @@
 
   <main>
 
-    <section class="commission-intro">
+    <section class="commission-section">
 
-      <h1>Commissions</h1>
+      <div class="commission-content">
 
-      <div class="commission-copy">
+        <h1>Commissions</h1>
 
-        <p class="question">
-          See a painting you love that is no longer available?
-        </p>
+        <div class="commission-copy">
 
-        <p>
-          Do you have an idea for a particular landscape, colour palette, or subject?
-        </p>
+          <p>
+            See a painting you love that is no longer available?
+          </p>
 
-        <p>
-          Would you like a painting created in a specific size?
-        </p>
+          <p>
+            Do you have an idea for a particular landscape,
+            colour palette, or subject?
+          </p>
 
-        <p>
-          I welcome enquiries for original paintings made specifically for you.
-        </p>
+          <p>
+            Would you like a painting created in a specific size?
+          </p>
 
-        <a
-          class="commission-link"
-          href="mailto:hello@georgedenver.art?subject=Commission%20Enquiry"
-        >
-          Get in touch →
-        </a>
+          <p>
+            I welcome enquiries for original paintings made specifically for you.
+          </p>
+
+          <a
+            class="commission-link"
+            href="mailto:hello@georgedenver.art?subject=Commission%20Enquiry"
+          >
+            Get in touch →
+          </a>
+
+        </div>
 
       </div>
 
-    </section>
 
+      <div class="commission-image">
 
-    <section class="commission-image">
+        <img
+          src="landingimage.JPG"
+          alt="Original painting by George Denver"
+        />
 
-      <img
-        src="landingimage.JPG"
-        alt="Original painting by George Denver"
-      />
+      </div>
 
     </section>
 
