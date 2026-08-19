@@ -138,23 +138,15 @@
 
   /* ---------- Contact ---------- */
 
-  .contact{
-    min-height:calc(100vh - 90px);
+ /* ---------- Contact ---------- */
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    padding:4rem clamp(1.5rem, 8vw, 8rem);
-  }
-
-  .contact{
+.contact{
   min-height:calc(100vh - 90px);
 
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.7fr;
   align-items:center;
-  gap:5rem;
+  gap:4rem;
 
   padding:4rem clamp(1.5rem, 8vw, 8rem);
 }
@@ -163,36 +155,46 @@
   max-width:500px;
 }
 
+.contact h1{
+  font-family:'Courier Prime', serif;
+  font-weight:500;
+  font-size:clamp(2rem, 4vw, 3rem);
+  line-height:1.1;
+
+  margin:0 0 2rem;
+}
+
+.contact p{
+  font-size:0.95rem;
+  line-height:1.7;
+  margin:0 0 1rem;
+}
+
+.contact a{
+  color:#000000;
+  text-decoration:none;
+  border-bottom:1px solid #000000;
+  padding-bottom:2px;
+}
+
+.contact a:hover{
+  opacity:0.55;
+}
+
 .contact-image{
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
   align-items:center;
 }
 
 .contact-image img{
   width:100%;
-  max-width:500px;
-  height:auto;
+  max-width:350px;
+  max-height:500px;
+  object-fit:contain;
   display:block;
 }
 
-
-  .contact p{
-    font-size:0.95rem;
-    line-height:1.7;
-    margin:0 0 1rem;
-  }
-
-  .contact a{
-    color:#000000;
-    text-decoration:none;
-    border-bottom:1px solid #000000;
-    padding-bottom:2px;
-  }
-
-  .contact a:hover{
-    opacity:0.55;
-  }
 
 
   /* ---------- Footer ---------- */
@@ -225,21 +227,32 @@
 
   @media (max-width:640px){
 
-    header{
-      flex-wrap:wrap;
-      gap:0.9rem;
-    }
-
-    nav{
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-
-    .contact{
-      padding:3rem 1.5rem;
-    }
-
+  header{
+    flex-wrap:wrap;
+    gap:0.9rem;
   }
+
+  nav{
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+    gap:3rem;
+    padding:3rem 1.5rem;
+  }
+
+  .contact-image{
+    justify-content:center;
+  }
+
+  .contact-image img{
+    max-width:300px;
+    max-height:400px;
+  }
+
+}
 
 </style>
 </head>
