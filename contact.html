@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Contact — George Denver</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Contact George Denver." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --paper:#ffffff;
+    --ink:#000000;
+    --line:#000000;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    padding-top:5.5rem;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{
+    color:inherit;
+  }
+
+
+  /* ---------- Header ---------- */
+
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+
+  .wordmark{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:1.7rem;
+    text-decoration:none;
+  }
+
+  .wordmark span{
+    color:var(--ink);
+    font-style:normal;
+  }
+
+  nav{
+    display:flex;
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
+
+  nav a{
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:2px;
+  }
+
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0;
+    height:1px;
+    background:#000000;
+    transition:width 0.25s ease;
+  }
+
+  nav a:hover::after{
+    width:100%;
+  }
+
+  nav a.current::after{
+    width:100%;
+  }
+
+
+  /* ---------- Contact ---------- */
+
+  .contact{
+    min-height:calc(100vh - 90px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:4rem clamp(1.5rem, 8vw, 8rem);
+  }
+
+  .contact h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(2rem, 4vw, 3rem);
+    line-height:1.1;
+
+    margin:0 0 2rem;
+  }
+
+  .contact p{
+    font-size:0.95rem;
+    line-height:1.7;
+    margin:0 0 1rem;
+  }
+
+  .contact a{
+    color:#000000;
+    text-decoration:none;
+    border-bottom:1px solid #000000;
+    padding-bottom:2px;
+  }
+
+  .contact a:hover{
+    opacity:0.55;
+  }
+
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    border-top:1px solid var(--line);
+
+    padding:2rem clamp(1.2rem, 4vw, 3rem);
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:0.6rem 2rem;
+
+    justify-content:space-between;
+
+    font-size:0.82rem;
+    color:var(--ink);
+
+    letter-spacing:0.02em;
+  }
+
+  footer a{
+    text-decoration:none;
+    border:0;
+  }
+
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width:640px){
+
+    header{
+      flex-wrap:wrap;
+      gap:0.9rem;
+    }
+
+    nav{
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .contact{
+      padding:3rem 1.5rem;
+    }
+
+  }
+
+</style>
+</head>
+
+
+<body>
+
+
+  <!-- Header -->
+
+  <header>
+
+    <a class="wordmark" href="/ArtPortfolio/index.html">
+      George <span>Denver</span>
+    </a>
+
+    <nav>
+
+      <a href="/ArtPortfolio/gallery.html">
+        Gallery
+      </a>
+
+      <a href="/ArtPortfolio/commissions.html">
+        Commissions
+      </a>
+
+      <a class="current" href="/ArtPortfolio/contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- Contact -->
+
+  <main>
+
+    <section class="contact">
+
+      <h1>Contact</h1>
+
+      <p>
+        Contact me by
+        <a href="mailto:hello@georgedenver.art">
+          email
+        </a>
+      </p>
+
+      <p>
+        And here is my
+        <a
+          href="YOUR-INSTAGRAM-LINK"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <span>
+      Kent, United Kingdom
+    </span>
+
+    <a href="mailto:hello@georgedenver.art">
+      hello@georgedenver.art
+    </a>
+
+  </footer>
+
+
+</body>
+</html>
