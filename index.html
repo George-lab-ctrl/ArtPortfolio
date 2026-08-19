@@ -230,15 +230,35 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 640px){
-    header{ flex-wrap:wrap; gap:0.9rem; }
-    nav{ gap:1rem; flex-wrap:wrap; }
-    .hero{ height:58vh; }
+
+    header{
+      flex-wrap:wrap;
+      gap:0.9rem;
+    }
+
+    nav{
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .hero{
+      height:58vh;
+    }
+
+    /* Handwriting on phone */
+    .hero-caption{
+      left:4%;
+      top:65%;
+      font-size:2.2rem;
+    }
+
   }
 
-  @media (prefers-reduced-motion: reduce){
+   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     nav a::after{ transition:none; }
   }
+
 </style>
 </head>
 <body>
