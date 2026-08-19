@@ -92,6 +92,33 @@
   nav a.current{ color:var(--ink); }
   nav a.current::after{ width:100%; }
 
+  
+.instagram-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:18px;
+  height:18px;
+  padding:0;
+  margin-left:-1rem;
+}
+
+.instagram-icon::after{
+  display:none !important;
+}
+
+.instagram-icon svg{
+  width:16px;
+  height:16px;
+  stroke:#000000;
+  fill:none;
+  stroke-width:1.6;
+}
+
+.instagram-icon:hover svg{
+  opacity:0.5;
+}
+
   /* ---------- Page intro ---------- */
   .page-intro{
     padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.2rem, 4vw, 3rem) 1rem;
