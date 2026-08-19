@@ -6,7 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="George Denver is a painter based in Kent, UK. Original artwork, commissions, and gallery works." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap"
+  rel="stylesheet"
+>
+
 
 <style>
   :root{
@@ -134,17 +138,28 @@
     background-position: 70% center;
   }
 
-  .hero-caption{
+ .hero-caption{
     position:absolute;
-    left:clamp(1rem, 3vw, 2rem);
-    bottom:clamp(1rem, 3vw, 2rem);
-    max-width:22ch;
-    font-family:'Courier Prime', serif;
-    font-style:normal;
-    font-size:clamp(1.1rem, 2.4vw, 1.6rem);
+
+    left:8%;
+    top:48%;
+
+    transform:rotate(-7deg);
+
+    max-width:10ch;
+
+    font-family:'Caveat', cursive;
+    font-weight:400;
+
+    font-size:clamp(3rem, 7vw, 6rem);
+    line-height:0.8;
+
     color:#000000;
-    text-shadow: 0 2px 18px rgba(0,0,0,0.35);
-  }
+
+    z-index:2;
+
+    text-shadow:none;
+}
 
   /* ---------- Intro ---------- */
   .intro{
@@ -245,8 +260,12 @@
   </header>
 
   <div class="hero">
-    <p class="hero-caption"></p>
-  </div>
+  <p class="hero-caption">
+    George<br>
+    Denver
+  </p>
+</div>
+
 
   <section class="intro">
     <h1>GEORGE DENVER</h1>
