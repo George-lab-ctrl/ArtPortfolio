@@ -176,10 +176,13 @@ nav a.current::after{
   }
 }
   
-  .piece{
-    display:flex;
-    flex-direction:column;
-  }
+ .piece{
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
 
   .piece-image{
     aspect-ratio: 4 / 5;
@@ -289,14 +292,19 @@ nav a.current::after{
 
   <section class="gallery">
 
-  <div class="piece">
-    <div class="piece-image">
-      <img src="landingimage.JPG" alt="Painting 1" loading="lazy">
-    </div>
-    <div class="piece-title">Painting 1</div>
-    <div class="piece-meta">£120 · Acrylic on canvas</div>
-    <button>Enquire / Purchase</button>
+  <a href="/ArtPortfolio/painting1.html" class="piece">
+
+  <div class="piece-image">
+    <img src="landingimage.JPG" alt="Painting 1" loading="lazy">
   </div>
+
+  <div class="piece-title">Painting 1</div>
+
+  <div class="piece-meta">
+    £120 · Acrylic on canvas
+  </div>
+
+</a>
 
   <div class="piece">
     <div class="piece-image">
