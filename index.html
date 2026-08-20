@@ -54,7 +54,7 @@
   a{ color:inherit; }
 
   /* ---------- Header ---------- */
- header{
+header{
   position:fixed;
   top:0;
   left:0;
@@ -67,10 +67,27 @@
 
   padding:1.6rem clamp(1.2rem, 4vw, 3rem);
 
-  background:rgba(247,247,245,0.88);
+  /* OPAQUE paper background */
+  background-color:#f7f7f5;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
   border-bottom:1px solid var(--line);
 }
-
   .wordmark{
   font-family:'Courier Prime', monospace;
   font-weight:400;
