@@ -142,11 +142,14 @@
   min-height:calc(100vh - 90px);
 
   display:grid;
-  grid-template-columns: 1fr 0.7fr;
+  grid-template-columns:1fr 0.8fr;
   align-items:center;
-  gap:4rem;
 
-  padding:4rem clamp(1.5rem, 8vw, 8rem);
+  gap:clamp(3rem, 8vw, 7rem);
+
+  padding:
+    clamp(3rem, 7vw, 6rem)
+    clamp(1.5rem, 8vw, 8rem);
 }
 
 .contact-content{
@@ -155,10 +158,9 @@
 
 .contact h1{
   font-family:'Courier Prime', monospace;
-  font-weight:500;
+  font-weight:400;
   font-size:clamp(2rem, 4vw, 3rem);
   line-height:1.1;
-
   margin:0 0 2rem;
 }
 
@@ -169,9 +171,9 @@
 }
 
 .contact a{
-  color:#000000;
+  color:#000;
   text-decoration:none;
-  border-bottom:1px solid #000000;
+  border-bottom:1px solid #000;
   padding-bottom:2px;
 }
 
@@ -181,15 +183,15 @@
 
 .contact-image{
   display:flex;
-  justify-content:flex-end;
+  justify-content:center;
   align-items:center;
 }
 
 .contact-image img{
-  width:100%;
-  max-width:400px;
-  height:auto;
   display:block;
+  width:100%;
+  max-width:360px;
+  height:auto;
 }
 
   /* ---------- Footer ---------- */
@@ -235,7 +237,7 @@
   .contact{
     grid-template-columns:1fr;
     gap:3rem;
-    padding:3rem 1.5rem;
+    padding:3rem 1.5rem 4rem;
   }
 
   .contact-image{
@@ -244,10 +246,10 @@
 
   .contact-image img{
     max-width:300px;
-    max-height:400px;
   }
 
 }
+
 
 </style>
 </head>
@@ -321,12 +323,12 @@
 
   </div>
 
-  <div class="landingimage.JPG">
-    <img
-      src="landingimage.JPG"
-      alt="George Denver artwork"
-    >
-  </div>
+  <div class="contact-image">
+  <img
+    src="landingimage.JPG"
+    alt="George Denver artwork"
+  >
+</div>
 
 </section>
 
