@@ -159,42 +159,100 @@ header{
 }
 
   /* ---------- Hero ---------- */
-  .hero{
-    position:relative;
-    margin:clamp(1.2rem, 4vw, 2.4rem);
-    height:78vh;
-    min-height:420px;
-    overflow:visible;
-    background:
-      linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
-    background-image: url('landingimage.JPG'), linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
-    background-size: cover;
-    background-position: 70% center;
-  }
+ .hero{
+  position:relative;
+  margin:clamp(1.2rem, 4vw, 2.4rem);
+  min-height:78vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:transparent;
+  overflow:hidden;
+}
+
+/* The sheet of paper */
+.hero::before{
+  content:'';
+
+  position:absolute;
+
+  width:min(52vw, 520px);
+  height:min(70vh, 700px);
+
+  background:#ffffff;
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.06),
+    0 10px 25px rgba(0,0,0,0.08);
+
+  transform:rotate(-0.8deg);
+
+  z-index:0;
+}
 
  .hero-caption{
-    position:absolute;
-    left:6.5%;
-    bottom:8%;
+  position:absolute;
 
-    transform:rotate(-7deg);
+  left:calc(50% + min(15vw, 150px));
+  bottom:8%;
 
-    max-width:none;
-    white-space:nowrap;
-   
-    font-family:'Homemade Apple', cursive;
-    font-weight:400;
+  transform:rotate(-7deg);
 
-    font-size:clamp(3rem, 7vw, 6rem);
-    line-height:0.8;
+  font-family:'Homemade Apple', cursive;
+  font-weight:400;
 
-    color:#000000;
+  font-size:clamp(2.5rem, 5vw, 4.5rem);
+  line-height:0.8;
 
-    z-index:2;
+  color:#000000;
 
-    text-shadow:none;
+  white-space:nowrap;
+
+  z-index:2;
 }
-  
+
+  .hero-paper{
+  position:relative;
+
+  width:min(44vw, 440px);
+  max-height:72vh;
+
+  padding:2.5rem;
+
+  background:#ffffff;
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.06),
+    0 10px 25px rgba(0,0,0,0.08);
+
+  transform:rotate(0.5deg);
+
+  z-index:1;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-paper img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  object-fit:contain;
+}
+
+.hero-paper:hover{
+  transform:rotate(0deg) scale(1.015);
+
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.08),
+    0 15px 35px rgba(0,0,0,0.12);
+}
+
   /* ---------- Intro ---------- */
   .intro{
     text-align:center;
@@ -313,10 +371,14 @@ header{
      </nav>
   </header>
 
- <div class="hero">
+<div class="hero">
+
+  <div class="hero-paper">
+    <img src="landingimage.JPG" alt="George Denver artwork">
+  </div>
 
   <p class="hero-caption">
-    From the studio<br>
+    From the studio
   </p>
 
 </div>
