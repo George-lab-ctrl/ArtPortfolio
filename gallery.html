@@ -85,7 +85,7 @@ background-image:
 border-bottom:1px solid var(--line);
 }
 
-.wordmark{
+..wordmark{
   font-family:'Courier Prime', monospace;
   font-weight:400;
   text-transform:uppercase;
@@ -94,9 +94,13 @@ border-bottom:1px solid var(--line);
   text-decoration:none;
 }
 
+.wordmark,
+.wordmark:visited,
+.wordmark:hover,
+.wordmark:active,
 .wordmark span{
-  color:var(--ink);
-  font-style:normal;
+  color:#000000 !important;
+  text-decoration:none;
 }
 
 nav{
