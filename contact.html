@@ -25,18 +25,31 @@
   }
 
   body{
-    margin:0;
-    padding-top:5.5rem;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Courier Prime', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  margin:0;
+  padding-top:5.5rem;
 
-  a{
-    color:inherit;
-  }
+  background-color:#f7f7f5;
 
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  color:var(--ink);
+  font-family:'Courier Prime', system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 
   /* ---------- Header ---------- */
 
@@ -53,10 +66,27 @@
 
     padding:1.6rem clamp(1.2rem, 4vw, 3rem);
 
-    background:var(--paper);
-    border-bottom:1px solid var(--line);
-  }
+    background-color:#f7f7f5;
 
+background-image:
+  repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.018) 0px,
+    rgba(0,0,0,0.018) 1px,
+    transparent 1px,
+    transparent 3px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    rgba(0,0,0,0.012) 0px,
+    rgba(0,0,0,0.012) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+
+border-bottom:1px solid var(--line);
+
+}
   .wordmark{
   font-family:'Courier Prime', monospace;
   font-weight:400;
