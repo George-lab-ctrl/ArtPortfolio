@@ -27,18 +27,29 @@
     scroll-behavior:smooth;
   }
 
-  body{
-    margin:0;
-    padding-top: 5.5rem;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Courier Prime', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  body {
+  margin: 0;
+  background-color: #f7f7f5;
 
-  a{
-    color:inherit;
-  }
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  color: #000;
+}
+
 
   /* ---------- Header ---------- */
  header{
