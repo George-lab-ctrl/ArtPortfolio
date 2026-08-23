@@ -7,7 +7,7 @@
 <meta name="description" content="George Denver is a painter based in Kent, UK. Original artwork, commissions, and gallery works." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link
-  href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Courier+Prime:wght@400;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Courier+Prime:wght@400;700&display=swap"
   rel="stylesheet"
 >
 
@@ -172,27 +172,48 @@ header{
     background-position: 70% center;
   }
 
- .hero-caption{
-    position:absolute;
-    left:6.5%;
-    bottom:8%;
+.hero-caption{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  z-index:2;
 
-    transform:rotate(-7deg);
+  text-align:center;
+  color:#f7f7f5;
 
-    max-width:none;
-    white-space:nowrap;
-   
-    font-family:'Homemade Apple', cursive;
-    font-weight:400;
+  white-space:nowrap;
+}
 
-    font-size:clamp(3rem, 7vw, 6rem);
-    line-height:0.8;
+.hero-title{
+  font-family:'Bodoni Moda', Georgia, serif;
+  font-weight:400;
+  font-size:clamp(5rem, 13vw, 12rem);
+  line-height:0.75;
+  letter-spacing:-0.055em;
 
-    color:#000000;
+  text-shadow:0 1px 8px rgba(0,0,0,0.08);
+}
 
-    z-index:2;
+.hero-subtitle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    text-shadow:none;
+  width:max-content;
+  min-width:230px;
+  height:72px;
+
+  margin:2rem auto 0;
+  padding:0 3rem;
+
+  border:2px solid #f7f7f5;
+  border-radius:50%;
+
+  font-family:'Courier Prime', monospace;
+  font-size:1.25rem;
+  font-weight:400;
+  letter-spacing:0.04em;
 }
   
   /* ---------- Intro ---------- */
@@ -278,13 +299,23 @@ header{
       height:58vh;
     }
 
-    /* Handwriting on phone */
-    .hero-caption{
-      left:4%;
-      top:65%;
-      font-size:2.2rem;
-    }
+  .hero-caption{
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
 
+.hero-title{
+  font-size:clamp(4rem, 18vw, 6rem);
+}
+
+.hero-subtitle{
+  min-width:170px;
+  height:52px;
+  margin-top:1.4rem;
+  padding:0 2rem;
+  font-size:0.9rem;
+}
   }
 
    @media (prefers-reduced-motion: reduce){
@@ -315,12 +346,11 @@ header{
 
  <div class="hero">
 
-  <p class="hero-caption">
-    From the studio<br>
-  </p>
-
+ <div class="hero-caption">
+  <div class="hero-title">Slow Bar</div>
+  <div class="hero-subtitle">BORCELLE</div>
 </div>
-
+   
   <section class="intro">
     <h1>GEORGE DENVER</h1>
     <p>Painter based in Kent, UK. Creating original artwork exploring landscape, texture, and colour — available to view, buy, or commission.</p>
