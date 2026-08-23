@@ -159,29 +159,33 @@ header{
 }
 
   /* ---------- Hero ---------- */
-  .hero{
-    position:relative;
-    margin:clamp(1.2rem, 4vw, 2.4rem);
-    height:78vh;
-    min-height:420px;
-    overflow:visible;
-    background:
-      linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
-    background-image: url('landingimage.JPG'), linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
-    background-size: cover;
-    background-position: 70% center;
-  }
+ .hero{
+  position:relative;
+  margin:clamp(1.2rem, 4vw, 2.4rem);
+  height:78vh;
+  min-height:420px;
+  overflow:visible;
+
+  background:
+    linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
+
+  background-image:
+    url('landingimage.JPG'),
+    linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
+
+  background-size:cover;
+  background-position:70% center;
+}
 
 .hero-caption{
   position:absolute;
   left:50%;
   top:50%;
   transform:translate(-50%, -50%);
-  z-index:2;
 
+  z-index:2;
   text-align:center;
   color:#f7f7f5;
-
   white-space:nowrap;
 }
 
@@ -191,8 +195,6 @@ header{
   font-size:clamp(5rem, 13vw, 12rem);
   line-height:0.75;
   letter-spacing:-0.055em;
-
-  text-shadow:0 1px 8px rgba(0,0,0,0.08);
 }
 
 .hero-subtitle{
@@ -200,22 +202,18 @@ header{
   align-items:center;
   justify-content:center;
 
-  width:max-content;
-  min-width:230px;
+  width:230px;
   height:72px;
 
   margin:2rem auto 0;
-  padding:0 3rem;
 
   border:2px solid #f7f7f5;
   border-radius:50%;
 
   font-family:'Courier Prime', monospace;
   font-size:1.25rem;
-  font-weight:400;
   letter-spacing:0.04em;
 }
-  
   /* ---------- Intro ---------- */
   .intro{
     text-align:center;
@@ -282,39 +280,39 @@ header{
   footer a{ text-decoration:none; }
   footer a:hover{ color:var(--ochre); }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 640px){
+/* ---------- Responsive ---------- */
+@media (max-width:640px){
 
-    header{
-      flex-wrap:wrap;
-      gap:0.9rem;
-    }
+  header{
+    flex-wrap:wrap;
+    gap:0.9rem;
+  }
 
-    nav{
-      gap:1rem;
-      flex-wrap:wrap;
-    }
+  nav{
+    gap:1rem;
+    flex-wrap:wrap;
+  }
 
-    .hero{
-      height:58vh;
-    }
+  .hero{
+    height:58vh;
+  }
 
   .hero-caption{
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
-}
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
 
-.hero-title{
-  font-size:clamp(4rem, 18vw, 6rem);
-}
+  .hero-title{
+    font-size:clamp(4rem, 18vw, 6rem);
+  }
 
-.hero-subtitle{
-  min-width:170px;
-  height:52px;
-  margin-top:1.4rem;
-  padding:0 2rem;
-  font-size:0.9rem;
+  .hero-subtitle{
+    width:170px;
+    height:52px;
+    margin-top:1.4rem;
+    font-size:0.9rem;
+  }
 }
   }
 
