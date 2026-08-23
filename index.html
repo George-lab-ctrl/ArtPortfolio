@@ -162,12 +162,9 @@ header{
  .hero{
   position:relative;
   margin:clamp(1.2rem, 4vw, 2.4rem);
-  height:78vh;
+  height:min(65vh, 700px);
   min-height:420px;
-  overflow:visible;
-
-  background:
-    linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
+  overflow:hidden;
 
   background-image:
     url('landingimage.JPG'),
@@ -216,11 +213,11 @@ header{
 }
   /* ---------- Intro ---------- */
   .intro{
-    text-align:center;
-    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem 3.5rem;
-    max-width:640px;
-    margin:0 auto;
-  }
+  text-align:center;
+  padding:clamp(4rem, 8vw, 7rem) 1.5rem 10rem;
+  max-width:640px;
+  margin:0 auto;
+}
 
   .intro h1{
     font-family:'Courier Prime', serif;
@@ -342,22 +339,25 @@ header{
      </nav>
   </header>
 
- <div class="hero">
-
- <div class="hero-caption">
-  <div class="hero-title">Slow Bar</div>
-  <div class="hero-subtitle">BORCELLE</div>
+<div class="hero">
+  <div class="hero-caption">
+    <div class="hero-title">Slow Bar</div>
+    <div class="hero-subtitle">BORCELLE</div>
+  </div>
 </div>
-   
-  <section class="intro">
-    <h1>GEORGE DENVER</h1>
-    <p>Painter based in Kent, UK. Creating original artwork exploring landscape, texture, and colour — available to view, buy, or commission.</p>
-    <div class="cta-row">
-      <a class="cta primary" href="/ArtPortfolio/gallery.html">View Gallery</a>
-      <a class="cta" href="/ArtPortfolio/commissions.html">Commission a Piece</a>
-    </div>
-  </section>
 
+<section class="intro">
+  <h1>GEORGE DENVER</h1>
+  <p>
+    Painter based in Kent, UK. Creating original artwork exploring landscape,
+    texture, and colour — available to view, buy, or commission.
+  </p>
+
+  <div class="cta-row">
+    <a class="cta primary" href="/ArtPortfolio/gallery.html">View Gallery</a>
+    <a class="cta" href="/ArtPortfolio/commissions.html">Commission a Piece</a>
+  </div>
+</section>
   <footer>
     <span>Kent, United Kingdom</span>
     <a href="mailto:enquire.georgedenverstudio@gmail.com">enquire.georgedenverstudio@gmail.com</a>
