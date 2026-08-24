@@ -100,19 +100,22 @@ background-image:
 border-bottom:1px solid var(--line);
 }
   .wordmark{
-    font-family:'Courier Prime', monospace;
-    font-weight:400;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    font-size:2rem;
-    text-decoration:none;
-  }
+  font-family:'Courier Prime', monospace;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  font-size:2rem;
+  text-decoration:none;
+}
 
-
-  .wordmark span{
-    color:var(--ink);
-  }
-
+.wordmark,
+.wordmark:visited,
+.wordmark:hover,
+.wordmark:active,
+.wordmark span{
+  color:#000000 !important;
+  text-decoration:none;
+}
 
   nav{
     display:flex;
@@ -312,35 +315,24 @@ border-bottom:1px solid var(--line);
 
   /* ---------- Footer ---------- */
 
-  footer{
+footer{
+  border-top:1px solid var(--line);
+  padding:2rem clamp(1.2rem, 4vw, 3rem);
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.6rem 2rem;
+  justify-content:space-between;
+  font-size:0.82rem;
+  letter-spacing:0.02em;
+}
 
-    border-top:1px solid var(--line);
-
-    padding:2rem clamp(1.2rem, 4vw, 3rem);
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:0.6rem 2rem;
-
-    justify-content:space-between;
-
-    font-size:0.82rem;
-
-    letter-spacing:0.02em;
-  }
-
-
-  footer a{
-    text-decoration:none;
-  }
-
-
-  footer a:hover{
-    opacity:0.5;
-  }
-
+footer a,
+footer a:visited,
+footer a:hover,
+footer a:active{
+  color:#000000 !important;
+  text-decoration:none;
+}
 
   /* ---------- Mobile ---------- */
 
@@ -509,7 +501,7 @@ border-bottom:1px solid var(--line);
 
       <a
   class="enquire"
-  href="mailto:enquire.georgedenverstudio@gmail.com?subject=Enquiry%20about%20Painting%201&body=Hey%20George%2C%0A%0AI%20am%20interested%20in%20%22Painting%201%22.%0A%0AMy%20shipping%20address%20is%20%28FILL%20IN%29%20and%20my%20phone%20number%20is%20%28FILL%20IN%29.%0A%0ABest%2C%0A%0APerson%20With%20Great%20Taste"
+  href="mailto:enquire.georgedenverstudio@gmail.com?subject=Enquiry%20about%20Painting%204&body=Hey%20George%2C%0A%0AI%20am%20interested%20in%20%22Painting%204%22.%0A%0AMy%20shipping%20address%20is%20%28FILL%20IN%29%20and%20my%20phone%20number%20is%20%28FILL%20IN%29.%0A%0ABest%2C%0A%0APerson%20With%20Great%20Taste"
 >
   Enquire →
 </a>
