@@ -167,18 +167,22 @@ border-bottom:1px solid var(--line);
 
   /* ---------- Contact ---------- */
 
-.contact{
+..contact{
   min-height:calc(100vh - 90px);
 
-  display:grid;
-  grid-template-columns:1fr 0.8fr;
+  display:flex;
   align-items:center;
-
-  gap:clamp(3rem, 8vw, 7rem);
+  justify-content:center;
 
   padding:
     clamp(3rem, 7vw, 6rem)
-    clamp(1.5rem, 8vw, 8rem);
+    1.5rem;
+}
+
+.contact-content{
+  width:100%;
+  max-width:600px;
+  text-align:center;
 }
 
 .contact-content{
@@ -210,18 +214,6 @@ border-bottom:1px solid var(--line);
   opacity:0.55;
 }
 
-.contact-image{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.contact-image img{
-  display:block;
-  width:100%;
-  max-width:360px;
-  height:auto;
-}
 
   /* ---------- Footer ---------- */
 
@@ -275,17 +267,6 @@ footer a:hover{
     gap:3rem;
     padding:3rem 1.5rem 4rem;
   }
-
-  .contact-image{
-    justify-content:center;
-  }
-
-  .contact-image img{
-    max-width:300px;
-  }
-
-}
-
 
 </style>
 </head>
@@ -357,14 +338,6 @@ footer a:hover{
       </a>
     </p>
 
-  </div>
-
-  <div class="contact-image">
-  <img
-    src="landingimage.JPG"
-    alt="George Denver artwork"
-  >
-</div>
 
 </section>
 
