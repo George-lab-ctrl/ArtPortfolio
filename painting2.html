@@ -230,14 +230,48 @@ border-bottom:1px solid var(--line);
   }
 
 
-  .artwork-images img{
+ /* ---------- Image Magnifier ---------- */
 
-    display:block;
+.artwork-image-zoom {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
 
-    width:100%;
+.artwork-image-zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.08s ease-out;
+  will-change: transform;
+}
 
-    height:auto;
+/* Magnification only on devices with a mouse */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .artwork-image-zoom:hover {
+    cursor: zoom-in;
   }
+
+  .artwork-image-zoom.is-zoomed img {
+    transform: scale(2);
+  }
+
+}
+
+/* On touch devices, keep the normal image */
+
+@media (hover: none), (pointer: coarse) {
+
+  .artwork-image-zoom {
+    cursor: default;
+  }
+
+}
+
 
 
   /* ---------- Information ---------- */
@@ -463,20 +497,28 @@ footer a:active{
 
     <!-- Two images -->
 
-    <div class="artwork-images">
+   <div class="artwork-images">
 
-      <img
-        src="landingimage.JPG"
-        alt="Painting 2 — George Denver"
-      >
+  <div class="artwork-image-zoom">
 
-      <img
-        src="landingimage.JPG"
-        alt="Painting 2 detail — George Denver"
-      >
+    <img
+      src="landingimage.JPG"
+      alt="Painting 2 — George Denver"
+    >
 
-    </div>
+  </div>
 
+
+  <div class="artwork-image-zoom">
+
+    <img
+      src="landingimage.JPG"
+      alt="Painting 2 detail — George Denver"
+    >
+
+  </div>
+
+</div>
 
     <!-- Information -->
 
@@ -534,6 +576,57 @@ footer a:active{
 
 </footer>
 
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const zoomImages = document.querySelectorAll('.artwork-image-zoom');
+
+  zoomImages.forEach(container => {
+
+    const image = container.querySelector('img');
+
+    if (!image) return;
+
+
+    container.addEventListener('mousemove', (event) => {
+
+      const rect = container.getBoundingClientRect();
+
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      const xPercent = (x / rect.width) * 100;
+      const yPercent = (y / rect.height) * 100;
+
+      image.style.transformOrigin =
+        `${xPercent}% ${yPercent}%`;
+
+      container.classList.add('is-zoomed');
+
+    });
+
+
+    container.addEventListener('mouseenter', () => {
+
+      container.classList.add('is-zoomed');
+
+    });
+
+
+    container.addEventListener('mouseleave', () => {
+
+      container.classList.remove('is-zoomed');
+
+      image.style.transformOrigin = 'center center';
+
+    });
+
+  });
+
+});
+
+</script>
 
 </body>
 
