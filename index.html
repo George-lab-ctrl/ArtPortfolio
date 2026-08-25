@@ -24,27 +24,14 @@
 
   html{ scroll-behavior:smooth; }
 
- body{
+body{
   margin:0;
   padding-top:5.5rem;
 
-  background-color:#f7f7f5;
-
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  background-color:#f4f2ec;
+  background-image:url('paper-texture.jpg');
+  background-repeat:repeat;
+  background-size:700px 700px;
 
   color:var(--ink);
   font-family:'Courier Prime', system-ui, sans-serif;
@@ -53,7 +40,8 @@
 
   a{ color:inherit; }
 
-  /* ---------- Header ---------- */
+/* ---------- Header ---------- */
+
 header{
   position:fixed;
   top:0;
@@ -67,27 +55,14 @@ header{
 
   padding:1.6rem clamp(1.2rem, 4vw, 3rem);
 
-  /* OPAQUE paper background */
-  background-color:#f7f7f5;
-
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  background-color:#f4f2ec;
+  background-image:url('paper.jpg');
+  background-repeat:repeat;
+  background-size:700px 700px;
 
   border-bottom:1px solid var(--line);
 }
+
   .wordmark{
   font-family:'Courier Prime', monospace;
   font-weight:400;
