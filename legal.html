@@ -4,29 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Legal — George Denver</title>
-
-  <meta
-    name="description"
-    content="Terms & Conditions, Privacy Policy and Cookies for George Denver Studio."
-  >
+  <title>Legal | George Denver Studio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 
   <style>
-
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -34,22 +20,7 @@
       background: #f7f7f5;
       color: #111;
       font-family: "Courier Prime", monospace;
-
-      background-image:
-        repeating-linear-gradient(
-          0deg,
-          rgba(0,0,0,0.015) 0px,
-          rgba(0,0,0,0.015) 1px,
-          transparent 1px,
-          transparent 4px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          rgba(0,0,0,0.01) 0px,
-          rgba(0,0,0,0.01) 1px,
-          transparent 1px,
-          transparent 5px
-        );
+      line-height: 1.7;
     }
 
     header {
@@ -57,98 +28,98 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-
       background: #f7f7f5;
       border-bottom: 1px solid #111;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 18px 28px;
-    }
-
-    .wordmark {
-      font-size: 2rem;
-      text-decoration: none;
-      color: #111;
-      letter-spacing: 0.02em;
+      z-index: 1000;
     }
 
     nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 30px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
+    }
+
+    .logo {
+      color: #111;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
       gap: 25px;
     }
 
-    nav a {
+    .nav-links a {
       color: #111;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 15px;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
-    .legal {
-      max-width: 800px;
+    main {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 150px 28px 100px;
+      padding: 140px 30px 80px;
     }
 
-    .legal h1 {
-      font-size: 2rem;
-      font-weight: 400;
-      margin: 0 0 50px;
+    h1 {
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 50px;
     }
 
-    .legal h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-top: 45px;
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin-top: 55px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      margin-top: 35px;
       margin-bottom: 15px;
     }
 
-    .legal h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 12px;
+    p {
+      margin-bottom: 18px;
     }
 
-    .legal p,
-    .legal li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    .legal ul,
-    .legal ol {
+    ul {
+      margin-bottom: 25px;
       padding-left: 25px;
     }
 
-    .legal a {
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
       color: #111;
     }
 
-    .seller-details {
-      margin-bottom: 30px;
+    .last-updated {
+      margin-bottom: 40px;
     }
 
     footer {
       border-top: 1px solid #111;
-
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 25px 30px 40px;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      gap: 20px;
       justify-content: space-between;
-
-      gap: 15px;
-      padding: 25px 28px;
-
-      font-size: 0.82rem;
+      font-size: 14px;
     }
 
     footer a {
@@ -161,107 +132,95 @@
     }
 
     @media (max-width: 700px) {
-
-      header {
-        padding: 16px 18px;
-      }
-
-      .wordmark {
-        font-size: 1.5rem;
-      }
-
       nav {
-        gap: 14px;
+        padding: 18px 20px;
       }
 
-      nav a {
-        font-size: 0.75rem;
+      .nav-links {
+        gap: 15px;
       }
 
-      .legal {
-        padding: 125px 20px 70px;
+      .nav-links a {
+        font-size: 13px;
       }
 
-      .legal h1 {
-        font-size: 1.7rem;
+      main {
+        padding: 120px 20px 60px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      h2 {
+        font-size: 20px;
       }
 
       footer {
-        padding: 22px 18px;
+        padding: 25px 20px 35px;
+        flex-direction: column;
+        gap: 10px;
       }
-
     }
-
   </style>
 </head>
 
 <body>
 
 <header>
-
-  <a href="/ArtPortfolio/index.html" class="wordmark">
-    GEORGE DENVER
-  </a>
-
   <nav>
-    <a href="/ArtPortfolio/gallery.html">Gallery</a>
-    <a href="/ArtPortfolio/commissions.html">Commissions</a>
-    <a href="/ArtPortfolio/contact.html">Contact</a>
-
-    <a
-      href="https://www.instagram.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      Instagram
+    <a href="/ArtPortfolio/" class="logo">
+      George Denver Studio
     </a>
-  </nav>
 
+    <div class="nav-links">
+      <a href="/ArtPortfolio/gallery.html">Gallery</a>
+      <a href="/ArtPortfolio/commissions.html">Commissions</a>
+      <a href="/ArtPortfolio/contact.html">Contact</a>
+    </div>
+  </nav>
 </header>
 
 
-<main class="legal">
+<main>
 
   <h1>Legal</h1>
+
+  <p class="last-updated">
+    <strong>Last updated: 2nd September 2026</strong>
+  </p>
 
 
   <!-- TERMS & CONDITIONS -->
 
   <h2>Terms &amp; Conditions</h2>
 
-  <p><strong>Last updated: 2nd September 2026</strong></p>
-
   <p>
-    These Terms and Conditions apply to purchases of original artwork made
-    through George Denver Studio (the "Website").
+    These Terms and Conditions apply to purchases of original artwork made through
+    George Denver Studio (the "Website").
   </p>
 
 
-  <h2>1. About the Seller</h2>
+  <h3>1. About the Seller</h3>
 
-  <div class="seller-details">
+  <p>
+    <strong>George Denver</strong><br>
+    Trading as George Denver Studio<br>
+    Email:
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a><br>
+    Phone: +44 7539488130
+  </p>
 
-    <p>
-      <strong>George Denver</strong><br>
-      Trading as George Denver Studio<br>
-      Email:
-      <a href="mailto:enquire.georgedenverstudio@gmail.com">
-        enquire.georgedenverstudio@gmail.com
-      </a><br>
-      Phone: +44 7539488130
-    </p>
-
-    <p>
-      George Denver is the seller of the artwork offered through this Website.
-      The geographical/business address required for consumer contracts will
-      be provided to customers as part of the purchase process where required.
-    </p>
-
-  </div>
+  <p>
+    George Denver is the seller of the artwork offered through this Website.
+    The geographical/business address required for consumer contracts will be
+    provided to customers as part of the purchase process where required.
+  </p>
 
 
-  <h2>2. Artwork</h2>
+  <h3>2. Artwork</h3>
 
   <p>
     All artwork displayed on the Website is original artwork created by
@@ -286,7 +245,7 @@
   </p>
 
 
-  <h2>3. Availability</h2>
+  <h3>3. Availability</h3>
 
   <p>
     Original paintings are generally one-of-a-kind pieces. Once an original
@@ -306,7 +265,7 @@
   </p>
 
 
-  <h2>4. Prices and Payment</h2>
+  <h3>4. Prices and Payment</h3>
 
   <p>
     All prices displayed or quoted for artwork are in pounds sterling (£),
@@ -319,14 +278,13 @@
   </p>
 
   <p>
-    The total amount payable will be clearly stated before payment is
-    completed.
+    The total amount payable will be clearly stated before payment is completed.
   </p>
 
   <p>
     Payment will be processed securely through Stripe. By making payment,
-    you confirm that the information provided by you is accurate and that
-    you are authorised to use the payment method provided.
+    you confirm that the information provided by you is accurate and that you
+    are authorised to use the payment method provided.
   </p>
 
   <p>
@@ -335,14 +293,14 @@
   </p>
 
 
-  <h2>5. Order and Contract</h2>
+  <h3>5. Order and Contract</h3>
 
   <h3>5.1 Purchases agreed by email</h3>
 
   <p>
     Where you contact us by email to express interest in an artwork, we will
-    communicate with you to confirm the artwork, price and delivery
-    arrangements before payment.
+    communicate with you to confirm the artwork, price and delivery arrangements
+    before payment.
   </p>
 
   <p>
@@ -351,17 +309,17 @@
   </p>
 
   <p>
-    A contract will be formed once payment has been successfully received
-    and the purchase has been confirmed by us.
+    A contract will be formed once payment has been successfully received and
+    the purchase has been confirmed by us.
   </p>
 
 
   <h3>5.2 Payment through Stripe</h3>
 
   <p>
-    Payment Links are provided through Stripe. Before payment, you will be
-    able to review the relevant purchase details, including the artwork and
-    amount payable.
+    Payment Links are provided through Stripe. Before payment, you will be able
+    to review the relevant purchase details, including the artwork and amount
+    payable.
   </p>
 
   <p>
@@ -370,18 +328,17 @@
   </p>
 
 
-  <h3>5.3 Pre-contract information</h3>
+  <h3>5.3 Pre-contract Information</h3>
 
   <p>
-    Before you complete a purchase, we will provide you with the key
-    information required by law, including information about the artwork,
-    total price, delivery arrangements, cancellation rights and how to
-    contact us.
+    Before you complete a purchase, we will provide you with the key information
+    required by law, including information about the artwork, total price,
+    delivery arrangements, cancellation rights and how to contact us.
   </p>
 
   <p>
-    Where required, our geographical/business address will also be provided
-    as part of the purchase information.
+    Where required, our geographical/business address will also be provided as
+    part of the purchase information.
   </p>
 
   <p>
@@ -390,7 +347,7 @@
   </p>
 
 
-  <h2>6. Delivery</h2>
+  <h3>6. Delivery</h3>
 
   <p>
     We will arrange delivery of the artwork to the delivery address provided
@@ -410,8 +367,7 @@
   </p>
 
   <p>
-    We will provide tracking information where a tracked delivery service is
-    used.
+    We will provide tracking information where a tracked delivery service is used.
   </p>
 
   <p>
@@ -420,7 +376,7 @@
   </p>
 
 
-  <h2>7. Damage or Loss During Delivery</h2>
+  <h3>7. Damage or Loss During Delivery</h3>
 
   <p>
     Artwork will be packaged appropriately for transportation.
@@ -432,10 +388,10 @@
   </p>
 
   <p>
-    If artwork arrives damaged, please contact us as soon as reasonably
-    possible and provide photographs of the artwork and packaging where
-    possible. This will help us investigate the issue with the delivery
-    provider and arrange an appropriate resolution.
+    If artwork arrives damaged, please contact us as soon as reasonably possible
+    and provide photographs of the artwork and packaging where possible. This
+    will help us investigate the issue with the delivery provider and arrange
+    an appropriate resolution.
   </p>
 
   <p>
@@ -444,7 +400,7 @@
   </p>
 
 
-  <h2>8. Cancellation and Returns</h2>
+  <h3>8. Cancellation and Returns</h3>
 
   <p>
     If you are a consumer purchasing artwork online, you generally have a
@@ -453,8 +409,8 @@
   </p>
 
   <p>
-    If you wish to exercise this right, you must notify us within the
-    applicable cancellation period by contacting:
+    If you wish to exercise this right, you must notify us within the applicable
+    cancellation period by contacting:
   </p>
 
   <p>
@@ -474,27 +430,26 @@
   </p>
 
   <p>
-    Artwork must be returned securely and with reasonable care taken to
-    prevent damage during return transportation.
+    Artwork must be returned securely and with reasonable care taken to prevent
+    damage during return transportation.
   </p>
 
   <p>
-    Unless the artwork is faulty, damaged or not as described, you will
-    normally be responsible for the direct cost of returning the artwork
-    where we have informed you of this before purchase.
+    Unless the artwork is faulty, damaged or not as described, you will normally
+    be responsible for the direct cost of returning the artwork where we have
+    informed you of this before purchase.
   </p>
 
   <p>
     Where you validly cancel an order, we will refund you within 14 days of
-    receiving the returned artwork back, or, if earlier, within 14 days of
-    you providing evidence that you have sent it back to us.
+    receiving the returned artwork back, or, if earlier, within 14 days of you
+    providing evidence that you have sent it back to us.
   </p>
 
   <p>
     Any refund will include the cost of standard delivery originally paid.
-    Where you selected a more expensive delivery service, we are only
-    required to refund the cost of the least expensive standard delivery
-    option available.
+    Where you selected a more expensive delivery service, we are only required
+    to refund the cost of the least expensive standard delivery option available.
   </p>
 
   <p>
@@ -502,12 +457,12 @@
   </p>
 
   <p>
-    These cancellation rights do not affect any separate statutory rights
-    you may have.
+    These cancellation rights do not affect any separate statutory rights you
+    may have.
   </p>
 
 
-  <h2>9. Faulty, Damaged or Misdescribed Artwork</h2>
+  <h3>9. Faulty, Damaged or Misdescribed Artwork</h3>
 
   <p>
     Your statutory rights are not affected by these Terms and Conditions.
@@ -519,8 +474,8 @@
   </p>
 
   <p>
-    If artwork is faulty, damaged or materially different from its
-    description, please contact us as soon as reasonably possible.
+    If artwork is faulty, damaged or materially different from its description,
+    please contact us as soon as reasonably possible.
   </p>
 
   <p>
@@ -534,28 +489,27 @@
   </p>
 
 
-  <h2>10. Copyright and Intellectual Property</h2>
+  <h3>10. Copyright and Intellectual Property</h3>
 
   <p>
-    Copyright in the artwork remains with the artist unless expressly
-    transferred to the purchaser in a separate written agreement.
+    Copyright in the artwork remains with the artist unless expressly transferred
+    to the purchaser in a separate written agreement.
   </p>
 
   <p>
-    Purchasing an original painting gives you ownership of the physical
-    artwork. It does not give you the right to reproduce, copy, commercially
-    exploit or otherwise reproduce the artwork without the artist's
-    permission.
+    Purchasing an original painting gives you ownership of the physical artwork.
+    It does not give you the right to reproduce, copy, commercially exploit or
+    otherwise reproduce the artwork without the artist's permission.
   </p>
 
   <p>
-    We may photograph artwork before or after sale and may use photographs
-    of sold artwork for portfolio, archival, website, social media or
-    promotional purposes, unless otherwise agreed in writing.
+    We may photograph artwork before or after sale and may use photographs of
+    sold artwork for portfolio, archival, website, social media or promotional
+    purposes, unless otherwise agreed in writing.
   </p>
 
 
-  <h2>11. Commissioned Artwork</h2>
+  <h3>11. Commissioned Artwork</h3>
 
   <p>
     Where we accept commissions, separate terms may apply.
@@ -579,18 +533,18 @@
   </p>
 
 
-  <h2>12. Returns of Artwork</h2>
+  <h3>12. Returns of Artwork</h3>
 
   <p>
-    Returned artwork must be packaged appropriately and returned in a
-    condition that allows us to assess whether it has been handled beyond
-    what would reasonably be permitted in a shop.
+    Returned artwork must be packaged appropriately and returned in a condition
+    that allows us to assess whether it has been handled beyond what would
+    reasonably be permitted in a shop.
   </p>
 
   <p>
     Where artwork has been damaged or diminished in value through handling
-    beyond what is reasonably necessary to inspect it, we may have legal
-    rights to make a deduction from a refund where permitted by law.
+    beyond what is reasonably necessary to inspect it, we may have legal rights
+    to make a deduction from a refund where permitted by law.
   </p>
 
   <p>
@@ -598,7 +552,7 @@
   </p>
 
 
-  <h2>13. Complaints and Alternative Dispute Resolution</h2>
+  <h3>13. Complaints and Alternative Dispute Resolution</h3>
 
   <p>
     If you have a question, concern or complaint regarding your purchase,
@@ -618,18 +572,18 @@
 
   <p>
     We do not currently use an alternative dispute resolution (ADR) provider
-    accredited under UK law. You may also contact the Citizens Advice
-    Consumer Service for free, impartial advice about your consumer rights.
+    accredited under UK law. You may also contact the Citizens Advice Consumer
+    Service for free, impartial advice about your consumer rights.
   </p>
 
 
-  <h2>14. Limitation of Liability</h2>
+  <h3>14. Limitation of Liability</h3>
 
   <p>
     Nothing in these Terms and Conditions excludes or limits liability that
     cannot legally be excluded or limited, including liability for death or
-    personal injury caused by negligence, fraud or fraudulent
-    misrepresentation, or your statutory consumer rights.
+    personal injury caused by negligence, fraud or fraudulent misrepresentation,
+    or your statutory consumer rights.
   </p>
 
   <p>
@@ -639,19 +593,19 @@
   </p>
 
 
-  <h2>15. Changes to These Terms</h2>
+  <h3>15. Changes to These Terms</h3>
 
   <p>
     We may update these Terms and Conditions from time to time.
   </p>
 
   <p>
-    The Terms and Conditions applicable to your purchase will be those in
-    force at the time your order is confirmed.
+    The Terms and Conditions applicable to your purchase will be those in force
+    at the time your order is confirmed.
   </p>
 
 
-  <h2>16. Governing Law and Jurisdiction</h2>
+  <h3>16. Governing Law and Jurisdiction</h3>
 
   <p>
     These Terms and Conditions are governed by the laws of England and Wales.
@@ -660,8 +614,7 @@
   <p>
     If you are a consumer, disputes may be brought in the courts of England
     and Wales, or, where you are domiciled in Scotland or Northern Ireland,
-    in the courts of that jurisdiction, in accordance with your statutory
-    rights.
+    in the courts of that jurisdiction, in accordance with your statutory rights.
   </p>
 
   <p>
@@ -670,7 +623,7 @@
   </p>
 
 
-  <h2>17. Statutory Rights</h2>
+  <h3>17. Statutory Rights</h3>
 
   <p>
     Nothing in these Terms and Conditions is intended to remove, restrict or
@@ -678,10 +631,9 @@
   </p>
 
   <p>
-    Where there is a conflict between these Terms and Conditions and a
-    mandatory consumer protection law, the relevant law will prevail.
+    Where there is a conflict between these Terms and Conditions and a mandatory
+    consumer protection law, the relevant law will prevail.
   </p>
-
 
 
   <!-- PRIVACY POLICY -->
@@ -690,12 +642,12 @@
 
   <p>
     This Privacy Policy explains how George Denver Studio collects, uses and
-    protects personal information when you contact us, purchase artwork or
-    use this Website.
+    protects personal information when you contact us, purchase artwork or use
+    this Website.
   </p>
 
 
-  <h2>1. Who We Are</h2>
+  <h3>1. Who We Are</h3>
 
   <p>
     George Denver Studio is operated by George Denver.
@@ -713,11 +665,9 @@
   </p>
 
 
-  <h2>2. Information We May Collect</h2>
+  <h3>2. Information We May Collect</h3>
 
-  <p>
-    Depending on how you interact with the Website, we may collect:
-  </p>
+  <p>Depending on how you interact with the Website, we may collect:</p>
 
   <ul>
     <li>Your name</li>
@@ -732,11 +682,9 @@
   </ul>
 
 
-  <h2>3. How We Collect Information</h2>
+  <h3>3. How We Collect Information</h3>
 
-  <p>
-    We may collect information when you:
-  </p>
+  <p>We may collect information when you:</p>
 
   <ul>
     <li>Contact us by email</li>
@@ -747,11 +695,9 @@
   </ul>
 
 
-  <h2>4. How We Use Your Information</h2>
+  <h3>4. How We Use Your Information</h3>
 
-  <p>
-    We may use your information to:
-  </p>
+  <p>We may use your information to:</p>
 
   <ul>
     <li>Respond to enquiries</li>
@@ -766,7 +712,7 @@
   </ul>
 
 
-  <h2>5. Lawful Basis</h2>
+  <h3>5. Lawful Basis</h3>
 
   <p>
     Depending on the circumstances, we process personal information because:
@@ -788,13 +734,13 @@
     </li>
 
     <li>
-      You have provided consent where consent is required, such as for
-      certain forms of marketing or non-essential cookies.
+      You have provided consent where consent is required, such as for certain
+      forms of marketing or non-essential cookies.
     </li>
   </ul>
 
 
-  <h2>6. Payment Processing</h2>
+  <h3>6. Payment Processing</h3>
 
   <p>
     Payments are processed securely by Stripe.
@@ -807,7 +753,7 @@
   </p>
 
 
-  <h2>7. Sharing Information</h2>
+  <h3>7. Sharing Information</h3>
 
   <p>
     We may share relevant information with service providers where necessary
@@ -827,7 +773,7 @@
   </p>
 
 
-  <h2>8. International Transfers</h2>
+  <h3>8. International Transfers</h3>
 
   <p>
     Some service providers we use may process personal information outside
@@ -840,7 +786,7 @@
   </p>
 
 
-  <h2>9. Retention</h2>
+  <h3>9. Retention</h3>
 
   <p>
     We keep personal information only for as long as reasonably necessary
@@ -850,7 +796,7 @@
   </p>
 
 
-  <h2>10. Your Rights</h2>
+  <h3>10. Your Rights</h3>
 
   <p>
     Depending on the circumstances, you may have rights under UK data
@@ -878,7 +824,7 @@
   </p>
 
 
-  <h2>11. Marketing</h2>
+  <h3>11. Marketing</h3>
 
   <p>
     We will only send marketing communications where permitted by applicable
@@ -890,17 +836,45 @@
   </p>
 
 
+  <!-- COOKIES -->
 
-  <h2>12. Security</h2>
+  <h2>Cookies</h2>
 
   <p>
-    We take reasonable technical and organisational measures to protect
-    personal information against loss, misuse, unauthorised access or
-    disclosure.
+    This Website does not currently use cookies for advertising, behavioural
+    tracking or analytics.
+  </p>
+
+  <p>
+    The Website may use strictly necessary technical functionality provided
+    by third-party services. Third-party services used by or linked to the
+    Website, such as Google Fonts and Stripe, may use cookies or similar
+    technologies on their own websites or services. These are subject to the
+    privacy and cookie policies of those third parties.
+  </p>
+
+  <p>
+    If we introduce analytics, advertising or other non-essential tracking
+    technologies in the future, this section will be updated and, where
+    required by law, appropriate consent will be requested before those
+    technologies are used.
+  </p>
+
+  <p>
+    You can manage or block cookies through your browser settings. Blocking
+    certain cookies may affect how some websites or services operate.
   </p>
 
 
-  <h2>13. Third-Party Websites</h2>
+  <h3>12. Security</h3>
+
+  <p>
+    We take reasonable technical and organisational measures to protect
+    personal information against loss, misuse, unauthorised access or disclosure.
+  </p>
+
+
+  <h3>13. Third-Party Websites</h3>
 
   <p>
     The Website may contain links to third-party websites, including social
@@ -909,16 +883,16 @@
   </p>
 
 
-  <h2>14. Children</h2>
+  <h3>14. Children</h3>
 
   <p>
     This Website is not specifically directed at children and we do not
-    knowingly collect personal information from children for the purpose of
-    selling artwork.
+    knowingly collect personal information from children for the purpose
+    of selling artwork.
   </p>
 
 
-  <h2>15. Changes to This Privacy Policy</h2>
+  <h3>15. Changes to This Privacy Policy</h3>
 
   <p>
     We may update this Privacy Policy from time to time. The latest version
@@ -926,7 +900,7 @@
   </p>
 
 
-  <h2>16. Complaints</h2>
+  <h3>16. Complaints</h3>
 
   <p>
     If you have concerns about how we handle your personal information,
@@ -945,44 +919,12 @@
     unlawfully.
   </p>
 
-
-  <!-- COOKIES -->
-
-  <h2>Cookies</h2>
-
-<p>
-This website does not currently use cookies for advertising, behavioural
-tracking or analytics.
-</p>
-
-<p>
-The website may use strictly necessary technical functionality provided by
-third-party services. External services linked to or used by this website,
-such as Google Fonts or Stripe, may have their own privacy and cookie
-policies, which are outside our control.
-</p>
-
-<p>
-If we introduce analytics, advertising or other non-essential tracking
-technologies in the future, this Cookies section will be updated and,
-where required by law, appropriate consent will be requested before those
-technologies are used.
-</p>
-  <h2>6. Changes</h2>
-
-  <p>
-    We may update this Cookies information if the technologies used on the
-    Website change.
-  </p>
-
 </main>
 
 
 <footer>
 
-  <span>
-    © 2026 George Denver Studio
-  </span>
+  <span>Kent, United Kingdom</span>
 
   <a href="/ArtPortfolio/legal.html">
     Terms &amp; Conditions · Privacy Policy · Cookies
@@ -993,7 +935,6 @@ technologies are used.
   </a>
 
 </footer>
-
 
 </body>
 </html>
