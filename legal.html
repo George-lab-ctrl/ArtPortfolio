@@ -1,1212 +1,1033 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8" />
+  <title>Legal — George Denver</title>
 
-<title>Legal — George Denver</title>
+  <meta
+    name="description"
+    content="Terms & Conditions, Privacy Policy and Cookies for George Denver Studio."
+  >
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<meta
-  name="description"
-  content="Terms and Conditions, Privacy Policy and Cookies for George Denver Studio."
-/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
-  rel="stylesheet"
->
-
-<style>
-
-  :root{
-    --paper:#ffffff;
-    --ink:#000000;
-    --line:#000000;
-  }
-
-  *{
-    box-sizing:border-box;
-  }
-
-  html{
-    scroll-behavior:smooth;
-  }
-
-
-  /* ---------- Body ---------- */
-
-  body{
-    margin:0;
-    padding-top:5.5rem;
-    min-height:100vh;
-
-    background-color:#f7f7f5;
-
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.018) 0px,
-        rgba(0,0,0,0.018) 1px,
-        transparent 1px,
-        transparent 3px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(0,0,0,0.012) 0px,
-        rgba(0,0,0,0.012) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-
-    color:var(--ink);
-
-    font-family:'Courier Prime', system-ui, sans-serif;
-
-    -webkit-font-smoothing:antialiased;
-  }
-
-
-  /* ---------- Header ---------- */
-
-  header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
-
-    background-color:#f7f7f5;
-
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.018) 0px,
-        rgba(0,0,0,0.018) 1px,
-        transparent 1px,
-        transparent 3px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(0,0,0,0.012) 0px,
-        rgba(0,0,0,0.012) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-
-    border-bottom:1px solid var(--line);
-  }
-
-
-  /* ---------- Wordmark ---------- */
-
-  .wordmark{
-    font-family:'Courier Prime', monospace;
-    font-weight:400;
-
-    color:#000000;
-
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-
-    font-size:2rem;
-
-    text-decoration:none;
-  }
-
-  .wordmark,
-  .wordmark:visited,
-  .wordmark:hover,
-  .wordmark:active,
-  .wordmark span{
-    color:#000000 !important;
-    text-decoration:none;
-  }
-
-
-  /* ---------- Navigation ---------- */
-
-  nav{
-    display:flex;
-    align-items:center;
-
-    gap:clamp(1rem, 3vw, 2.2rem);
-  }
-
-  nav a{
-    text-decoration:none;
-
-    font-family:'Courier Prime', monospace;
-
-    font-size:0.85rem;
-    font-weight:400;
-
-    letter-spacing:0.06em;
-
-    text-transform:uppercase;
-
-    color:var(--ink);
-
-    position:relative;
-
-    padding-bottom:2px;
-  }
-
-
-  nav a::after{
-    content:'';
-
-    position:absolute;
-
-    left:0;
-    bottom:-3px;
-
-    width:0;
-    height:1px;
-
-    background:#000000;
-
-    transition:width 0.25s ease;
-  }
-
-
-  nav a:hover::after{
-    width:100%;
-  }
-
-
-  nav a.current::after{
-    width:100%;
-  }
-
-
-  /* ---------- Instagram ---------- */
-
-  .instagram-icon{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:58px;
-    height:18px;
-
-    padding:0;
-
-    margin-left:-1rem;
-
-    transform:translateY(-2px);
-  }
-
-
-  .instagram-icon::after{
-    display:none !important;
-  }
-
-
-  .instagram-icon svg{
-    width:16px;
-    height:16px;
-
-    stroke:#000000;
-
-    fill:none;
-
-    stroke-width:1.6;
-  }
-
-
-  .instagram-icon:hover svg{
-    opacity:0.5;
-  }
-
-
-  /* ---------- Legal Content ---------- */
-
-  .legal{
-
-    padding:
-      clamp(4rem, 7vw, 7rem)
-      clamp(1.5rem, 12vw, 12rem)
-      6rem;
-  }
-
-
-  .legal-content{
-
-    width:100%;
-
-    max-width:800px;
-  }
-
-
-  .legal h1{
-
-    font-family:'Courier Prime', monospace;
-
-    font-weight:400;
-
-    font-size:clamp(2rem, 4vw, 3rem);
-
-    line-height:1.1;
-
-    margin:0 0 4rem;
-  }
-
-
-  .legal h2{
-
-    font-family:'Courier Prime', monospace;
-
-    font-weight:700;
-
-    font-size:1.25rem;
-
-    line-height:1.4;
-
-    margin:3.5rem 0 1.5rem;
-  }
-
-
-  .legal h3{
-
-    font-family:'Courier Prime', monospace;
-
-    font-weight:700;
-
-    font-size:1rem;
-
-    line-height:1.5;
-
-    margin:2rem 0 1rem;
-  }
-
-
-  .legal p{
-
-    font-size:0.9rem;
-
-    line-height:1.8;
-
-    margin:0 0 1.25rem;
-  }
-
-
-  .legal ul,
-  .legal ol{
-
-    font-size:0.9rem;
-
-    line-height:1.8;
-
-    margin:0 0 1.5rem;
-
-    padding-left:1.5rem;
-  }
-
-
-  .legal li{
-
-    margin-bottom:0.5rem;
-  }
-
-
-  .legal a{
-
-    color:#000000;
-
-    text-decoration:none;
-
-    border-bottom:1px solid #000000;
-
-    padding-bottom:2px;
-
-    transition:opacity 0.2s ease;
-  }
-
-
-  .legal a:hover{
-
-    opacity:0.5;
-  }
-
-
-  .legal .intro{
-
-    margin-bottom:3rem;
-  }
-
-
-  .legal .updated{
-
-    font-size:0.8rem;
-
-    margin-bottom:3rem;
-  }
-
-
-  /* ---------- Footer ---------- */
-
-  footer{
-
-    border-top:1px solid var(--line);
-
-    padding:2rem clamp(1.2rem, 4vw, 3rem);
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:0.6rem 2rem;
-
-    justify-content:space-between;
-
-    font-size:0.82rem;
-
-    color:var(--ink);
-
-    letter-spacing:0.02em;
-  }
-
-
-  footer a{
-
-    color:#000000;
-
-    text-decoration:none;
-  }
-
-
-  footer a:visited{
-
-    color:#000000;
-  }
-
-
-  footer a:hover{
-
-    color:#000000;
-  }
-
-
-  /* ---------- Mobile ---------- */
-
-  @media (max-width:640px){
-
-    header{
-
-      flex-wrap:wrap;
-
-      gap:0.9rem;
+    * {
+      box-sizing: border-box;
     }
 
-
-    nav{
-
-      gap:1rem;
-
-      flex-wrap:wrap;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #111;
+      font-family: "Courier Prime", monospace;
 
-    .legal{
-
-      padding:
-        3rem
-        1.5rem
-        4rem;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,0.015) 0px,
+          rgba(0,0,0,0.015) 1px,
+          transparent 1px,
+          transparent 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,0,0,0.01) 0px,
+          rgba(0,0,0,0.01) 1px,
+          transparent 1px,
+          transparent 5px
+        );
     }
 
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
 
-    .legal h1{
+      background: #f7f7f5;
+      border-bottom: 1px solid #111;
 
-      font-size:2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-      margin-bottom:3rem;
+      padding: 18px 28px;
     }
 
-
-    .legal h2{
-
-      font-size:1.15rem;
-
-      margin-top:3rem;
+    .wordmark {
+      font-size: 2rem;
+      text-decoration: none;
+      color: #111;
+      letter-spacing: 0.02em;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #111;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .legal {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 150px 28px 100px;
+    }
+
+    .legal h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0 0 50px;
+    }
+
+    .legal h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 45px;
+      margin-bottom: 15px;
+    }
+
+    .legal h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
 
     .legal p,
+    .legal li {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
     .legal ul,
-    .legal ol{
-
-      font-size:0.88rem;
-
-      line-height:1.8;
+    .legal ol {
+      padding-left: 25px;
     }
 
-  }
-
-
-  /* ---------- Reduced Motion ---------- */
-
-  @media (prefers-reduced-motion:reduce){
-
-    html{
-
-      scroll-behavior:auto;
+    .legal a {
+      color: #111;
     }
 
-    nav a::after{
-
-      transition:none;
+    .seller-details {
+      margin-bottom: 30px;
     }
 
-  }
+    footer {
+      border-top: 1px solid #111;
 
-</style>
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
 
+      gap: 15px;
+      padding: 25px 28px;
+
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 16px 18px;
+      }
+
+      .wordmark {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+      }
+
+      .legal {
+        padding: 125px 20px 70px;
+      }
+
+      .legal h1 {
+        font-size: 1.7rem;
+      }
+
+      footer {
+        padding: 22px 18px;
+      }
+
+    }
+
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- Header -->
-
 <header>
 
-  <a
-    class="wordmark"
-    href="/ArtPortfolio/index.html"
-  >
-    George <span>Denver</span>
+  <a href="/ArtPortfolio/index.html" class="wordmark">
+    GEORGE DENVER
   </a>
 
-
   <nav>
-
-    <a href="/ArtPortfolio/gallery.html">
-      Gallery
-    </a>
-
-
-    <a href="/ArtPortfolio/commissions.html">
-      Commissions
-    </a>
-
-
-    <a href="/ArtPortfolio/contact.html">
-      Contact
-    </a>
-
+    <a href="/ArtPortfolio/gallery.html">Gallery</a>
+    <a href="/ArtPortfolio/commissions.html">Commissions</a>
+    <a href="/ArtPortfolio/contact.html">Contact</a>
 
     <a
-      class="instagram-icon"
-      href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Instagram"
     >
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="5"
-        ></rect>
-
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-        ></circle>
-
-        <circle
-          cx="17.5"
-          cy="6.5"
-          r="1"
-          fill="#000000"
-          stroke="none"
-        ></circle>
-
-      </svg>
-
+      Instagram
     </a>
-
   </nav>
 
 </header>
 
 
+<main class="legal">
 
-<!-- Legal Content -->
+  <h1>Legal</h1>
 
-<main>
 
-<section class="legal">
+  <!-- TERMS & CONDITIONS -->
 
-<div class="legal-content">
+  <h2>Terms &amp; Conditions</h2>
 
+  <p><strong>Last updated: 2nd September 2026</strong></p>
 
-<h1>Legal</h1>
+  <p>
+    These Terms and Conditions apply to purchases of original artwork made
+    through George Denver Studio (the "Website").
+  </p>
 
-<p class="updated">
-Last updated: 2 September 2026
-</p>
 
+  <h2>1. About the Seller</h2>
 
-<!-- ========================================================= -->
-<!-- TERMS & CONDITIONS -->
-<!-- ========================================================= -->
+  <div class="seller-details">
 
-<h2>Terms &amp; Conditions</h2>
+    <p>
+      <strong>George Denver</strong><br>
+      Trading as George Denver Studio<br>
+      Email:
+      <a href="mailto:enquire.georgedenverstudio@gmail.com">
+        enquire.georgedenverstudio@gmail.com
+      </a><br>
+      Phone: +44 7539488130
+    </p>
 
+    <p>
+      George Denver is the seller of the artwork offered through this Website.
+      The geographical/business address required for consumer contracts will
+      be provided to customers as part of the purchase process where required.
+    </p>
 
-<p class="intro">
-These Terms and Conditions apply to purchases of original artwork made through George Denver Studio (the "Website").
-</p>
+  </div>
 
 
-<h3>1. About the Seller</h3>
+  <h2>2. Artwork</h2>
 
-<p>
-The Website and artwork are operated by:
-</p>
+  <p>
+    All artwork displayed on the Website is original artwork created by
+    George Denver, unless otherwise stated.
+  </p>
 
-<p>
-<strong>George Denver</strong><br>
-Cobridge, Imperial Avenue<br>
-Minster on Sea<br>
-Sheerness<br>
-ME12 2HG<br>
-Email: <a href="mailto:enquire.georgedenverstudio@gmail.com">enquire.georgedenverstudio@gmail.com</a><br>
-Phone: +44 7539488130
-</p>
+  <p>
+    Each original artwork is individually produced and may contain natural
+    variations in colour, texture, brushwork and finish. Colours may also
+    appear slightly different depending on your screen or device.
+  </p>
 
-<p>
-For the purposes of these Terms and Conditions, "we", "us" and "our" refer to the seller of the artwork, and "you" and "your" refer to the customer.
-</p>
+  <p>
+    Artwork descriptions, dimensions, materials and photographs are provided
+    as accurately as reasonably possible.
+  </p>
 
+  <p>
+    Unless expressly stated otherwise, the purchase of an original painting
+    relates to the physical artwork only and does not transfer copyright or
+    reproduction rights to the purchaser.
+  </p>
 
-<h3>2. Artwork</h3>
 
-<p>
-All artwork displayed on the Website is original artwork created by George Denver, unless otherwise stated.
-</p>
+  <h2>3. Availability</h2>
 
-<p>
-Each original artwork is individually produced and may contain natural variations in colour, texture, brushwork and finish. Colours may also appear slightly different depending on your screen or device.
-</p>
+  <p>
+    Original paintings are generally one-of-a-kind pieces. Once an original
+    artwork has been sold, it will not be sold to another customer.
+  </p>
 
-<p>
-Artwork descriptions, dimensions, materials and photographs are provided as accurately as reasonably possible.
-</p>
+  <p>
+    Artwork remains available for purchase until payment has been received
+    and the purchase has been confirmed by us.
+  </p>
 
-<p>
-Unless expressly stated otherwise, the purchase of an original painting relates to the physical artwork only and does not transfer copyright or reproduction rights to the purchaser.
-</p>
+  <p>
+    We reserve the right to correct genuine errors in artwork descriptions,
+    pricing or availability. If an error materially affects your purchase
+    and you have already paid, we will contact you and provide an appropriate
+    resolution, including a refund where applicable.
+  </p>
 
 
-<h3>3. Availability</h3>
+  <h2>4. Prices and Payment</h2>
 
-<p>
-Original paintings are generally one-of-a-kind pieces. Once an original artwork has been sold, it will not be sold to another customer.
-</p>
+  <p>
+    All prices displayed or quoted for artwork are in pounds sterling (£),
+    unless otherwise stated.
+  </p>
 
-<p>
-Artwork remains available for purchase until payment has been received and the purchase has been confirmed by us.
-</p>
+  <p>
+    Before payment is made, we will confirm the price of the artwork and any
+    applicable delivery charges with you.
+  </p>
 
-<p>
-We reserve the right to correct genuine errors in artwork descriptions, pricing or availability. If an error materially affects your purchase and you have already paid, we will contact you and provide an appropriate resolution, including a refund where applicable.
-</p>
+  <p>
+    The total amount payable will be clearly stated before payment is
+    completed.
+  </p>
 
+  <p>
+    Payment will be processed securely through Stripe. By making payment,
+    you confirm that the information provided by you is accurate and that
+    you are authorised to use the payment method provided.
+  </p>
 
-<h3>4. Prices and Payment</h3>
+  <p>
+    Payment must be received in full before artwork is dispatched, unless
+    otherwise agreed in writing.
+  </p>
 
-<p>
-All prices displayed or quoted for artwork are in pounds sterling (£), unless otherwise stated. The total price shown to you before you complete your purchase includes all mandatory charges, including delivery, so that there are no hidden or additional fees added at checkout.
-</p>
 
-<p>
-The price payable for the artwork will be the price agreed with you at the time of purchase.
-</p>
+  <h2>5. Order and Contract</h2>
 
-<p>
-Where applicable, delivery and shipping costs will be included in the total price agreed.
-</p>
+  <h3>5.1 Purchases agreed by email</h3>
 
-<p>
-Payment will be processed securely through Stripe. By making payment, you confirm that the information provided by you is accurate and that you are authorised to use the payment method provided.
-</p>
+  <p>
+    Where you contact us by email to express interest in an artwork, we will
+    communicate with you to confirm the artwork, price and delivery
+    arrangements before payment.
+  </p>
 
-<p>
-Payment must be received in full before artwork is dispatched, unless otherwise agreed in writing.
-</p>
+  <p>
+    Once these details have been agreed, we may provide you with a Stripe
+    Payment Link to complete payment.
+  </p>
 
+  <p>
+    A contract will be formed once payment has been successfully received
+    and the purchase has been confirmed by us.
+  </p>
 
-<h3>5. Order and Contract</h3>
 
-<h3>5.1 Purchases made directly through the Website</h3>
+  <h3>5.2 Payment through Stripe</h3>
 
-<p>
-Where artwork is purchased directly through Stripe checkout, a contract is formed once we send you an order confirmation email following successful payment. Beginning checkout does not itself constitute a binding contract.
-</p>
+  <p>
+    Payment Links are provided through Stripe. Before payment, you will be
+    able to review the relevant purchase details, including the artwork and
+    amount payable.
+  </p>
 
-<h3>5.2 Purchases agreed by email or other direct communication</h3>
+  <p>
+    Where applicable, you may be required to confirm your agreement to these
+    Terms and Conditions before completing payment.
+  </p>
 
-<p>
-Where artwork is purchased following communication by email, the purchase will be confirmed once:
-</p>
 
-<ol>
-<li>the artwork and price have been agreed;</li>
-<li>delivery information has been agreed;</li>
-<li>payment has been successfully received.</li>
-</ol>
+  <h3>5.3 Pre-contract information</h3>
+
+  <p>
+    Before you complete a purchase, we will provide you with the key
+    information required by law, including information about the artwork,
+    total price, delivery arrangements, cancellation rights and how to
+    contact us.
+  </p>
+
+  <p>
+    Where required, our geographical/business address will also be provided
+    as part of the purchase information.
+  </p>
+
+  <p>
+    Relevant purchase information and these Terms and Conditions will be
+    provided in a form that you can retain for future reference.
+  </p>
+
+
+  <h2>6. Delivery</h2>
+
+  <p>
+    We will arrange delivery of the artwork to the delivery address provided
+    by you.
+  </p>
+
+  <p>
+    Estimated delivery times and delivery costs will be communicated before
+    payment.
+  </p>
+
+  <p>
+    Unless otherwise agreed with you, we will aim to dispatch the artwork
+    within 14 working days of receiving cleared payment, and in any event no
+    later than 30 days after the contract is formed, unless a longer period
+    has been expressly agreed with you.
+  </p>
+
+  <p>
+    We will provide tracking information where a tracked delivery service is
+    used.
+  </p>
+
+  <p>
+    Delivery dates are estimates unless a specific delivery date has been
+    expressly agreed.
+  </p>
+
+
+  <h2>7. Damage or Loss During Delivery</h2>
+
+  <p>
+    Artwork will be packaged appropriately for transportation.
+  </p>
+
+  <p>
+    The artwork remains at our risk until it is delivered into your physical
+    possession, or that of a person you have nominated to receive it.
+  </p>
+
+  <p>
+    If artwork arrives damaged, please contact us as soon as reasonably
+    possible and provide photographs of the artwork and packaging where
+    possible. This will help us investigate the issue with the delivery
+    provider and arrange an appropriate resolution.
+  </p>
+
+  <p>
+    Nothing in these Terms and Conditions limits your statutory rights where
+    artwork is damaged, faulty or not as described.
+  </p>
+
+
+  <h2>8. Cancellation and Returns</h2>
+
+  <p>
+    If you are a consumer purchasing artwork online, you generally have a
+    statutory right to cancel your purchase within 14 days of receiving the
+    artwork, without giving a reason.
+  </p>
+
+  <p>
+    If you wish to exercise this right, you must notify us within the
+    applicable cancellation period by contacting:
+  </p>
+
+  <p>
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a>
+  </p>
+
+  <p>
+    You may notify us by email or by another clear written statement.
+    A model cancellation form may also be provided where applicable.
+  </p>
+
+  <p>
+    After notifying us that you wish to cancel, you must return the artwork
+    within 14 days of telling us that you wish to cancel.
+  </p>
+
+  <p>
+    Artwork must be returned securely and with reasonable care taken to
+    prevent damage during return transportation.
+  </p>
+
+  <p>
+    Unless the artwork is faulty, damaged or not as described, you will
+    normally be responsible for the direct cost of returning the artwork
+    where we have informed you of this before purchase.
+  </p>
+
+  <p>
+    Where you validly cancel an order, we will refund you within 14 days of
+    receiving the returned artwork back, or, if earlier, within 14 days of
+    you providing evidence that you have sent it back to us.
+  </p>
+
+  <p>
+    Any refund will include the cost of standard delivery originally paid.
+    Where you selected a more expensive delivery service, we are only
+    required to refund the cost of the least expensive standard delivery
+    option available.
+  </p>
+
+  <p>
+    Refunds will normally be made using the original payment method.
+  </p>
+
+  <p>
+    These cancellation rights do not affect any separate statutory rights
+    you may have.
+  </p>
+
+
+  <h2>9. Faulty, Damaged or Misdescribed Artwork</h2>
+
+  <p>
+    Your statutory rights are not affected by these Terms and Conditions.
+  </p>
+
+  <p>
+    Artwork must be as described, of satisfactory quality and fit for purpose
+    where applicable.
+  </p>
+
+  <p>
+    If artwork is faulty, damaged or materially different from its
+    description, please contact us as soon as reasonably possible.
+  </p>
+
+  <p>
+    Depending on the circumstances and your legal rights, we may provide a
+    repair, replacement or refund.
+  </p>
+
+  <p>
+    Nothing in these Terms and Conditions is intended to exclude or restrict
+    any consumer rights that cannot legally be excluded or restricted.
+  </p>
+
+
+  <h2>10. Copyright and Intellectual Property</h2>
+
+  <p>
+    Copyright in the artwork remains with the artist unless expressly
+    transferred to the purchaser in a separate written agreement.
+  </p>
+
+  <p>
+    Purchasing an original painting gives you ownership of the physical
+    artwork. It does not give you the right to reproduce, copy, commercially
+    exploit or otherwise reproduce the artwork without the artist's
+    permission.
+  </p>
+
+  <p>
+    We may photograph artwork before or after sale and may use photographs
+    of sold artwork for portfolio, archival, website, social media or
+    promotional purposes, unless otherwise agreed in writing.
+  </p>
 
-<p>
-We will provide confirmation of the purchase by email.
-</p>
+
+  <h2>11. Commissioned Artwork</h2>
+
+  <p>
+    Where we accept commissions, separate terms may apply.
+  </p>
+
+  <p>
+    Before work begins, we will agree with you the artwork specifications,
+    price, payment arrangements, estimated completion time and any other
+    relevant requirements.
+  </p>
+
+  <p>
+    Commissioned or personalised artwork may be exempt from the statutory
+    14-day cancellation right where the relevant legal exemption applies.
+    We will explain this to you before you place a commission.
+  </p>
 
+  <p>
+    Your statutory rights in relation to faulty or misdescribed commissioned
+    artwork are not affected.
+  </p>
 
-<h3>5.3 Pre-contract information</h3>
+
+  <h2>12. Returns of Artwork</h2>
+
+  <p>
+    Returned artwork must be packaged appropriately and returned in a
+    condition that allows us to assess whether it has been handled beyond
+    what would reasonably be permitted in a shop.
+  </p>
 
-<p>
-Before you complete a purchase, we will provide you with the key information required by law, including our contact details, a description of the artwork, the total price, delivery arrangements, and information about your right to cancel where applicable.
-</p>
+  <p>
+    Where artwork has been damaged or diminished in value through handling
+    beyond what is reasonably necessary to inspect it, we may have legal
+    rights to make a deduction from a refund where permitted by law.
+  </p>
 
-<p>
-A copy of the relevant purchase details and these Terms and Conditions should be retained by you for your records.
-</p>
+  <p>
+    This does not affect your statutory rights.
+  </p>
 
 
-<h3>6. Delivery</h3>
+  <h2>13. Complaints and Alternative Dispute Resolution</h2>
 
-<p>
-We will arrange delivery of the artwork to the delivery address provided by you.
-</p>
+  <p>
+    If you have a question, concern or complaint regarding your purchase,
+    please contact:
+  </p>
 
-<p>
-Estimated delivery times will be communicated before payment.
-</p>
+  <p>
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a>
+  </p>
 
-<p>
-Unless otherwise agreed with you, we will aim to dispatch the artwork within 14 working days of receiving cleared payment, and in any event no later than 30 days after the contract is formed, unless a longer period has been expressly agreed with you.
-</p>
+  <p>
+    We will aim to respond to complaints as soon as reasonably practicable
+    and work with you to resolve the issue fairly.
+  </p>
 
-<p>
-We will provide tracking information where a tracked delivery service is used.
-</p>
+  <p>
+    We do not currently use an alternative dispute resolution (ADR) provider
+    accredited under UK law. You may also contact the Citizens Advice
+    Consumer Service for free, impartial advice about your consumer rights.
+  </p>
 
-<p>
-Delivery dates are estimates unless a specific delivery date has been expressly agreed.
-</p>
 
+  <h2>14. Limitation of Liability</h2>
 
-<h3>7. Damage or Loss During Delivery</h3>
+  <p>
+    Nothing in these Terms and Conditions excludes or limits liability that
+    cannot legally be excluded or limited, including liability for death or
+    personal injury caused by negligence, fraud or fraudulent
+    misrepresentation, or your statutory consumer rights.
+  </p>
 
-<p>
-Artwork will be packaged appropriately for transportation.
-</p>
+  <p>
+    Subject to the above, we will not be responsible for losses that are not
+    reasonably foreseeable or that arise outside the scope of our agreement
+    with you.
+  </p>
 
-<p>
-The artwork remains at our risk until it is delivered into your physical possession (or that of a person you have nominated to receive it). This means that if the artwork is lost or damaged in transit, this is our responsibility, not yours.
-</p>
 
-<p>
-If artwork arrives damaged, please contact us as soon as reasonably possible after receiving the artwork and provide photographs of the artwork and packaging where possible. This will help us investigate the issue and arrange an appropriate resolution.
-</p>
+  <h2>15. Changes to These Terms</h2>
 
-<p>
-Nothing in these Terms and Conditions limits your statutory rights where artwork is damaged, faulty or not as described.
-</p>
+  <p>
+    We may update these Terms and Conditions from time to time.
+  </p>
 
+  <p>
+    The Terms and Conditions applicable to your purchase will be those in
+    force at the time your order is confirmed.
+  </p>
 
-<h3>8. Cancellation and Returns</h3>
 
-<p>
-If you are a consumer purchasing artwork online, you generally have a statutory right to cancel your purchase within <strong>14 days of receiving the artwork</strong>, without giving a reason.
-</p>
+  <h2>16. Governing Law and Jurisdiction</h2>
 
-<p>
-If you wish to exercise this right, you must notify us within the applicable cancellation period by contacting <a href="mailto:enquire.georgedenverstudio@gmail.com">enquire.georgedenverstudio@gmail.com</a> or by another clear written statement.
-</p>
+  <p>
+    These Terms and Conditions are governed by the laws of England and Wales.
+  </p>
 
-<p>
-You may use the model cancellation form provided to you at the time of purchase, but you do not have to use it.
-</p>
+  <p>
+    If you are a consumer, disputes may be brought in the courts of England
+    and Wales, or, where you are domiciled in Scotland or Northern Ireland,
+    in the courts of that jurisdiction, in accordance with your statutory
+    rights.
+  </p>
 
-<p>
-After notifying us that you wish to cancel, you must return the artwork to us within 14 days of telling us you wish to cancel.
-</p>
+  <p>
+    Nothing in this clause deprives you of the protection afforded by any
+    mandatory provisions of the law of the country in which you are resident.
+  </p>
 
-<p>
-Artwork must be returned securely and with reasonable care taken to prevent damage during return transportation.
-</p>
 
-<p>
-Unless the artwork is faulty, damaged or not as described, you will normally be responsible for the direct cost of returning the artwork where we have informed you of this before purchase.
-</p>
+  <h2>17. Statutory Rights</h2>
 
-<p>
-Where you validly cancel an order, we will refund you within 14 days of receiving the returned artwork back (or, if earlier, within 14 days of you providing evidence that you have sent it back to us). Any refund will include the cost of standard delivery originally paid. Where you selected a more expensive delivery service, we are only required to refund the cost of the least expensive standard delivery option available.
-</p>
+  <p>
+    Nothing in these Terms and Conditions is intended to remove, restrict or
+    replace any statutory rights you have as a consumer.
+  </p>
 
-<p>
-Refunds will normally be made using the original payment method.
-</p>
+  <p>
+    Where there is a conflict between these Terms and Conditions and a
+    mandatory consumer protection law, the relevant law will prevail.
+  </p>
 
-<p>
-These cancellation rights do not affect any separate statutory rights you may have.
-</p>
 
 
-<h3>9. Faulty, Damaged or Misdescribed Artwork</h3>
+  <!-- PRIVACY POLICY -->
 
-<p>
-Your statutory rights are not affected by these Terms and Conditions.
-</p>
+  <h2>Privacy Policy</h2>
 
-<p>
-Artwork must be as described, of satisfactory quality and fit for purpose where applicable.
-</p>
+  <p>
+    This Privacy Policy explains how George Denver Studio collects, uses and
+    protects personal information when you contact us, purchase artwork or
+    use this Website.
+  </p>
 
-<p>
-If artwork is faulty, damaged or materially different from its description, please contact us as soon as reasonably possible after receiving the artwork so that we can investigate the issue.
-</p>
 
-<p>
-Depending on the circumstances and your legal rights, we may provide a repair, replacement or refund.
-</p>
+  <h2>1. Who We Are</h2>
 
-<p>
-Nothing in these Terms and Conditions is intended to exclude or restrict any consumer rights that cannot legally be excluded or restricted.
-</p>
+  <p>
+    George Denver Studio is operated by George Denver.
+  </p>
 
+  <p>
+    If you have any questions about this Privacy Policy or how your personal
+    information is handled, you can contact:
+  </p>
 
-<h3>10. Copyright and Intellectual Property</h3>
+  <p>
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a>
+  </p>
 
-<p>
-Copyright in the artwork remains with the artist unless expressly transferred to the purchaser in a separate written agreement.
-</p>
 
-<p>
-Purchasing an original painting gives you ownership of the physical artwork. It does not give you the right to reproduce, copy, commercially exploit or otherwise reproduce the artwork without the artist's permission.
-</p>
+  <h2>2. Information We May Collect</h2>
 
-<p>
-We may photograph artwork before or after sale and may use photographs of sold artwork for portfolio, archival, website, social media or promotional purposes, unless otherwise agreed in writing.
-</p>
+  <p>
+    Depending on how you interact with the Website, we may collect:
+  </p>
 
+  <ul>
+    <li>Your name</li>
+    <li>Your email address</li>
+    <li>Your telephone number, where provided</li>
+    <li>Your delivery address</li>
+    <li>Artwork and order information</li>
+    <li>Payment and transaction information</li>
+    <li>Correspondence between you and us</li>
+    <li>Information relating to returns, refunds or complaints</li>
+    <li>Technical information about how you use the Website</li>
+  </ul>
 
-<h3>11. Commissioned Artwork</h3>
 
-<p>
-Where we accept commissions, separate terms may apply.
-</p>
+  <h2>3. How We Collect Information</h2>
 
-<p>
-Before work begins, we will agree with you the artwork specifications, price, payment arrangements, estimated completion time and any other relevant requirements.
-</p>
+  <p>
+    We may collect information when you:
+  </p>
 
-<p>
-<strong>Commissioned or personalised artwork may be exempt from the statutory 14-day cancellation right where the relevant legal exemption applies.</strong> We will explain this to you before you place a commission.
-</p>
+  <ul>
+    <li>Contact us by email</li>
+    <li>Ask about or purchase artwork</li>
+    <li>Complete a payment through Stripe</li>
+    <li>Arrange delivery or returns</li>
+    <li>Use the Website</li>
+  </ul>
 
-<p>
-Your statutory rights in relation to faulty or misdescribed commissioned artwork are not affected.
-</p>
 
+  <h2>4. How We Use Your Information</h2>
 
-<h3>12. Returns of Artwork</h3>
+  <p>
+    We may use your information to:
+  </p>
 
-<p>
-Returned artwork must be packaged appropriately and returned in a condition that allows us to assess whether it has been handled beyond what would reasonably be permitted in a shop.
-</p>
+  <ul>
+    <li>Respond to enquiries</li>
+    <li>Process artwork purchases</li>
+    <li>Arrange delivery</li>
+    <li>Process refunds and returns</li>
+    <li>Communicate with you about your purchase</li>
+    <li>Maintain business and financial records</li>
+    <li>Comply with legal and accounting requirements</li>
+    <li>Protect the Website and prevent fraud or misuse</li>
+    <li>Improve the Website and customer experience</li>
+  </ul>
 
-<p>
-Where artwork has been damaged or diminished in value through handling beyond what is reasonably necessary to inspect it, we may have legal rights to make a deduction from a refund where permitted by law.
-</p>
 
-<p>
-This does not affect your statutory rights.
-</p>
+  <h2>5. Lawful Basis</h2>
 
+  <p>
+    Depending on the circumstances, we process personal information because:
+  </p>
 
-<h3>13. Complaints and Alternative Dispute Resolution</h3>
+  <ul>
+    <li>
+      It is necessary to take steps at your request before entering into a
+      contract or to perform a contract with you.
+    </li>
 
-<p>
-If you have a question, concern or complaint regarding your purchase, please contact:
-</p>
+    <li>
+      We have a legal obligation to keep certain records.
+    </li>
 
-<p>
-Email: <a href="mailto:enquire.georgedenverstudio@gmail.com">enquire.georgedenverstudio@gmail.com</a><br>
-Phone: +44 7539488130
-</p>
+    <li>
+      We have a legitimate interest in operating, protecting and improving
+      our business and Website.
+    </li>
 
-<p>
-We will aim to respond to complaints as soon as reasonably practicable and work with you to resolve the issue fairly.
-</p>
+    <li>
+      You have provided consent where consent is required, such as for
+      certain forms of marketing or non-essential cookies.
+    </li>
+  </ul>
 
-<p>
-We do not currently use an alternative dispute resolution (ADR) provider accredited under UK law. You may also contact the Citizens Advice Consumer Service for free, impartial advice about your consumer rights.
-</p>
 
+  <h2>6. Payment Processing</h2>
 
-<h3>14. Limitation of Liability</h3>
+  <p>
+    Payments are processed securely by Stripe.
+  </p>
 
-<p>
-Nothing in these Terms and Conditions excludes or limits liability that cannot legally be excluded or limited, including liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or your statutory consumer rights.
-</p>
+  <p>
+    We do not normally receive or store your full payment card details.
+    Payment information is handled by Stripe in accordance with its own
+    privacy and security practices.
+  </p>
 
-<p>
-Subject to the above, we will not be responsible for losses that are not reasonably foreseeable or that arise outside the scope of our agreement with you.
-</p>
 
+  <h2>7. Sharing Information</h2>
 
-<h3>15. Changes to These Terms</h3>
+  <p>
+    We may share relevant information with service providers where necessary
+    to operate the business, including:
+  </p>
 
-<p>
-We may update these Terms and Conditions from time to time.
-</p>
+  <ul>
+    <li>Stripe for payment processing</li>
+    <li>Delivery and postal providers for shipping artwork</li>
+    <li>Website, hosting or technical service providers</li>
+    <li>Professional advisers where reasonably necessary</li>
+    <li>Authorities where legally required</li>
+  </ul>
 
-<p>
-The Terms and Conditions applicable to your purchase will be those in force at the time your order is confirmed.
-</p>
+  <p>
+    We do not sell your personal information.
+  </p>
 
 
-<h3>16. Governing Law and Jurisdiction</h3>
+  <h2>8. International Transfers</h2>
 
-<p>
-These Terms and Conditions are governed by the laws of England and Wales. If you are a consumer, disputes may be brought in the courts of England and Wales, or, where you are domiciled in Scotland or Northern Ireland, in the courts of that jurisdiction, in accordance with your statutory rights. Nothing in this clause deprives you of the protection afforded by any mandatory provisions of the law of the country in which you are resident.
-</p>
+  <p>
+    Some service providers we use may process personal information outside
+    the United Kingdom.
+  </p>
 
+  <p>
+    Where this occurs, appropriate safeguards will be used where required by
+    applicable data protection law.
+  </p>
 
-<h3>17. Statutory Rights</h3>
 
-<p>
-Nothing in these Terms and Conditions is intended to remove, restrict or replace any statutory rights you have as a consumer.
-</p>
+  <h2>9. Retention</h2>
 
-<p>
-Where there is a conflict between these Terms and Conditions and a mandatory consumer protection law, the relevant law will prevail.
-</p>
+  <p>
+    We keep personal information only for as long as reasonably necessary
+    for the purposes described in this Privacy Policy, including where we
+    need to retain information to comply with legal, accounting or tax
+    obligations.
+  </p>
 
 
+  <h2>10. Your Rights</h2>
 
-<!-- ========================================================= -->
-<!-- PRIVACY POLICY -->
-<!-- ========================================================= -->
+  <p>
+    Depending on the circumstances, you may have rights under UK data
+    protection law, including the right to:
+  </p>
 
-<h2>Privacy Policy</h2>
+  <ul>
+    <li>Request access to personal information we hold about you</li>
+    <li>Request correction of inaccurate information</li>
+    <li>Request deletion of information in certain circumstances</li>
+    <li>Object to certain processing</li>
+    <li>Request restriction of processing in certain circumstances</li>
+    <li>Request transfer of certain information</li>
+    <li>Withdraw consent where processing is based on consent</li>
+  </ul>
 
+  <p>
+    To exercise your rights, contact:
+  </p>
 
-<p class="intro">
-This Privacy Policy explains how George Denver Studio collects, uses, stores and protects personal information when you use this Website or contact us about artwork.
-</p>
+  <p>
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a>
+  </p>
 
 
-<h3>1. Who We Are</h3>
+  <h2>11. Marketing</h2>
 
-<p>
-George Denver Studio is operated by George Denver.
-</p>
+  <p>
+    We will only send marketing communications where permitted by applicable
+    law and, where required, with your consent.
+  </p>
 
-<p>
-Contact email:
-<a href="mailto:enquire.georgedenverstudio@gmail.com">
-enquire.georgedenverstudio@gmail.com
-</a>
-</p>
+  <p>
+    You can ask us to stop sending marketing communications at any time.
+  </p>
 
 
-<h3>2. Information We May Collect</h3>
+  <h2>12. Cookies</h2>
 
-<p>
-Depending on how you interact with the Website, we may collect:
-</p>
+  <p>
+    This Website may use cookies or similar technologies.
+  </p>
 
-<ul>
-<li>your name;</li>
-<li>email address;</li>
-<li>telephone number where you provide it;</li>
-<li>billing and delivery information;</li>
-<li>details of artwork you enquire about or purchase;</li>
-<li>payment and transaction information;</li>
-<li>communications between you and George Denver Studio;</li>
-<li>information required to process returns, refunds or complaints;</li>
-<li>technical information such as IP address, browser type and device information where collected through website technologies.</li>
-</ul>
+  <h3>Essential Cookies</h3>
 
+  <p>
+    Some cookies may be necessary for the Website to function properly.
+  </p>
 
-<h3>3. How We Collect Information</h3>
+  <h3>Analytics and Other Non-Essential Cookies</h3>
 
-<p>
-We may collect information when you:
-</p>
+  <p>
+    If we use analytics, advertising or other non-essential tracking
+    technologies, these will only be used where permitted by applicable law
+    and, where required, after obtaining appropriate consent.
+  </p>
 
-<ul>
-<li>contact us by email or through the Website;</li>
-<li>purchase artwork;</li>
-<li>make an enquiry about a painting or commission;</li>
-<li>request a return or refund;</li>
-<li>communicate with us about an order;</li>
-<li>use the Website and information is collected through cookies or similar technologies.</li>
-</ul>
+  <h3>Managing Cookies</h3>
 
+  <p>
+    You can manage or block cookies through your browser settings. Blocking
+    certain cookies may affect how the Website operates.
+  </p>
 
-<h3>4. How We Use Your Information</h3>
 
-<p>
-We may use personal information to:
-</p>
+  <h2>13. Security</h2>
 
-<ul>
-<li>respond to enquiries;</li>
-<li>process and fulfil artwork purchases;</li>
-<li>arrange delivery;</li>
-<li>process refunds and returns;</li>
-<li>communicate with you about your purchase;</li>
-<li>maintain business and financial records;</li>
-<li>comply with legal and accounting obligations;</li>
-<li>protect the Website and business against fraud or misuse;</li>
-<li>improve the Website and customer experience where appropriate.</li>
-</ul>
+  <p>
+    We take reasonable technical and organisational measures to protect
+    personal information against loss, misuse, unauthorised access or
+    disclosure.
+  </p>
 
 
-<h3>5. Lawful Basis for Processing</h3>
+  <h2>14. Third-Party Websites</h2>
 
-<p>
-Depending on the circumstances, we rely on the following lawful bases under UK data protection law:
-</p>
+  <p>
+    The Website may contain links to third-party websites, including social
+    media platforms. We are not responsible for the privacy practices of
+    those websites.
+  </p>
 
-<ul>
-<li><strong>Contract:</strong> where processing is necessary to fulfil an order or provide services you have requested.</li>
-<li><strong>Legal obligation:</strong> where we are required to retain or process information to comply with tax, accounting or other legal requirements.</li>
-<li><strong>Legitimate interests:</strong> where processing is necessary for the operation, security and administration of the business, provided those interests are not overridden by your rights.</li>
-<li><strong>Consent:</strong> where consent is required, such as for certain forms of marketing or non-essential cookies.</li>
-</ul>
 
+  <h2>15. Children</h2>
 
-<h3>6. Payment Processing</h3>
+  <p>
+    This Website is not specifically directed at children and we do not
+    knowingly collect personal information from children for the purpose of
+    selling artwork.
+  </p>
 
-<p>
-Payments may be processed through Stripe. When you make a payment, Stripe may collect and process payment and transaction information in accordance with its own privacy policy and terms.
-</p>
 
-<p>
-We do not normally receive or store your full payment card details.
-</p>
+  <h2>16. Changes to This Privacy Policy</h2>
 
+  <p>
+    We may update this Privacy Policy from time to time. The latest version
+    will be published on this page with the relevant update date.
+  </p>
 
-<h3>7. Sharing Your Information</h3>
 
-<p>
-We may share personal information where necessary with service providers who help us operate the business, such as payment processors, delivery companies, website hosting providers, email providers, accounting providers or other suppliers.
-</p>
+  <h2>17. Complaints</h2>
 
-<p>
-We may also disclose information where required by law, legal process or a competent authority.
-</p>
+  <p>
+    If you have concerns about how we handle your personal information,
+    please contact us first using:
+  </p>
 
+  <p>
+    <a href="mailto:enquire.georgedenverstudio@gmail.com">
+      enquire.georgedenverstudio@gmail.com
+    </a>
+  </p>
 
-<h3>8. International Transfers</h3>
+  <p>
+    You also have the right to complain to the Information Commissioner's
+    Office (ICO) if you believe your personal information has been handled
+    unlawfully.
+  </p>
 
-<p>
-Some service providers we use may process personal information outside the United Kingdom. Where this occurs, appropriate safeguards will be used where required by applicable data protection law.
-</p>
 
 
-<h3>9. How Long We Keep Information</h3>
+  <!-- COOKIES -->
 
-<p>
-We retain personal information only for as long as reasonably necessary for the purposes described in this Privacy Policy, including fulfilling orders, maintaining records, resolving disputes and complying with legal and accounting obligations.
-</p>
+  <h2>Cookies</h2>
 
+  <h2>1. What Are Cookies?</h2>
 
-<h3>10. Your Rights</h3>
+  <p>
+    Cookies are small text files that may be stored on your device when you
+    visit a website.
+  </p>
 
-<p>
-Under UK data protection law, you may have rights including:
-</p>
 
-<ul>
-<li>the right to request access to personal information we hold about you;</li>
-<li>the right to request correction of inaccurate information;</li>
-<li>the right to request deletion of personal information in certain circumstances;</li>
-<li>the right to request restriction of processing in certain circumstances;</li>
-<li>the right to object to certain processing;</li>
-<li>the right to data portability where applicable;</li>
-<li>the right to withdraw consent where processing is based on consent.</li>
-</ul>
+  <h2>2. How We Use Cookies</h2>
 
-<p>
-These rights are subject to certain legal exceptions and limitations.
-</p>
+  <p>
+    We may use cookies to help the Website function, understand how visitors
+    use the Website and improve its performance.
+  </p>
 
 
-<h3>11. Marketing</h3>
+  <h2>3. Essential Cookies</h2>
 
-<p>
-We will only send direct marketing communications where permitted by applicable law. Where consent is required, we will ask for it before sending marketing communications.
-</p>
+  <p>
+    Some cookies may be necessary for the basic operation and security of the
+    Website.
+  </p>
 
-<p>
-You can ask us to stop sending marketing communications at any time by contacting us.
-</p>
 
+  <h2>4. Analytics and Other Non-Essential Cookies</h2>
 
-<h3>12. Cookies</h3>
+  <p>
+    If we introduce analytics, advertising or other non-essential cookies,
+    these will be described here and used in accordance with applicable
+    privacy and electronic communications laws.
+  </p>
 
-<p>
-The Website may use cookies and similar technologies.
-</p>
 
-<p>
-Some cookies may be necessary for the Website to operate. Other cookies, such as certain analytics or advertising cookies, may require your consent before they are placed on your device.
-</p>
+  <h2>5. Managing Cookies</h2>
 
-<p>
-Further information is provided in the Cookies section below.
-</p>
+  <p>
+    You can manage cookies through your browser settings. You may also be
+    presented with cookie controls where consent is required.
+  </p>
 
 
-<h3>13. Security</h3>
+  <h2>6. Changes</h2>
 
-<p>
-We take reasonable technical and organisational measures to protect personal information against unauthorised access, loss, misuse or disclosure.
-</p>
-
-<p>
-However, no method of transmission or storage can be guaranteed to be completely secure.
-</p>
-
-
-<h3>14. Third-Party Websites</h3>
-
-<p>
-The Website may contain links to third-party websites or services, including social media platforms such as Instagram. We are not responsible for the privacy practices of those third parties.
-</p>
-
-
-<h3>15. Children</h3>
-
-<p>
-This Website is not specifically directed towards children, and we do not knowingly collect personal information from children for marketing purposes.
-</p>
-
-
-<h3>16. Changes to This Privacy Policy</h3>
-
-<p>
-We may update this Privacy Policy from time to time. The latest version will be published on this page with the relevant update date.
-</p>
-
-
-<h3>17. Complaints</h3>
-
-<p>
-If you have concerns about how we handle your personal information, please contact us first at:
-</p>
-
-<p>
-<a href="mailto:enquire.georgedenverstudio@gmail.com">
-enquire.georgedenverstudio@gmail.com
-</a>
-</p>
-
-<p>
-You also have the right to complain to the UK Information Commissioner's Office (ICO) if you believe your personal information has been handled unlawfully.
-</p>
-
-
-
-<!-- ========================================================= -->
-<!-- COOKIES -->
-<!-- ========================================================= -->
-
-<h2>Cookies</h2>
-
-
-<p class="intro">
-This section explains how cookies and similar technologies may be used on the George Denver Studio Website.
-</p>
-
-
-<h3>1. What Are Cookies?</h3>
-
-<p>
-Cookies are small text files placed on your device when you visit a website. They can help websites remember information about your visit and allow certain functions to operate.
-</p>
-
-
-<h3>2. How We Use Cookies</h3>
-
-<p>
-The Website may use cookies for purposes such as:
-</p>
-
-<ul>
-<li>enabling essential website functionality;</li>
-<li>remembering certain preferences;</li>
-<li>understanding how visitors use the Website;</li>
-<li>improving website performance and design.</li>
-</ul>
-
-
-<h3>3. Essential Cookies</h3>
-
-<p>
-Some cookies may be strictly necessary for the Website to function. These cookies do not generally require consent where they are used only for functions that you have specifically requested or that are strictly necessary to provide the service.
-</p>
-
-
-<h3>4. Analytics and Other Non-Essential Cookies</h3>
-
-<p>
-If we use analytics, advertising, social-media tracking or other non-essential cookies, we will seek consent where required by applicable law before placing those cookies on your device.
-</p>
-
-
-<h3>5. Managing Cookies</h3>
-
-<p>
-You can control or delete cookies through your browser settings. Disabling certain cookies may affect how parts of the Website function.
-</p>
-
-
-<h3>6. Changes to This Cookies Policy</h3>
-
-<p>
-We may update this Cookies section if the cookies or similar technologies used on the Website change.
-</p>
-
-
-</div>
-
-</section>
+  <p>
+    We may update this Cookies information if the technologies used on the
+    Website change.
+  </p>
 
 </main>
 
-
-
-<!-- Footer -->
 
 <footer>
 
@@ -1214,17 +1035,11 @@ We may update this Cookies section if the cookies or similar technologies used o
     © 2026 George Denver Studio
   </span>
 
-
-  <a
-    href="/ArtPortfolio/legal.html"
-  >
+  <a href="/ArtPortfolio/legal.html">
     Terms &amp; Conditions · Privacy Policy · Cookies
   </a>
 
-
-  <a
-    href="mailto:enquire.georgedenverstudio@gmail.com"
-  >
+  <a href="mailto:enquire.georgedenverstudio@gmail.com">
     enquire.georgedenverstudio@gmail.com
   </a>
 
@@ -1232,5 +1047,4 @@ We may update this Cookies section if the cookies or similar technologies used o
 
 
 </body>
-
 </html>
