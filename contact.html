@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +40,7 @@
   html{
     scroll-behavior:smooth;
   }
+
 
   /* ---------- Body ---------- */
 
@@ -126,6 +128,7 @@
     text-decoration:none;
   }
 
+
   .wordmark,
   .wordmark:visited,
   .wordmark:hover,
@@ -144,6 +147,7 @@
 
     gap:clamp(1rem, 3vw, 2.2rem);
   }
+
 
   nav a{
     text-decoration:none;
@@ -304,63 +308,67 @@
 
   /* ---------- Footer ---------- */
 
-footer{
-  position:relative;
+  footer{
 
-  border-top:1px solid var(--line);
+    position:relative;
 
-  padding:2rem clamp(1.2rem, 4vw, 3rem);
+    border-top:1px solid var(--line);
 
-  display:flex;
+    padding:2rem clamp(1.2rem, 4vw, 3rem);
 
-  flex-wrap:wrap;
+    display:flex;
 
-  gap:0.6rem 2rem;
+    flex-wrap:wrap;
 
-  justify-content:space-between;
+    gap:0.6rem 2rem;
 
-  align-items:center;
+    justify-content:space-between;
 
-  font-size:0.82rem;
+    align-items:center;
 
-  color:var(--ink);
+    font-size:0.82rem;
 
-  letter-spacing:0.02em;
-}
+    color:var(--ink);
 
-
-footer a{
-
-  color:#000000;
-
-  text-decoration:none;
-}
+    letter-spacing:0.02em;
+  }
 
 
-footer a:visited{
+  footer a{
 
-  color:#000000;
-}
+    color:#000000;
 
-
-footer a:hover{
-
-  color:#000000;
-}
+    text-decoration:none;
+  }
 
 
-/* Centre the legal/privacy link */
+  footer a:visited{
 
-footer > a{
+    color:#000000;
+  }
 
-  position:absolute;
 
-  left:50%;
+  footer a:hover{
 
-  transform:translateX(-50%);
+    color:#000000;
+  }
 
-  white-space:nowrap;
-}
+
+  /* ---------- Centre Legal Links ---------- */
+
+  footer .legal-link{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    white-space:nowrap;
+  }
+
 
   /* ---------- Mobile ---------- */
 
@@ -413,6 +421,30 @@ footer > a{
       line-height:1.8;
     }
 
+
+    /* Footer stacks naturally on mobile */
+
+    footer{
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      justify-content:flex-start;
+    }
+
+
+    footer .legal-link{
+
+      position:static;
+
+      transform:none;
+
+      white-space:normal;
+
+      order:2;
+    }
+
   }
 
 
@@ -424,6 +456,7 @@ footer > a{
 
       scroll-behavior:auto;
     }
+
 
     nav a::after{
 
@@ -550,7 +583,7 @@ footer > a{
           target="_blank"
           rel="noopener"
         >
-          Instagram 
+          Instagram
         </a>
 
       </p>
@@ -561,18 +594,34 @@ footer > a{
 
 </main>
 
+
+
 <!-- Footer -->
 
 <footer>
 
   <span>Kent, United Kingdom</span>
 
-  <a href="/ArtPortfolio/legal.html">
+
+  <a
+    class="legal-link"
+    href="/ArtPortfolio/legal.html"
+  >
     Terms &amp; Conditions · Privacy Policy · Cookies
   </a>
 
-  <a href="mailto:enquire.georgedenverstudio@gmail.com">
+
+  <a
+    href="mailto:enquire.georgedenverstudio@gmail.com"
+  >
     enquire.georgedenverstudio@gmail.com
   </a>
 
 </footer>
+
+
+</body>
+
+</html>
+```
+
