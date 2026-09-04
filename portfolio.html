@@ -7,6 +7,8 @@
 
 <title>Portfolio — George Denver</title>
 
+<link rel="icon" type="image/png" href="logo.png" />
+
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
@@ -17,7 +19,7 @@
   content="Portfolio of paintings and artwork by George Denver."
 />
 
-<link rel="icon" type="image/png" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
   href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
@@ -26,500 +28,511 @@
 
 <style>
 
-/* =========================
-   BASE
-========================= */
-
-html {
-  background: #f7f7f5;
+:root{
+  --paper:#f7f7f5;
+  --ink:#000000;
+  --line:#000000;
 }
 
-body {
-  margin: 0;
-  padding-top: 5.5rem;
-  background:
+/* ---------- Base ---------- */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--paper);
+}
+
+body{
+  margin:0;
+  padding-top:5.5rem;
+  min-height:100vh;
+
+  background-color:var(--paper);
+
+  background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
       transparent 1px,
       transparent 3px
     ),
-    #f7f7f5;
-  color: #111;
-  font-family: "Courier Prime", monospace;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5.5rem;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 2rem;
-
-  background:
     repeating-linear-gradient(
-      0deg,
+      90deg,
       rgba(0,0,0,0.012) 0px,
       rgba(0,0,0,0.012) 1px,
       transparent 1px,
+      transparent 4px
+    );
+
+  color:var(--ink);
+  font-family:'Courier Prime', monospace;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- Header ---------- */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+
+  background-color:var(--paper);
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
       transparent 3px
     ),
-    #f7f7f5;
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
 
-  border-bottom: 1px solid #111;
-
-  z-index: 100;
+  border-bottom:1px solid var(--line);
 }
 
-
-/* WORDMARK */
-
-.logo {
-  font-size: 2rem;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
+.wordmark{
+  font-family:'Courier Prime', monospace;
+  font-weight:400;
+  color:#000;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  font-size:2rem;
+  text-decoration:none;
 }
 
-
-/* NAV */
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+.wordmark span{
+  color:#000;
+  font-style:normal;
 }
 
-nav a {
-  color: #111;
-  text-decoration: none;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  white-space: nowrap;
+/* ---------- Navigation ---------- */
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:clamp(1rem, 3vw, 2.2rem);
 }
 
-nav a:hover,
-nav a.current {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+nav a{
+  text-decoration:none;
+  font-family:'Courier Prime', monospace;
+  font-size:0.85rem;
+  font-weight:400;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:#000;
+  position:relative;
+  padding-bottom:2px;
 }
 
-
-/* INSTAGRAM */
-
-.instagram-icon {
-  width: 58px;
-  margin-left: -1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:1px;
+  background:#000;
+  transition:width 0.25s ease;
 }
 
-.instagram-icon svg {
-  width: 16px;
-  height: 16px;
+nav a:hover::after{
+  width:100%;
 }
 
-
-/* =========================
-   PAGE TITLE
-========================= */
-
-.page-intro {
-  padding: 3rem 2rem 2rem;
+nav a.current::after{
+  width:100%;
 }
 
-.page-intro h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 400;
-  text-transform: uppercase;
+/* ---------- Instagram ---------- */
+
+.instagram-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:58px;
+  height:18px;
+
+  padding:0;
+  margin-left:-1rem;
+
+  transform:translateY(-2px);
 }
 
-
-/* =========================
-   PORTFOLIO CAROUSEL
-========================= */
-
-.portfolio-wrapper {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  padding: 1rem 5rem 4rem;
+.instagram-icon::after{
+  display:none !important;
 }
 
-
-/* ARTWORK ROW */
-
-.portfolio {
-  display: flex;
-  flex-direction: row;
-
-  gap: 2rem;
-
-  width: max-content;
-
-  transition: transform 0.45s ease;
+.instagram-icon svg{
+  width:16px;
+  height:16px;
+  stroke:#000;
+  fill:none;
+  stroke-width:1.6;
 }
 
-
-/* INDIVIDUAL ARTWORK */
-
-.work {
-  flex: 0 0 auto;
-
-  width: 42vw;
-  max-width: 600px;
-  min-width: 320px;
-
-  cursor: pointer;
+.instagram-icon:hover svg{
+  opacity:0.5;
 }
 
-.work img {
-  display: block;
+/* ---------- Page Title ---------- */
 
-  width: 100%;
-  height: auto;
-
-  object-fit: contain;
+.page-intro{
+  padding:3rem clamp(1.2rem, 4vw, 3rem) 2rem;
 }
 
+.page-intro h1{
+  margin:0;
 
-/* ARTWORK INFORMATION */
+  font-family:'Courier Prime', monospace;
+  font-size:2rem;
+  font-weight:400;
 
-.work-info {
-  margin-top: 0.75rem;
+  text-transform:uppercase;
 }
 
-.work-title {
-  margin: 0;
+/* ---------- Portfolio ---------- */
 
-  font-size: 0.9rem;
-  line-height: 1.3;
+.portfolio-wrapper{
+  position:relative;
+
+  width:100%;
+
+  overflow:hidden;
+
+  padding:1rem 5rem 4rem;
 }
 
-.work-year {
-  margin: 0.2rem 0 0;
+.portfolio{
+  display:flex;
+  flex-direction:row;
 
-  font-size: 0.8rem;
+  gap:2rem;
+
+  width:max-content;
+
+  transition:transform 0.45s ease;
 }
 
+.work{
+  flex:0 0 auto;
 
-/* =========================
-   CAROUSEL ARROWS
-========================= */
+  width:42vw;
+  max-width:600px;
+  min-width:320px;
 
-.portfolio-arrow {
-  position: absolute;
-
-  /*
-    The arrows are centred against the artwork area.
-    The wrapper has 1rem of top padding, so we offset
-    the centre accordingly.
-  */
-  top: calc(50% - 1.5rem);
-
-  transform: translateY(-50%);
-
-  width: 3rem;
-  height: 3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-
-  background: #f7f7f5;
-
-  border: none;
-
-  color: #111;
-
-  font-family: "Courier Prime", monospace;
-  font-size: 2.5rem;
-  line-height: 1;
-
-  cursor: pointer;
-
-  z-index: 10;
+  cursor:pointer;
 }
 
-.portfolio-arrow.left {
-  left: 1rem;
+.work img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  object-fit:contain;
 }
 
-.portfolio-arrow.right {
-  right: 1rem;
+.work-info{
+  margin-top:0.75rem;
 }
 
-.portfolio-arrow:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.work-title{
+  margin:0;
+
+  font-size:0.9rem;
+  line-height:1.3;
 }
 
-.portfolio-arrow:disabled {
-  opacity: 0.25;
-  cursor: default;
-  text-decoration: none;
+.work-year{
+  margin:0.2rem 0 0;
+
+  font-size:0.8rem;
 }
 
+/* ---------- Portfolio Arrows ---------- */
 
-/* =========================
-   LIGHTBOX
-========================= */
+.portfolio-arrow{
+  position:absolute;
 
-.lightbox {
-  position: fixed;
+  top:calc(50% - 1.5rem);
 
-  inset: 0;
+  transform:translateY(-50%);
 
-  display: none;
-  align-items: center;
-  justify-content: center;
+  width:3rem;
+  height:3rem;
 
-  background: rgba(247,247,245,0.96);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  z-index: 1000;
+  padding:0;
+
+  background:var(--paper);
+
+  border:none;
+
+  color:#000;
+
+  font-family:'Courier Prime', monospace;
+  font-size:2.5rem;
+  line-height:1;
+
+  cursor:pointer;
+
+  z-index:10;
 }
 
-.lightbox.active {
-  display: flex;
+.portfolio-arrow.left{
+  left:1rem;
 }
 
-
-/* LIGHTBOX IMAGE */
-
-.lightbox img {
-  max-width: 85vw;
-  max-height: 85vh;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
+.portfolio-arrow.right{
+  right:1rem;
 }
 
-
-/* LIGHTBOX CLOSE */
-
-.lightbox-close {
-  position: absolute;
-
-  top: 1.5rem;
-  right: 2rem;
-
-  border: none;
-  background: none;
-
-  font-family: "Courier Prime", monospace;
-  font-size: 2rem;
-
-  color: #111;
-
-  cursor: pointer;
+.portfolio-arrow:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
 }
 
-
-/* LIGHTBOX ARROWS */
-
-.lightbox-arrow {
-  position: absolute;
-
-  top: 50%;
-  transform: translateY(-50%);
-
-  border: none;
-  background: none;
-
-  font-family: "Courier Prime", monospace;
-  font-size: 3rem;
-
-  color: #111;
-
-  cursor: pointer;
+.portfolio-arrow:disabled{
+  opacity:0.25;
+  cursor:default;
+  text-decoration:none;
 }
 
-.lightbox-arrow.left {
-  left: 2rem;
+/* ---------- Lightbox ---------- */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(247,247,245,0.96);
+
+  z-index:2000;
 }
 
-.lightbox-arrow.right {
-  right: 2rem;
+.lightbox.active{
+  display:flex;
 }
 
+.lightbox img{
+  max-width:85vw;
+  max-height:85vh;
 
-/* =========================
-   FOOTER
-========================= */
+  width:auto;
+  height:auto;
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 2rem;
-
-  border-top: 1px solid #111;
-
-  font-size: 0.75rem;
+  object-fit:contain;
 }
 
-footer a {
-  color: #111;
-  text-decoration: none;
+.lightbox-close{
+  position:absolute;
+
+  top:1.5rem;
+  right:2rem;
+
+  border:none;
+  background:none;
+
+  font-family:'Courier Prime', monospace;
+  font-size:2rem;
+
+  color:#000;
+
+  cursor:pointer;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.lightbox-arrow{
+  position:absolute;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  border:none;
+  background:none;
+
+  font-family:'Courier Prime', monospace;
+  font-size:3rem;
+
+  color:#000;
+
+  cursor:pointer;
 }
 
+.lightbox-arrow.left{
+  left:2rem;
+}
 
-/* =========================
-   MOBILE
-========================= */
+.lightbox-arrow.right{
+  right:2rem;
+}
 
-@media (max-width: 700px) {
+/* ---------- Footer ---------- */
 
-  header {
-    height: auto;
-    min-height: 5.5rem;
+footer{
+  border-top:1px solid #000;
 
-    padding: 1.25rem;
+  padding:2rem clamp(1.2rem, 4vw, 3rem);
 
-    align-items: flex-start;
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:0.6rem 2rem;
+
+  justify-content:space-between;
+
+  font-size:0.82rem;
+
+  color:#000;
+
+  letter-spacing:0.02em;
+}
+
+footer a{
+  color:#000;
+  text-decoration:none;
+}
+
+footer a:visited{
+  color:#000;
+}
+
+footer a:hover{
+  color:#000;
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:700px){
+
+  header{
+    flex-wrap:wrap;
+    gap:0.9rem;
   }
 
-  .logo {
-    font-size: 1.5rem;
+  nav{
+    gap:1rem;
+    flex-wrap:wrap;
   }
 
-  nav {
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  nav a{
+    font-size:0.7rem;
   }
 
-  nav a {
-    font-size: 0.7rem;
+  .page-intro{
+    padding:2rem 1.25rem 1rem;
   }
 
-  .instagram-icon {
-    width: auto;
-    margin-left: 0.25rem;
+  .page-intro h1{
+    font-size:1.5rem;
   }
 
-  .page-intro {
-    padding: 2rem 1.25rem 1rem;
+  .portfolio-wrapper{
+    padding:1rem 3.5rem 3rem;
   }
 
-  .page-intro h1 {
-    font-size: 1.5rem;
+  .portfolio{
+    gap:1.25rem;
   }
 
-  .portfolio-wrapper {
-    padding: 1rem 3.5rem 3rem;
+  .work{
+    width:78vw;
+    min-width:78vw;
   }
 
-  .portfolio {
-    gap: 1.25rem;
+  .portfolio-arrow{
+    width:2.5rem;
+    height:2.5rem;
+    font-size:2rem;
   }
 
-  .work {
-    width: 78vw;
-    min-width: 78vw;
+  .portfolio-arrow.left{
+    left:0.5rem;
   }
 
-  .portfolio-arrow {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    font-size: 2rem;
+  .portfolio-arrow.right{
+    right:0.5rem;
   }
 
-  .portfolio-arrow.left {
-    left: 0.5rem;
+  .lightbox img{
+    max-width:90vw;
+    max-height:80vh;
   }
 
-  .portfolio-arrow.right {
-    right: 0.5rem;
+  .lightbox-arrow{
+    font-size:2.5rem;
   }
 
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 80vh;
+  .lightbox-arrow.left{
+    left:0.5rem;
   }
 
-  .lightbox-arrow {
-    font-size: 2.5rem;
+  .lightbox-arrow.right{
+    right:0.5rem;
   }
 
-  .lightbox-arrow.left {
-    left: 0.5rem;
-  }
+  footer{
+    padding:1.5rem 1.25rem;
 
-  .lightbox-arrow.right {
-    right: 0.5rem;
-  }
+    flex-direction:column;
 
-  footer {
-    padding: 1.5rem 1.25rem;
+    align-items:flex-start;
 
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 0.75rem;
+    gap:0.75rem;
   }
 
 }
 
+/* ---------- Hide Scrollbars ---------- */
 
-/* =========================
-   HIDE SCROLLBARS
-========================= */
-
-.portfolio-wrapper::-webkit-scrollbar {
-  display: none;
+.portfolio-wrapper::-webkit-scrollbar{
+  display:none;
 }
 
-.portfolio-wrapper {
-  scrollbar-width: none;
+.portfolio-wrapper{
+  scrollbar-width:none;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
-  <div class="logo">
-    George Denver
-  </div>
+  <a class="wordmark" href="/ArtPortfolio/index.html">
+    George <span>Denver</span>
+  </a>
 
   <nav>
 
@@ -549,11 +562,7 @@ footer a:hover {
 
       <svg
         viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        aria-hidden="true"
       >
 
         <rect
@@ -562,21 +571,21 @@ footer a:hover {
           width="18"
           height="18"
           rx="5"
-        />
+        ></rect>
 
         <circle
           cx="12"
           cy="12"
           r="4"
-        />
+        ></circle>
 
         <circle
           cx="17.5"
           cy="6.5"
-          r="0.8"
-          fill="currentColor"
+          r="1"
+          fill="#000"
           stroke="none"
-        />
+        ></circle>
 
       </svg>
 
@@ -587,9 +596,7 @@ footer a:hover {
 </header>
 
 
-<!-- =========================
-     TITLE
-========================= -->
+<!-- PAGE TITLE -->
 
 <section class="page-intro">
 
@@ -598,9 +605,7 @@ footer a:hover {
 </section>
 
 
-<!-- =========================
-     PORTFOLIO
-========================= -->
+<!-- PORTFOLIO -->
 
 <div class="portfolio-wrapper">
 
@@ -765,9 +770,7 @@ footer a:hover {
 </div>
 
 
-<!-- =========================
-     LIGHTBOX
-========================= -->
+<!-- LIGHTBOX -->
 
 <div
   class="lightbox"
@@ -811,36 +814,31 @@ footer a:hover {
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-  <div>
-    Kent, United Kingdom
-  </div>
+  <span>Kent, United Kingdom</span>
 
-  <div>
-    <a href="/ArtPortfolio/legal.html">
-      Legal
-    </a>
-  </div>
+  <a
+    class="legal-link"
+    href="/ArtPortfolio/legal.html"
+  >
+    Terms &amp; Conditions · Privacy Policy · Cookies
+  </a>
 
-  <div>
-    <a href="mailto:enquire.georgedenverstudio@gmail.com">
-      enquire.georgedenverstudio@gmail.com
-    </a>
-  </div>
+  <a
+    href="mailto:enquire.georgedenverstudio@gmail.com"
+  >
+    enquire.georgedenverstudio@gmail.com
+  </a>
 
 </footer>
 
 
 <script>
 
-/* =========================
-   PORTFOLIO CAROUSEL
-========================= */
+/* ---------- Portfolio Carousel ---------- */
 
 const portfolio =
   document.getElementById("portfolio");
@@ -857,11 +855,9 @@ const portfolioWorks =
 let portfolioPosition = 0;
 
 
-/* GET WIDTH OF ONE ARTWORK + GAP */
+function getPortfolioStep(){
 
-function getPortfolioStep() {
-
-  if (!portfolioWorks.length) {
+  if(!portfolioWorks.length){
     return 0;
   }
 
@@ -874,12 +870,11 @@ function getPortfolioStep() {
     ) || 0;
 
   return work.offsetWidth + gap;
+
 }
 
 
-/* UPDATE ARROWS */
-
-function updatePortfolioArrows() {
+function updatePortfolioArrows(){
 
   const wrapper =
     document.querySelector(".portfolio-wrapper");
@@ -897,10 +892,9 @@ function updatePortfolioArrows() {
 
   portfolioNext.disabled =
     portfolioPosition >= maxPosition - 2;
+
 }
 
-
-/* NEXT */
 
 portfolioNext.addEventListener(
   "click",
@@ -935,8 +929,6 @@ portfolioNext.addEventListener(
 );
 
 
-/* PREVIOUS */
-
 portfolioPrev.addEventListener(
   "click",
   () => {
@@ -959,8 +951,6 @@ portfolioPrev.addEventListener(
 );
 
 
-/* RESET ON RESIZE */
-
 window.addEventListener(
   "resize",
   () => {
@@ -976,17 +966,13 @@ window.addEventListener(
 );
 
 
-/* INITIAL STATE */
-
 window.addEventListener(
   "load",
   updatePortfolioArrows
 );
 
 
-/* =========================
-   LIGHTBOX
-========================= */
+/* ---------- Lightbox ---------- */
 
 const lightbox =
   document.getElementById("lightbox");
@@ -1006,9 +992,7 @@ const lightboxNext =
 let currentIndex = 0;
 
 
-/* OPEN LIGHTBOX */
-
-function openLightbox(index) {
+function openLightbox(index){
 
   currentIndex = index;
 
@@ -1034,9 +1018,7 @@ function openLightbox(index) {
 }
 
 
-/* CLOSE LIGHTBOX */
-
-function closeLightbox() {
+function closeLightbox(){
 
   lightbox.classList.remove("active");
 
@@ -1048,9 +1030,7 @@ function closeLightbox() {
 }
 
 
-/* NEXT LIGHTBOX IMAGE */
-
-function showNext() {
+function showNext(){
 
   currentIndex =
     (currentIndex + 1) %
@@ -1061,9 +1041,7 @@ function showNext() {
 }
 
 
-/* PREVIOUS LIGHTBOX IMAGE */
-
-function showPrevious() {
+function showPrevious(){
 
   currentIndex =
     (currentIndex - 1 +
@@ -1075,10 +1053,10 @@ function showPrevious() {
 }
 
 
-/* CLICK ARTWORK */
+/* Artwork Click */
 
 portfolioWorks.forEach(
-  (work, index) => {
+  (work,index) => {
 
     work.addEventListener(
       "click",
@@ -1089,7 +1067,7 @@ portfolioWorks.forEach(
 );
 
 
-/* LIGHTBOX CONTROLS */
+/* Lightbox Controls */
 
 lightboxClose.addEventListener(
   "click",
@@ -1107,13 +1085,13 @@ lightboxPrev.addEventListener(
 );
 
 
-/* CLOSE WHEN CLICKING BACKGROUND */
+/* Click Outside Image */
 
 lightbox.addEventListener(
   "click",
   (event) => {
 
-    if (event.target === lightbox) {
+    if(event.target === lightbox){
       closeLightbox();
     }
 
@@ -1121,27 +1099,25 @@ lightbox.addEventListener(
 );
 
 
-/* KEYBOARD */
+/* Keyboard Controls */
 
 document.addEventListener(
   "keydown",
   (event) => {
 
-    if (
-      !lightbox.classList.contains("active")
-    ) {
+    if(!lightbox.classList.contains("active")){
       return;
     }
 
-    if (event.key === "Escape") {
+    if(event.key === "Escape"){
       closeLightbox();
     }
 
-    if (event.key === "ArrowRight") {
+    if(event.key === "ArrowRight"){
       showNext();
     }
 
-    if (event.key === "ArrowLeft") {
+    if(event.key === "ArrowLeft"){
       showPrevious();
     }
 
@@ -1149,9 +1125,10 @@ document.addEventListener(
 );
 
 
-/* MOBILE SWIPE */
+/* Mobile Swipe */
 
 let touchStartX = 0;
+
 
 lightbox.addEventListener(
   "touchstart",
@@ -1163,6 +1140,7 @@ lightbox.addEventListener(
   }
 );
 
+
 lightbox.addEventListener(
   "touchend",
   (event) => {
@@ -1173,13 +1151,13 @@ lightbox.addEventListener(
     const difference =
       touchStartX - touchEndX;
 
-    if (Math.abs(difference) < 50) {
+    if(Math.abs(difference) < 50){
       return;
     }
 
-    if (difference > 0) {
+    if(difference > 0){
       showNext();
-    } else {
+    }else{
       showPrevious();
     }
 
