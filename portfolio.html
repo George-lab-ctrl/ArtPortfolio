@@ -14,7 +14,7 @@
 
 <meta
   name="description"
-  content="Portfolio of paintings and works by George Denver."
+  content="Portfolio of paintings and artwork by George Denver."
 />
 
 <link rel="icon" type="image/png" href="logo.png" />
@@ -30,30 +30,24 @@
    BASE
 ========================= */
 
-* {
-  box-sizing: border-box;
+html {
+  background: #f7f7f5;
 }
 
-html,
 body {
   margin: 0;
-  padding: 0;
-}
-
-body {
   padding-top: 5.5rem;
-  background: #f7f7f5;
-  color: #111;
-  font-family: "Courier Prime", monospace;
-
-  background-image:
+  background:
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
       transparent 1px,
-      transparent 4px
-    );
+      transparent 3px
+    ),
+    #f7f7f5;
+  color: #111;
+  font-family: "Courier Prime", monospace;
 }
 
 
@@ -67,6 +61,7 @@ header {
   left: 0;
   width: 100%;
   height: 5.5rem;
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
@@ -74,23 +69,38 @@ header {
 
   padding: 0 2rem;
 
-  background: #f7f7f5;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    #f7f7f5;
 
   border-bottom: 1px solid #111;
 
-  z-index: 1000;
+  z-index: 100;
 }
 
-.wordmark {
+
+/* WORDMARK */
+
+.logo {
   font-size: 2rem;
-  text-transform: uppercase;
   line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
+
+
+/* NAV */
 
 nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 
 nav a {
@@ -98,22 +108,25 @@ nav a {
   text-decoration: none;
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
+nav a:hover,
 nav a.current {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
+
+
+/* INSTAGRAM */
 
 .instagram-icon {
   width: 58px;
-  display: flex;
-  justify-content: flex-end;
   margin-left: -1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .instagram-icon svg {
@@ -123,7 +136,7 @@ nav a.current {
 
 
 /* =========================
-   PAGE INTRO
+   PAGE TITLE
 ========================= */
 
 .page-intro {
@@ -134,6 +147,7 @@ nav a.current {
   margin: 0;
   font-size: 2rem;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 
@@ -143,13 +157,16 @@ nav a.current {
 
 .portfolio-wrapper {
   position: relative;
-
   width: 100%;
+  box-sizing: border-box;
 
   overflow: hidden;
 
   padding: 1rem 5rem 4rem;
 }
+
+
+/* ARTWORK ROW */
 
 .portfolio {
   display: flex;
@@ -161,6 +178,9 @@ nav a.current {
 
   transition: transform 0.45s ease;
 }
+
+
+/* INDIVIDUAL ARTWORK */
 
 .work {
   flex: 0 0 auto;
@@ -182,14 +202,39 @@ nav a.current {
 }
 
 
+/* ARTWORK INFORMATION */
+
+.work-info {
+  margin-top: 0.75rem;
+}
+
+.work-title {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.work-year {
+  margin: 0.2rem 0 0;
+
+  font-size: 0.8rem;
+}
+
+
 /* =========================
-   PORTFOLIO ARROWS
+   CAROUSEL ARROWS
 ========================= */
 
 .portfolio-arrow {
   position: absolute;
 
-  top: 50%;
+  /*
+    The arrows are centred against the artwork area.
+    The wrapper has 1rem of top padding, so we offset
+    the centre accordingly.
+  */
+  top: calc(50% - 1.5rem);
 
   transform: translateY(-50%);
 
@@ -209,18 +254,12 @@ nav a.current {
   color: #111;
 
   font-family: "Courier Prime", monospace;
-
   font-size: 2.5rem;
-
   line-height: 1;
 
   cursor: pointer;
 
   z-index: 10;
-}
-
-.portfolio-arrow:hover {
-  text-decoration: underline;
 }
 
 .portfolio-arrow.left {
@@ -229,6 +268,11 @@ nav a.current {
 
 .portfolio-arrow.right {
   right: 1rem;
+}
+
+.portfolio-arrow:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .portfolio-arrow:disabled {
@@ -253,12 +297,15 @@ nav a.current {
 
   background: rgba(247,247,245,0.96);
 
-  z-index: 2000;
+  z-index: 1000;
 }
 
 .lightbox.active {
   display: flex;
 }
+
+
+/* LIGHTBOX IMAGE */
 
 .lightbox img {
   max-width: 85vw;
@@ -271,7 +318,7 @@ nav a.current {
 }
 
 
-/* CLOSE */
+/* LIGHTBOX CLOSE */
 
 .lightbox-close {
   position: absolute;
@@ -279,13 +326,15 @@ nav a.current {
   top: 1.5rem;
   right: 2rem;
 
+  border: none;
+  background: none;
+
+  font-family: "Courier Prime", monospace;
   font-size: 2rem;
 
-  line-height: 1;
+  color: #111;
 
   cursor: pointer;
-
-  user-select: none;
 }
 
 
@@ -295,23 +344,24 @@ nav a.current {
   position: absolute;
 
   top: 50%;
-
   transform: translateY(-50%);
 
-  font-size: 2.5rem;
+  border: none;
+  background: none;
 
-  line-height: 1;
+  font-family: "Courier Prime", monospace;
+  font-size: 3rem;
+
+  color: #111;
 
   cursor: pointer;
-
-  user-select: none;
 }
 
-.lightbox-prev {
+.lightbox-arrow.left {
   left: 2rem;
 }
 
-.lightbox-next {
+.lightbox-arrow.right {
   right: 2rem;
 }
 
@@ -321,22 +371,19 @@ nav a.current {
 ========================= */
 
 footer {
-  border-top: 1px solid #111;
-
-  padding: 1.5rem 2rem;
-
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 
-  align-items: center;
+  padding: 2rem;
+
+  border-top: 1px solid #111;
 
   font-size: 0.75rem;
 }
 
 footer a {
   color: #111;
-
   text-decoration: none;
 }
 
@@ -353,23 +400,20 @@ footer a:hover {
 
   header {
     height: auto;
+    min-height: 5.5rem;
 
-    min-height: 5rem;
-
-    padding: 1.2rem 1rem;
+    padding: 1.25rem;
 
     align-items: flex-start;
   }
 
-  .wordmark {
+  .logo {
     font-size: 1.5rem;
   }
 
   nav {
     gap: 0.8rem;
-
     flex-wrap: wrap;
-
     justify-content: flex-end;
   }
 
@@ -379,20 +423,15 @@ footer a:hover {
 
   .instagram-icon {
     width: auto;
-
-    margin-left: 0;
-  }
-
-  body {
-    padding-top: 5.5rem;
+    margin-left: 0.25rem;
   }
 
   .page-intro {
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1.25rem 1rem;
   }
 
   .page-intro h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .portfolio-wrapper {
@@ -400,12 +439,11 @@ footer a:hover {
   }
 
   .portfolio {
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .work {
     width: 78vw;
-
     min-width: 78vw;
   }
 
@@ -425,29 +463,44 @@ footer a:hover {
   }
 
   .lightbox img {
-    max-width: 92vw;
-
-    max-height: 85vh;
+    max-width: 90vw;
+    max-height: 80vh;
   }
 
-  .lightbox-prev {
-    left: 1rem;
+  .lightbox-arrow {
+    font-size: 2.5rem;
   }
 
-  .lightbox-next {
-    right: 1rem;
+  .lightbox-arrow.left {
+    left: 0.5rem;
+  }
+
+  .lightbox-arrow.right {
+    right: 0.5rem;
   }
 
   footer {
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1.25rem;
 
     flex-direction: column;
-
     align-items: flex-start;
 
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
+}
+
+
+/* =========================
+   HIDE SCROLLBARS
+========================= */
+
+.portfolio-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-wrapper {
+  scrollbar-width: none;
 }
 
 </style>
@@ -464,7 +517,7 @@ footer a:hover {
 
 <header>
 
-  <div class="wordmark">
+  <div class="logo">
     George Denver
   </div>
 
@@ -490,13 +543,17 @@ footer a:hover {
       class="instagram-icon"
       href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
       aria-label="Instagram"
+      target="_blank"
+      rel="noopener"
     >
 
       <svg
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="1.5"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
 
         <rect
@@ -516,7 +573,7 @@ footer a:hover {
         <circle
           cx="17.5"
           cy="6.5"
-          r="1"
+          r="0.8"
           fill="currentColor"
           stroke="none"
         />
@@ -531,7 +588,7 @@ footer a:hover {
 
 
 <!-- =========================
-     PORTFOLIO
+     TITLE
 ========================= -->
 
 <section class="page-intro">
@@ -541,10 +598,11 @@ footer a:hover {
 </section>
 
 
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
 <div class="portfolio-wrapper">
-
-
-  <!-- LEFT ARROW -->
 
   <button
     class="portfolio-arrow left"
@@ -555,14 +613,14 @@ footer a:hover {
   </button>
 
 
-  <!-- ARTWORK -->
-
   <main class="portfolio" id="portfolio">
 
 
     <article
       class="work"
-      data-title="And Another Round — 2026"
+      data-index="0"
+      data-title="And Another Round"
+      data-year="2026"
     >
 
       <img
@@ -570,12 +628,26 @@ footer a:hover {
         alt="And Another Round — 2026"
       />
 
+      <div class="work-info">
+
+        <p class="work-title">
+          And Another Round
+        </p>
+
+        <p class="work-year">
+          2026
+        </p>
+
+      </div>
+
     </article>
 
 
     <article
       class="work"
-      data-title="Painting 2 — 2026"
+      data-index="1"
+      data-title="Painting 2"
+      data-year="2026"
     >
 
       <img
@@ -583,12 +655,26 @@ footer a:hover {
         alt="Painting 2 — 2026"
       />
 
+      <div class="work-info">
+
+        <p class="work-title">
+          Painting 2
+        </p>
+
+        <p class="work-year">
+          2026
+        </p>
+
+      </div>
+
     </article>
 
 
     <article
       class="work"
-      data-title="Painting 3 — 2026"
+      data-index="2"
+      data-title="Painting 3"
+      data-year="2026"
     >
 
       <img
@@ -596,12 +682,26 @@ footer a:hover {
         alt="Painting 3 — 2026"
       />
 
+      <div class="work-info">
+
+        <p class="work-title">
+          Painting 3
+        </p>
+
+        <p class="work-year">
+          2026
+        </p>
+
+      </div>
+
     </article>
 
 
     <article
       class="work"
-      data-title="Painting 4 — 2026"
+      data-index="3"
+      data-title="Painting 4"
+      data-year="2026"
     >
 
       <img
@@ -609,12 +709,26 @@ footer a:hover {
         alt="Painting 4 — 2026"
       />
 
+      <div class="work-info">
+
+        <p class="work-title">
+          Painting 4
+        </p>
+
+        <p class="work-year">
+          2026
+        </p>
+
+      </div>
+
     </article>
 
 
     <article
       class="work"
-      data-title="Painting 5 — 2026"
+      data-index="4"
+      data-title="Painting 5"
+      data-year="2026"
     >
 
       <img
@@ -622,13 +736,23 @@ footer a:hover {
         alt="Painting 5 — 2026"
       />
 
+      <div class="work-info">
+
+        <p class="work-title">
+          Painting 5
+        </p>
+
+        <p class="work-year">
+          2026
+        </p>
+
+      </div>
+
     </article>
 
 
   </main>
 
-
-  <!-- RIGHT ARROW -->
 
   <button
     class="portfolio-arrow right"
@@ -637,7 +761,6 @@ footer a:hover {
   >
     ›
   </button>
-
 
 </div>
 
@@ -652,21 +775,22 @@ footer a:hover {
   aria-hidden="true"
 >
 
-
-  <span
+  <button
     class="lightbox-close"
     id="lightboxClose"
+    aria-label="Close"
   >
     ×
-  </span>
+  </button>
 
 
-  <span
-    class="lightbox-arrow lightbox-prev"
+  <button
+    class="lightbox-arrow left"
     id="lightboxPrev"
+    aria-label="Previous artwork"
   >
     ‹
-  </span>
+  </button>
 
 
   <img
@@ -676,13 +800,13 @@ footer a:hover {
   />
 
 
-  <span
-    class="lightbox-arrow lightbox-next"
+  <button
+    class="lightbox-arrow right"
     id="lightboxNext"
+    aria-label="Next artwork"
   >
     ›
-  </span>
-
+  </button>
 
 </div>
 
@@ -698,17 +822,15 @@ footer a:hover {
   </div>
 
   <div>
-
     <a href="/ArtPortfolio/legal.html">
       Legal
     </a>
+  </div>
 
-    &nbsp;·&nbsp;
-
+  <div>
     <a href="mailto:enquire.georgedenverstudio@gmail.com">
       enquire.georgedenverstudio@gmail.com
     </a>
-
   </div>
 
 </footer>
@@ -735,7 +857,7 @@ const portfolioWorks =
 let portfolioPosition = 0;
 
 
-/* GET MOVEMENT DISTANCE */
+/* GET WIDTH OF ONE ARTWORK + GAP */
 
 function getPortfolioStep() {
 
@@ -759,11 +881,15 @@ function getPortfolioStep() {
 
 function updatePortfolioArrows() {
 
+  const wrapper =
+    document.querySelector(".portfolio-wrapper");
+
   const maxPosition =
     Math.max(
       0,
       portfolio.scrollWidth -
-      portfolio.parentElement.clientWidth
+      wrapper.clientWidth +
+      160
     );
 
   portfolioPrev.disabled =
@@ -774,7 +900,7 @@ function updatePortfolioArrows() {
 }
 
 
-/* MOVE NEXT */
+/* NEXT */
 
 portfolioNext.addEventListener(
   "click",
@@ -783,11 +909,15 @@ portfolioNext.addEventListener(
     const step =
       getPortfolioStep();
 
+    const wrapper =
+      document.querySelector(".portfolio-wrapper");
+
     const maxPosition =
       Math.max(
         0,
         portfolio.scrollWidth -
-        portfolio.parentElement.clientWidth
+        wrapper.clientWidth +
+        160
       );
 
     portfolioPosition =
@@ -805,7 +935,7 @@ portfolioNext.addEventListener(
 );
 
 
-/* MOVE PREVIOUS */
+/* PREVIOUS */
 
 portfolioPrev.addEventListener(
   "click",
@@ -829,12 +959,7 @@ portfolioPrev.addEventListener(
 );
 
 
-/* INITIAL ARROW STATE */
-
-window.addEventListener(
-  "load",
-  updatePortfolioArrows
-);
+/* RESET ON RESIZE */
 
 window.addEventListener(
   "resize",
@@ -851,14 +976,17 @@ window.addEventListener(
 );
 
 
+/* INITIAL STATE */
+
+window.addEventListener(
+  "load",
+  updatePortfolioArrows
+);
+
+
 /* =========================
    LIGHTBOX
 ========================= */
-
-const works =
-  Array.from(
-    document.querySelectorAll(".work")
-  );
 
 const lightbox =
   document.getElementById("lightbox");
@@ -866,27 +994,29 @@ const lightbox =
 const lightboxImage =
   document.getElementById("lightboxImage");
 
-const closeButton =
+const lightboxClose =
   document.getElementById("lightboxClose");
 
-const prevButton =
+const lightboxPrev =
   document.getElementById("lightboxPrev");
 
-const nextButton =
+const lightboxNext =
   document.getElementById("lightboxNext");
 
 let currentIndex = 0;
 
 
-/* OPEN */
+/* OPEN LIGHTBOX */
 
 function openLightbox(index) {
 
   currentIndex = index;
 
+  const work =
+    portfolioWorks[currentIndex];
+
   const image =
-    works[currentIndex]
-      .querySelector("img");
+    work.querySelector("img");
 
   lightboxImage.src =
     image.src;
@@ -901,72 +1031,53 @@ function openLightbox(index) {
     "false"
   );
 
-  document.body.style.overflow =
-    "hidden";
 }
 
 
-/* CLOSE */
+/* CLOSE LIGHTBOX */
 
 function closeLightbox() {
 
-  lightbox.classList.remove(
-    "active"
-  );
+  lightbox.classList.remove("active");
 
   lightbox.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  document.body.style.overflow =
-    "";
 }
 
 
-/* NEXT */
+/* NEXT LIGHTBOX IMAGE */
 
 function showNext() {
 
   currentIndex =
     (currentIndex + 1) %
-    works.length;
+    portfolioWorks.length;
 
-  const image =
-    works[currentIndex]
-      .querySelector("img");
+  openLightbox(currentIndex);
 
-  lightboxImage.src =
-    image.src;
-
-  lightboxImage.alt =
-    image.alt;
 }
 
 
-/* PREVIOUS */
+/* PREVIOUS LIGHTBOX IMAGE */
 
 function showPrevious() {
 
   currentIndex =
-    (currentIndex - 1 + works.length) %
-    works.length;
+    (currentIndex - 1 +
+    portfolioWorks.length) %
+    portfolioWorks.length;
 
-  const image =
-    works[currentIndex]
-      .querySelector("img");
+  openLightbox(currentIndex);
 
-  lightboxImage.src =
-    image.src;
-
-  lightboxImage.alt =
-    image.alt;
 }
 
 
 /* CLICK ARTWORK */
 
-works.forEach(
+portfolioWorks.forEach(
   (work, index) => {
 
     work.addEventListener(
@@ -978,33 +1089,31 @@ works.forEach(
 );
 
 
-/* BUTTONS */
+/* LIGHTBOX CONTROLS */
 
-closeButton.addEventListener(
+lightboxClose.addEventListener(
   "click",
   closeLightbox
 );
 
-nextButton.addEventListener(
+lightboxNext.addEventListener(
   "click",
   showNext
 );
 
-prevButton.addEventListener(
+lightboxPrev.addEventListener(
   "click",
   showPrevious
 );
 
 
-/* BACKGROUND CLICK */
+/* CLOSE WHEN CLICKING BACKGROUND */
 
 lightbox.addEventListener(
   "click",
   (event) => {
 
-    if (
-      event.target === lightbox
-    ) {
+    if (event.target === lightbox) {
       closeLightbox();
     }
 
@@ -1019,28 +1128,20 @@ document.addEventListener(
   (event) => {
 
     if (
-      !lightbox.classList.contains(
-        "active"
-      )
+      !lightbox.classList.contains("active")
     ) {
       return;
     }
 
-    if (
-      event.key === "Escape"
-    ) {
+    if (event.key === "Escape") {
       closeLightbox();
     }
 
-    if (
-      event.key === "ArrowRight"
-    ) {
+    if (event.key === "ArrowRight") {
       showNext();
     }
 
-    if (
-      event.key === "ArrowLeft"
-    ) {
+    if (event.key === "ArrowLeft") {
       showPrevious();
     }
 
@@ -1052,49 +1153,40 @@ document.addEventListener(
 
 let touchStartX = 0;
 
-
 lightbox.addEventListener(
   "touchstart",
   (event) => {
 
     touchStartX =
-      event.changedTouches[0]
-        .screenX;
+      event.changedTouches[0].screenX;
 
-  },
-  { passive: true }
+  }
 );
-
 
 lightbox.addEventListener(
   "touchend",
   (event) => {
 
     const touchEndX =
-      event.changedTouches[0]
-        .screenX;
+      event.changedTouches[0].screenX;
 
-    const distance =
-      touchEndX - touchStartX;
+    const difference =
+      touchStartX - touchEndX;
 
-    if (
-      Math.abs(distance) < 50
-    ) {
+    if (Math.abs(difference) < 50) {
       return;
     }
 
-    if (distance < 0) {
+    if (difference > 0) {
       showNext();
     } else {
       showPrevious();
     }
 
-  },
-  { passive: true }
+  }
 );
 
 </script>
-
 
 </body>
 
