@@ -6,13 +6,13 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="logo.png" href="logo.png" />
 
-<title>Painting 3 — George Denver</title>
+<title>Painting 1 — George Denver</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 <meta
   name="description"
-  content="Painting 3 by George Denver."
+  content="Painting 1 by George Denver."
 />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +65,8 @@
   -webkit-font-smoothing:antialiased;
 }
 
+
+
   /* ---------- Header ---------- */
 
   header{
@@ -80,7 +82,7 @@
 
     padding:1.6rem clamp(1.2rem, 4vw, 3rem);
 
-   background-color:#f7f7f5;
+    background-color:#f7f7f5;
 
 background-image:
   repeating-linear-gradient(
@@ -100,6 +102,7 @@ background-image:
 
 border-bottom:1px solid var(--line);
 }
+
   .wordmark{
   font-family:'Courier Prime', monospace;
   font-weight:400;
@@ -232,35 +235,63 @@ border-bottom:1px solid var(--line);
     opacity:0.5;
   }
 
-  /* ---------- Images ---------- */
+/* ---------- Images ---------- */
 
-  .artwork-images{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:clamp(1.5rem, 4vw, 3rem);
-
-    align-items:start;
-  }
-
-  /* ---------- Image Magnifier ---------- */
-
-.artwork-image-zoom {
-  position: relative;
-  overflow: hidden;
-  cursor: zoom-in;
+.artwork-images{
+  display:grid;
+  grid-template-columns:repeat(2, 400px);
+  gap:2.5rem;
+  justify-content:center;
+  align-items:start;
 }
 
-.artwork-image-zoom img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transform: scale(1);
-  transform-origin: center center;
-  transition: transform 0.08s ease-out;
-  will-change: transform;
+
+/* ---------- Image Magnifier ---------- */
+
+.artwork-image-zoom{
+  width:400px;
+  height:400px;
+  position:relative;
+  overflow:hidden;
+  cursor:zoom-in;
+  background:#ffffff;
+}
+
+.artwork-image-zoom img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1);
+  transform-origin:center center;
+  transition:transform 0.08s ease-out;
+  will-change:transform;
+}
+
+/* ---------- Desktop Magnification ---------- */
+
+@media (hover:hover) and (pointer:fine){
+
+  .artwork-image-zoom:hover{
+    cursor:zoom-in;
+  }
+
+  .artwork-image-zoom.is-zoomed img{
+    transform:scale(2);
+  }
+
+}
+
+
+/* ---------- Touch Devices ---------- */
+
+@media (hover:none), (pointer:coarse){
+
+  .artwork-image-zoom{
+    cursor:default;
+  }
+
 }
 
 /* Magnification only on devices with a mouse */
@@ -296,6 +327,7 @@ border-bottom:1px solid var(--line);
     margin-top:4rem;
   }
 
+
   .artwork-info h1{
 
     font-family:'Courier Prime', monospace;
@@ -306,6 +338,7 @@ border-bottom:1px solid var(--line);
 
     margin:0 0 1rem;
   }
+
 
   .artwork-meta{
 
@@ -326,6 +359,7 @@ border-bottom:1px solid var(--line);
     margin-bottom:2rem;
   }
 
+
   .enquire{
 
     display:inline-block;
@@ -343,12 +377,14 @@ border-bottom:1px solid var(--line);
     padding-bottom:3px;
   }
 
+
   .enquire:hover{
     opacity:0.5;
   }
 
-  /* ---------- Footer ---------- */
 
+  /* ---------- Footer ---------- */
+  
 footer{
   border-top:1px solid var(--line);
   padding:2rem clamp(1.2rem, 4vw, 3rem);
@@ -370,31 +406,37 @@ footer a:active{
 
   /* ---------- Mobile ---------- */
 
-  @media (max-width:700px){
+@media (max-width:700px){
 
-    header{
-      flex-wrap:wrap;
-      gap:0.9rem;
-    }
-
-    nav{
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-
-    .artwork-images{
-      grid-template-columns:1fr;
-    }
-
-    .artwork-page{
-      padding-top:3rem;
-    }
-
-    .artwork-info{
-      margin-top:3rem;
-    }
-
+  header{
+    flex-wrap:wrap;
+    gap:0.9rem;
   }
+
+  nav{
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+
+  .artwork-images{
+    grid-template-columns:1fr;
+    justify-items:center;
+  }
+
+  .artwork-image-zoom{
+    width:min(400px, 100%);
+    height:400px;
+  }
+
+  .artwork-page{
+    padding-top:3rem;
+  }
+
+  .artwork-info{
+    margin-top:3rem;
+  }
+
+}
   
   /* ---------- Force artwork links black ---------- */
 
@@ -505,13 +547,13 @@ footer a:active{
 
     <!-- Two images -->
 
-    <div class="artwork-images">
+   <div class="artwork-images">
 
   <div class="artwork-image-zoom">
 
     <img
-      src="landingimage.JPG"
-      alt="Painting 3 — George Denver"
+      src="andanotherround.JPG"
+      alt="Painting 1 — George Denver"
     >
 
   </div>
@@ -520,8 +562,8 @@ footer a:active{
   <div class="artwork-image-zoom">
 
     <img
-      src="landingimage.JPG"
-      alt="Painting 3 detail — George Denver"
+      src="andanotherround.JPG"
+      alt="Painting 1 detail — George Denver"
     >
 
   </div>
@@ -533,14 +575,14 @@ footer a:active{
 
     <div class="artwork-info">
 
-      <h1>Painting 3</h1>
+      <h1>Placeholder</h1>
 
 
       <div class="artwork-meta">
 
-        £120<br>
+        £XXX<br>
 
-        Acrylic on canvas
+        Acrylic + Oil Pastel + Pencil 
 
       </div>
 
@@ -555,8 +597,7 @@ footer a:active{
 
       </div>
 
-
-      <a
+<a
   class="enquire"
   href="mailto:enquire.georgedenverstudio@gmail.com?subject=Painting%201"
 >
@@ -641,4 +682,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
