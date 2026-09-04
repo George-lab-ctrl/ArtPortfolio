@@ -1,0 +1,1166 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+
+<title>Portfolio — George Denver</title>
+
+<link rel="icon" type="image/png" href="logo.png" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+/>
+
+<meta
+  name="description"
+  content="Portfolio of original paintings by George Denver, painter based in Kent, UK."
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+  href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+  :root{
+    --paper:#f7f7f5;
+    --ink:#000000;
+    --line:#000000;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  html{
+    scroll-behavior:smooth;
+  }
+
+  body{
+    margin:0;
+    padding-top:5.5rem;
+
+    background-color:#f7f7f5;
+
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+
+    color:var(--ink);
+    font-family:'Courier Prime', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+
+    background-color:#f7f7f5;
+
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+
+    border-bottom:1px solid var(--line);
+  }
+
+
+  .wordmark{
+    font-family:'Courier Prime', monospace;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:2rem;
+    text-decoration:none;
+  }
+
+  .wordmark,
+  .wordmark:visited,
+  .wordmark:hover,
+  .wordmark:active,
+  .wordmark span{
+    color:#000000 !important;
+    text-decoration:none;
+  }
+
+
+  nav{
+    display:flex;
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
+
+  nav a{
+    text-decoration:none;
+    font-family:'Courier Prime', monospace;
+    font-size:0.85rem;
+    font-weight:400;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#000000;
+    position:relative;
+    padding-bottom:2px;
+  }
+
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0;
+    height:1px;
+    background:#000000;
+    transition:width 0.25s ease;
+  }
+
+  nav a:hover::after{
+    width:100%;
+  }
+
+  nav a.current::after{
+    width:100%;
+  }
+
+
+  /* ---------- INSTAGRAM ---------- */
+
+  .instagram-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:58px;
+    height:18px;
+    padding:0;
+    margin-left:-1rem;
+    transform:translateY(-2px);
+  }
+
+  .instagram-icon::after{
+    display:none !important;
+  }
+
+  .instagram-icon svg{
+    width:16px;
+    height:16px;
+    stroke:#000000;
+    fill:none;
+    stroke-width:1.6;
+  }
+
+  .instagram-icon:hover svg{
+    opacity:0.5;
+  }
+
+
+  /* ---------- PAGE INTRO ---------- */
+
+  .page-intro{
+    padding:
+      clamp(3rem, 7vw, 5rem)
+      clamp(1.2rem, 4vw, 3rem)
+      clamp(2rem, 5vw, 4rem);
+
+    max-width:900px;
+  }
+
+  .page-intro h1{
+    font-family:'Courier Prime', serif;
+    font-weight:600;
+    font-size:clamp(2rem, 5vw, 3rem);
+    margin:0 0 0.7rem;
+  }
+
+  .page-intro p{
+    margin:0;
+    font-size:0.9rem;
+    line-height:1.6;
+    max-width:55ch;
+  }
+
+
+  /* ---------- PORTFOLIO ---------- */
+
+  .portfolio{
+    display:grid;
+
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+
+    column-gap:clamp(2rem, 5vw, 6rem);
+    row-gap:clamp(5rem, 9vw, 9rem);
+
+    padding:
+      0
+      clamp(1.2rem, 6vw, 6rem)
+      clamp(5rem, 10vw, 9rem);
+  }
+
+
+  .work{
+    cursor:pointer;
+  }
+
+
+  /*
+    Images keep their natural proportions.
+    This prevents paintings being awkwardly cropped.
+  */
+
+  .work-image{
+    width:100%;
+    display:block;
+    overflow:hidden;
+    background:#e9e9e6;
+  }
+
+  .work-image img{
+    width:100%;
+    height:auto;
+    display:block;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.5s ease;
+  }
+
+  .work:hover .work-image img{
+    opacity:0.9;
+    transform:scale(1.01);
+  }
+
+
+  .work-info{
+    padding-top:0.9rem;
+  }
+
+  .work-title{
+    font-size:1rem;
+    font-style:italic;
+    margin-bottom:0.25rem;
+  }
+
+  .work-year{
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+  }
+
+
+  /* ---------- FEATURED / LARGE WORKS ---------- */
+
+  .work.large{
+    grid-column:span 2;
+  }
+
+  .work.large .work-image{
+    max-width:100%;
+  }
+
+
+  /* ---------- LIGHTBOX ---------- */
+
+  .lightbox{
+    position:fixed;
+    inset:0;
+
+    z-index:2000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(247,247,245,0.98);
+
+    padding:5rem 5rem 4rem;
+  }
+
+  .lightbox.active{
+    display:flex;
+  }
+
+
+  .lightbox-image{
+    max-width:calc(100vw - 12rem);
+    max-height:calc(100vh - 9rem);
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+  }
+
+
+  .lightbox-title{
+    position:absolute;
+
+    left:50%;
+    bottom:1.5rem;
+
+    transform:translateX(-50%);
+
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+    text-align:center;
+  }
+
+
+  /* ---------- LIGHTBOX BUTTONS ---------- */
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next{
+    position:absolute;
+
+    border:0;
+    background:none;
+
+    color:#000000;
+
+    font-family:'Courier Prime', monospace;
+
+    cursor:pointer;
+
+    padding:1rem;
+
+    line-height:1;
+
+    transition:opacity 0.2s ease;
+  }
+
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover{
+    opacity:0.45;
+  }
+
+
+  .lightbox-close{
+    top:1.3rem;
+    right:1.5rem;
+
+    font-size:1.4rem;
+  }
+
+
+  .lightbox-prev{
+    left:1rem;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:2rem;
+  }
+
+
+  .lightbox-next{
+    right:1rem;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:2rem;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    border-top:1px solid var(--line);
+
+    padding:
+      2rem
+      clamp(1.2rem, 4vw, 3rem);
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:0.6rem 2rem;
+
+    justify-content:space-between;
+
+    font-size:0.82rem;
+
+    color:#000000;
+
+    letter-spacing:0.02em;
+  }
+
+  footer a{
+    color:#000000;
+    text-decoration:none;
+  }
+
+  footer a:visited{
+    color:#000000;
+  }
+
+  footer a:hover{
+    color:#000000;
+  }
+
+
+  /* ---------- MOBILE ---------- */
+
+  @media (max-width:800px){
+
+    .portfolio{
+      grid-template-columns:1fr;
+
+      column-gap:0;
+
+      row-gap:4.5rem;
+
+      padding-left:clamp(1.2rem, 5vw, 2rem);
+      padding-right:clamp(1.2rem, 5vw, 2rem);
+    }
+
+    .work.large{
+      grid-column:span 1;
+    }
+
+    .lightbox{
+      padding:
+        4rem
+        2.5rem
+        4rem;
+    }
+
+    .lightbox-image{
+      max-width:calc(100vw - 4rem);
+      max-height:calc(100vh - 9rem);
+    }
+
+    .lightbox-prev{
+      left:0.2rem;
+      font-size:1.7rem;
+    }
+
+    .lightbox-next{
+      right:0.2rem;
+      font-size:1.7rem;
+    }
+  }
+
+
+  @media (max-width:640px){
+
+    header{
+      flex-wrap:wrap;
+      gap:0.9rem;
+    }
+
+    nav{
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .page-intro{
+      padding-top:2.8rem;
+    }
+
+    footer{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+  }
+
+
+  @media (prefers-reduced-motion:reduce){
+
+    html{
+      scroll-behavior:auto;
+    }
+
+    nav a::after{
+      transition:none;
+    }
+
+    .work-image img{
+      transition:none;
+    }
+  }
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <a
+    class="wordmark"
+    href="/ArtPortfolio/index.html"
+  >
+    George <span>Denver</span>
+  </a>
+
+
+  <nav>
+
+    <a href="/ArtPortfolio/gallery.html">
+      Gallery
+    </a>
+
+    <a
+      class="current"
+      href="/ArtPortfolio/portfolio.html"
+    >
+      Portfolio
+    </a>
+
+    <a href="/ArtPortfolio/commissions.html">
+      Commissions
+    </a>
+
+    <a href="/ArtPortfolio/contact.html">
+      Contact
+    </a>
+
+
+    <a
+      class="instagram-icon"
+      href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+      aria-label="Instagram"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        ></rect>
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        ></circle>
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="#000000"
+          stroke="none"
+        ></circle>
+
+      </svg>
+
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="page-intro">
+
+  <h1>Portfolio</h1>
+
+  <p>
+    A selection of paintings and works by George Denver.
+  </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     PORTFOLIO
+     
+     Add/remove works below.
+     
+     To make a work large across the page:
+     
+     <article class="work large">
+     
+     Otherwise:
+     
+     <article class="work">
+========================================================= -->
+
+<section class="portfolio">
+
+
+  <!-- WORK 1 -->
+
+  <article
+    class="work large"
+    data-title="And Another Round — 2026"
+  >
+
+    <div class="work-image">
+
+      <img
+        src="andanotherround.JPG"
+        alt="And Another Round"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="work-info">
+
+      <div class="work-title">
+        And Another Round
+      </div>
+
+      <div class="work-year">
+        2026
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- WORK 2 -->
+
+  <article
+    class="work"
+    data-title="Painting 2 — 2026"
+  >
+
+    <div class="work-image">
+
+      <img
+        src="andanotherround.JPG"
+        alt="Painting 2"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="work-info">
+
+      <div class="work-title">
+        Painting 2
+      </div>
+
+      <div class="work-year">
+        2026
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- WORK 3 -->
+
+  <article
+    class="work"
+    data-title="Painting 3 — 2026"
+  >
+
+    <div class="work-image">
+
+      <img
+        src="andanotherround.JPG"
+        alt="Painting 3"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="work-info">
+
+      <div class="work-title">
+        Painting 3
+      </div>
+
+      <div class="work-year">
+        2026
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- WORK 4 -->
+
+  <article
+    class="work"
+    data-title="Painting 4 — 2026"
+  >
+
+    <div class="work-image">
+
+      <img
+        src="andanotherround.JPG"
+        alt="Painting 4"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="work-info">
+
+      <div class="work-title">
+        Painting 4
+      </div>
+
+      <div class="work-year">
+        2026
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- WORK 5 -->
+
+  <article
+    class="work"
+    data-title="Painting 5 — 2026"
+  >
+
+    <div class="work-image">
+
+      <img
+        src="andanotherround.JPG"
+        alt="Painting 5"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="work-info">
+
+      <div class="work-title">
+        Painting 5
+      </div>
+
+      <div class="work-year">
+        2026
+      </div>
+
+    </div>
+
+  </article>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true"
+>
+
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Close portfolio image"
+  >
+    ×
+  </button>
+
+
+  <button
+    class="lightbox-prev"
+    id="lightboxPrev"
+    aria-label="Previous artwork"
+  >
+    ←
+  </button>
+
+
+  <img
+    class="lightbox-image"
+    id="lightboxImage"
+    src=""
+    alt=""
+  >
+
+
+  <button
+    class="lightbox-next"
+    id="lightboxNext"
+    aria-label="Next artwork"
+  >
+    →
+  </button>
+
+
+  <div
+    class="lightbox-title"
+    id="lightboxTitle"
+  ></div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <span>
+    Kent, United Kingdom
+  </span>
+
+
+  <a
+    href="/ArtPortfolio/legal.html"
+  >
+    Terms &amp; Conditions · Privacy Policy · Cookies
+  </a>
+
+
+  <a
+    href="mailto:enquire.georgedenverstudio@gmail.com"
+  >
+    enquire.georgedenverstudio@gmail.com
+  </a>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+  const works = Array.from(
+    document.querySelectorAll('.work')
+  );
+
+  const lightbox =
+    document.getElementById('lightbox');
+
+  const lightboxImage =
+    document.getElementById('lightboxImage');
+
+  const lightboxTitle =
+    document.getElementById('lightboxTitle');
+
+  const closeButton =
+    document.getElementById('lightboxClose');
+
+  const prevButton =
+    document.getElementById('lightboxPrev');
+
+  const nextButton =
+    document.getElementById('lightboxNext');
+
+
+  let currentIndex = 0;
+
+
+
+  /* ---------- OPEN ---------- */
+
+  function openLightbox(index){
+
+    currentIndex = index;
+
+    const work = works[currentIndex];
+
+    const image =
+      work.querySelector('img');
+
+    lightboxImage.src = image.src;
+
+    lightboxImage.alt = image.alt;
+
+    lightboxTitle.textContent =
+      work.dataset.title || image.alt;
+
+    lightbox.classList.add('active');
+
+    lightbox.setAttribute(
+      'aria-hidden',
+      'false'
+    );
+
+    document.body.style.overflow = 'hidden';
+
+  }
+
+
+
+  /* ---------- CLOSE ---------- */
+
+  function closeLightbox(){
+
+    lightbox.classList.remove('active');
+
+    lightbox.setAttribute(
+      'aria-hidden',
+      'true'
+    );
+
+    document.body.style.overflow = '';
+
+    lightboxImage.src = '';
+
+  }
+
+
+
+  /* ---------- NEXT ---------- */
+
+  function nextArtwork(){
+
+    currentIndex =
+      (currentIndex + 1) % works.length;
+
+    updateLightbox();
+
+  }
+
+
+
+  /* ---------- PREVIOUS ---------- */
+
+  function previousArtwork(){
+
+    currentIndex =
+      (currentIndex - 1 + works.length)
+      % works.length;
+
+    updateLightbox();
+
+  }
+
+
+
+  /* ---------- UPDATE ---------- */
+
+  function updateLightbox(){
+
+    const work = works[currentIndex];
+
+    const image =
+      work.querySelector('img');
+
+    lightboxImage.src = image.src;
+
+    lightboxImage.alt = image.alt;
+
+    lightboxTitle.textContent =
+      work.dataset.title || image.alt;
+
+  }
+
+
+
+  /* ---------- CLICK WORK ---------- */
+
+  works.forEach((work, index) => {
+
+    work.addEventListener(
+      'click',
+      () => openLightbox(index)
+    );
+
+  });
+
+
+
+  /* ---------- BUTTONS ---------- */
+
+  closeButton.addEventListener(
+    'click',
+    closeLightbox
+  );
+
+  nextButton.addEventListener(
+    'click',
+    nextArtwork
+  );
+
+  prevButton.addEventListener(
+    'click',
+    previousArtwork
+  );
+
+
+
+  /* ---------- KEYBOARD ---------- */
+
+  document.addEventListener(
+    'keydown',
+    (event) => {
+
+      if(
+        !lightbox.classList.contains('active')
+      ){
+        return;
+      }
+
+
+      if(event.key === 'Escape'){
+
+        closeLightbox();
+
+      }
+
+
+      if(event.key === 'ArrowRight'){
+
+        nextArtwork();
+
+      }
+
+
+      if(event.key === 'ArrowLeft'){
+
+        previousArtwork();
+
+      }
+
+    }
+  );
+
+
+
+  /* ---------- CLICK BACKGROUND TO CLOSE ---------- */
+
+  lightbox.addEventListener(
+    'click',
+    (event) => {
+
+      if(event.target === lightbox){
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+
+  /* ---------- SWIPE ON MOBILE ---------- */
+
+  let touchStartX = 0;
+
+  let touchEndX = 0;
+
+
+  lightbox.addEventListener(
+    'touchstart',
+    (event) => {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    {passive:true}
+  );
+
+
+  lightbox.addEventListener(
+    'touchend',
+    (event) => {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+      const distance =
+        touchStartX - touchEndX;
+
+
+      if(Math.abs(distance) < 50){
+
+        return;
+
+      }
+
+
+      if(distance > 0){
+
+        nextArtwork();
+
+      }else{
+
+        previousArtwork();
+
+      }
+
+    },
+    {passive:true}
+  );
+
+</script>
+
+
+</body>
+</html>
+```
