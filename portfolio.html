@@ -138,28 +138,28 @@ nav a.current {
 
 
 /* =========================
-   HORIZONTAL PORTFOLIO
+   PORTFOLIO CAROUSEL
 ========================= */
 
 .portfolio-wrapper {
+  position: relative;
+
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
 
-  padding: 1rem 2rem 4rem;
+  overflow: hidden;
 
-  scrollbar-width: thin;
-  scrollbar-color: #111 transparent;
-
-  -webkit-overflow-scrolling: touch;
+  padding: 1rem 5rem 4rem;
 }
 
 .portfolio {
   display: flex;
   flex-direction: row;
+
   gap: 2rem;
 
   width: max-content;
+
+  transition: transform 0.45s ease;
 }
 
 .work {
@@ -183,11 +183,68 @@ nav a.current {
 
 
 /* =========================
+   PORTFOLIO ARROWS
+========================= */
+
+.portfolio-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 3rem;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: #f7f7f5;
+
+  border: none;
+
+  color: #111;
+
+  font-family: "Courier Prime", monospace;
+
+  font-size: 2.5rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.portfolio-arrow:hover {
+  text-decoration: underline;
+}
+
+.portfolio-arrow.left {
+  left: 1rem;
+}
+
+.portfolio-arrow.right {
+  right: 1rem;
+}
+
+.portfolio-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+  text-decoration: none;
+}
+
+
+/* =========================
    LIGHTBOX
 ========================= */
 
 .lightbox {
   position: fixed;
+
   inset: 0;
 
   display: none;
@@ -223,21 +280,26 @@ nav a.current {
   right: 2rem;
 
   font-size: 2rem;
+
   line-height: 1;
 
   cursor: pointer;
+
+  user-select: none;
 }
 
 
-/* ARROWS */
+/* LIGHTBOX ARROWS */
 
 .lightbox-arrow {
   position: absolute;
 
   top: 50%;
+
   transform: translateY(-50%);
 
   font-size: 2.5rem;
+
   line-height: 1;
 
   cursor: pointer;
@@ -264,7 +326,9 @@ footer {
   padding: 1.5rem 2rem;
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
   font-size: 0.75rem;
@@ -272,6 +336,7 @@ footer {
 
 footer a {
   color: #111;
+
   text-decoration: none;
 }
 
@@ -288,6 +353,7 @@ footer a:hover {
 
   header {
     height: auto;
+
     min-height: 5rem;
 
     padding: 1.2rem 1rem;
@@ -301,7 +367,9 @@ footer a:hover {
 
   nav {
     gap: 0.8rem;
+
     flex-wrap: wrap;
+
     justify-content: flex-end;
   }
 
@@ -311,6 +379,7 @@ footer a:hover {
 
   .instagram-icon {
     width: auto;
+
     margin-left: 0;
   }
 
@@ -327,7 +396,7 @@ footer a:hover {
   }
 
   .portfolio-wrapper {
-    padding: 1rem 1rem 3rem;
+    padding: 1rem 3.5rem 3rem;
   }
 
   .portfolio {
@@ -336,11 +405,28 @@ footer a:hover {
 
   .work {
     width: 78vw;
+
     min-width: 78vw;
+  }
+
+  .portfolio-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    font-size: 2rem;
+  }
+
+  .portfolio-arrow.left {
+    left: 0.5rem;
+  }
+
+  .portfolio-arrow.right {
+    right: 0.5rem;
   }
 
   .lightbox img {
     max-width: 92vw;
+
     max-height: 85vh;
   }
 
@@ -356,9 +442,12 @@ footer a:hover {
     padding: 1.2rem 1rem;
 
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 0.5rem;
   }
+
 }
 
 </style>
@@ -454,7 +543,21 @@ footer a:hover {
 
 <div class="portfolio-wrapper">
 
-  <main class="portfolio">
+
+  <!-- LEFT ARROW -->
+
+  <button
+    class="portfolio-arrow left"
+    id="portfolioPrev"
+    aria-label="Previous artwork"
+  >
+    ‹
+  </button>
+
+
+  <!-- ARTWORK -->
+
+  <main class="portfolio" id="portfolio">
 
 
     <article
@@ -524,6 +627,18 @@ footer a:hover {
 
   </main>
 
+
+  <!-- RIGHT ARROW -->
+
+  <button
+    class="portfolio-arrow right"
+    id="portfolioNext"
+    aria-label="Next artwork"
+  >
+    ›
+  </button>
+
+
 </div>
 
 
@@ -537,12 +652,14 @@ footer a:hover {
   aria-hidden="true"
 >
 
+
   <span
     class="lightbox-close"
     id="lightboxClose"
   >
     ×
   </span>
+
 
   <span
     class="lightbox-arrow lightbox-prev"
@@ -551,11 +668,13 @@ footer a:hover {
     ‹
   </span>
 
+
   <img
     id="lightboxImage"
     src=""
     alt=""
   />
+
 
   <span
     class="lightbox-arrow lightbox-next"
@@ -563,6 +682,7 @@ footer a:hover {
   >
     ›
   </span>
+
 
 </div>
 
@@ -594,35 +714,166 @@ footer a:hover {
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
-const works = Array.from(
-  document.querySelectorAll(".work")
+/* =========================
+   PORTFOLIO CAROUSEL
+========================= */
+
+const portfolio =
+  document.getElementById("portfolio");
+
+const portfolioPrev =
+  document.getElementById("portfolioPrev");
+
+const portfolioNext =
+  document.getElementById("portfolioNext");
+
+const portfolioWorks =
+  Array.from(document.querySelectorAll(".work"));
+
+let portfolioPosition = 0;
+
+
+/* GET MOVEMENT DISTANCE */
+
+function getPortfolioStep() {
+
+  if (!portfolioWorks.length) {
+    return 0;
+  }
+
+  const work =
+    portfolioWorks[0];
+
+  const gap =
+    parseFloat(
+      getComputedStyle(portfolio).gap
+    ) || 0;
+
+  return work.offsetWidth + gap;
+}
+
+
+/* UPDATE ARROWS */
+
+function updatePortfolioArrows() {
+
+  const maxPosition =
+    Math.max(
+      0,
+      portfolio.scrollWidth -
+      portfolio.parentElement.clientWidth
+    );
+
+  portfolioPrev.disabled =
+    portfolioPosition <= 0;
+
+  portfolioNext.disabled =
+    portfolioPosition >= maxPosition - 2;
+}
+
+
+/* MOVE NEXT */
+
+portfolioNext.addEventListener(
+  "click",
+  () => {
+
+    const step =
+      getPortfolioStep();
+
+    const maxPosition =
+      Math.max(
+        0,
+        portfolio.scrollWidth -
+        portfolio.parentElement.clientWidth
+      );
+
+    portfolioPosition =
+      Math.min(
+        portfolioPosition + step,
+        maxPosition
+      );
+
+    portfolio.style.transform =
+      `translateX(-${portfolioPosition}px)`;
+
+    updatePortfolioArrows();
+
+  }
 );
 
-const lightbox = document.getElementById(
-  "lightbox"
+
+/* MOVE PREVIOUS */
+
+portfolioPrev.addEventListener(
+  "click",
+  () => {
+
+    const step =
+      getPortfolioStep();
+
+    portfolioPosition =
+      Math.max(
+        portfolioPosition - step,
+        0
+      );
+
+    portfolio.style.transform =
+      `translateX(-${portfolioPosition}px)`;
+
+    updatePortfolioArrows();
+
+  }
 );
 
-const lightboxImage = document.getElementById(
-  "lightboxImage"
+
+/* INITIAL ARROW STATE */
+
+window.addEventListener(
+  "load",
+  updatePortfolioArrows
 );
 
-const closeButton = document.getElementById(
-  "lightboxClose"
+window.addEventListener(
+  "resize",
+  () => {
+
+    portfolioPosition = 0;
+
+    portfolio.style.transform =
+      "translateX(0)";
+
+    updatePortfolioArrows();
+
+  }
 );
 
-const prevButton = document.getElementById(
-  "lightboxPrev"
-);
 
-const nextButton = document.getElementById(
-  "lightboxNext"
-);
+/* =========================
+   LIGHTBOX
+========================= */
+
+const works =
+  Array.from(
+    document.querySelectorAll(".work")
+  );
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const closeButton =
+  document.getElementById("lightboxClose");
+
+const prevButton =
+  document.getElementById("lightboxPrev");
+
+const nextButton =
+  document.getElementById("lightboxNext");
 
 let currentIndex = 0;
 
@@ -634,10 +885,14 @@ function openLightbox(index) {
   currentIndex = index;
 
   const image =
-    works[currentIndex].querySelector("img");
+    works[currentIndex]
+      .querySelector("img");
 
-  lightboxImage.src = image.src;
-  lightboxImage.alt = image.alt;
+  lightboxImage.src =
+    image.src;
+
+  lightboxImage.alt =
+    image.alt;
 
   lightbox.classList.add("active");
 
@@ -646,7 +901,8 @@ function openLightbox(index) {
     "false"
   );
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
 }
 
 
@@ -654,14 +910,17 @@ function openLightbox(index) {
 
 function closeLightbox() {
 
-  lightbox.classList.remove("active");
+  lightbox.classList.remove(
+    "active"
+  );
 
   lightbox.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 }
 
 
@@ -670,13 +929,18 @@ function closeLightbox() {
 function showNext() {
 
   currentIndex =
-    (currentIndex + 1) % works.length;
+    (currentIndex + 1) %
+    works.length;
 
   const image =
-    works[currentIndex].querySelector("img");
+    works[currentIndex]
+      .querySelector("img");
 
-  lightboxImage.src = image.src;
-  lightboxImage.alt = image.alt;
+  lightboxImage.src =
+    image.src;
+
+  lightboxImage.alt =
+    image.alt;
 }
 
 
@@ -685,27 +949,33 @@ function showNext() {
 function showPrevious() {
 
   currentIndex =
-    (currentIndex - 1 + works.length)
-    % works.length;
+    (currentIndex - 1 + works.length) %
+    works.length;
 
   const image =
-    works[currentIndex].querySelector("img");
+    works[currentIndex]
+      .querySelector("img");
 
-  lightboxImage.src = image.src;
-  lightboxImage.alt = image.alt;
+  lightboxImage.src =
+    image.src;
+
+  lightboxImage.alt =
+    image.alt;
 }
 
 
 /* CLICK ARTWORK */
 
-works.forEach((work, index) => {
+works.forEach(
+  (work, index) => {
 
-  work.addEventListener(
-    "click",
-    () => openLightbox(index)
-  );
+    work.addEventListener(
+      "click",
+      () => openLightbox(index)
+    );
 
-});
+  }
+);
 
 
 /* BUTTONS */
@@ -732,7 +1002,9 @@ lightbox.addEventListener(
   "click",
   (event) => {
 
-    if (event.target === lightbox) {
+    if (
+      event.target === lightbox
+    ) {
       closeLightbox();
     }
 
@@ -746,19 +1018,29 @@ document.addEventListener(
   "keydown",
   (event) => {
 
-    if (!lightbox.classList.contains("active")) {
+    if (
+      !lightbox.classList.contains(
+        "active"
+      )
+    ) {
       return;
     }
 
-    if (event.key === "Escape") {
+    if (
+      event.key === "Escape"
+    ) {
       closeLightbox();
     }
 
-    if (event.key === "ArrowRight") {
+    if (
+      event.key === "ArrowRight"
+    ) {
       showNext();
     }
 
-    if (event.key === "ArrowLeft") {
+    if (
+      event.key === "ArrowLeft"
+    ) {
       showPrevious();
     }
 
@@ -770,12 +1052,14 @@ document.addEventListener(
 
 let touchStartX = 0;
 
+
 lightbox.addEventListener(
   "touchstart",
   (event) => {
 
     touchStartX =
-      event.changedTouches[0].screenX;
+      event.changedTouches[0]
+        .screenX;
 
   },
   { passive: true }
@@ -787,12 +1071,15 @@ lightbox.addEventListener(
   (event) => {
 
     const touchEndX =
-      event.changedTouches[0].screenX;
+      event.changedTouches[0]
+        .screenX;
 
     const distance =
       touchEndX - touchStartX;
 
-    if (Math.abs(distance) < 50) {
+    if (
+      Math.abs(distance) < 50
+    ) {
       return;
     }
 
