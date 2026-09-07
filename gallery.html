@@ -1,441 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Gallery — George Denver</title>
-<link rel="icon" type="logo.png" href="logo.png" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<meta name="description" content="Browse original paintings by George Denver, painter based in Kent, UK." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 
-  
+<meta charset="UTF-8" />
+
+<title>Gallery — George Denver</title>
+
+<link rel="icon" type="image/png" href="logo.png" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+/>
+
+<meta
+  name="description"
+  content="Browse original paintings by George Denver, painter based in Kent, UK."
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+  rel="stylesheet"
+>
+
 <style>
+
   :root{
-    --paper:      #ffffff;
-    --ink:        #000000;
-    --ink-soft:   #000000;
-    --line:       #000000;
-    --ochre:      #000000;
+    --paper:#ffffff;
+    --ink:#000000;
+    --ink-soft:#000000;
+    --line:#000000;
+    --ochre:#000000;
   }
 
-  *{ box-sizing:border-box; }
+  *{
+    box-sizing:border-box;
+  }
 
-  html{ scroll-behavior:smooth; }
+  html{
+    scroll-behavior:smooth;
+  }
+
+  /* ---------- Body ---------- */
 
   body{
-  margin:0;
-  padding-top:5.5rem;
+    margin:0;
+    padding-top:5.5rem;
 
-  background-color:#f7f7f5;
+    background-color:#f7f7f5;
 
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
 
-  color:var(--ink);
-  font-family:'Courier Prime', system-ui, sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
+    color:var(--ink);
 
-  /* ---------- Header (matches homepage) ---------- */
+    font-family:'Courier Prime', system-ui, sans-serif;
 
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
+    -webkit-font-smoothing:antialiased;
+  }
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  /* ---------- Header ---------- */
 
-  padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+  header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
 
-  background-color:#f7f7f5;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-background-image:
-  repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0.018) 0px,
-    rgba(0,0,0,0.018) 1px,
-    transparent 1px,
-    transparent 3px
-  ),
-  repeating-linear-gradient(
-    90deg,
-    rgba(0,0,0,0.012) 0px,
-    rgba(0,0,0,0.012) 1px,
-    transparent 1px,
-    transparent 4px
-  );
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
 
-border-bottom:1px solid var(--line);
-}
+    background-color:#f7f7f5;
 
-.wordmark{
-  font-family:'Courier Prime', monospace;
-  font-weight:400;
-  text-transform:uppercase;
-  letter-spacing:0.03em;
-  font-size:2.0rem;
-  text-decoration:none;
-}
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
 
-.wordmark,
-.wordmark:visited,
-.wordmark:hover,
-.wordmark:active,
-.wordmark span{
-  color:#000000 !important;
-  text-decoration:none;
-}
+    border-bottom:1px solid var(--line);
+  }
 
-nav{
-  display:flex;
-  gap:clamp(1rem, 3vw, 2.2rem);
-}
+  /* ---------- Wordmark ---------- */
 
-nav a{
-  text-decoration:none;
-  font-family:'Courier Prime', monospace;
-  font-size:0.85rem;
-  font-weight:400;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  color:var(--ink-soft);
-  position:relative;
-  padding-bottom:2px;
-}
+  .wordmark{
+    font-family:'Courier Prime', monospace;
+    font-weight:400;
 
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-3px;
-  width:0;
-  height:1px;
-  background:var(--ochre);
-  transition:width 0.25s ease;
-}
+    color:#000000;
 
-nav a:hover{
-  color:var(--ink);
-}
+    text-transform:uppercase;
+    letter-spacing:0.03em;
 
-nav a:hover::after{
-  width:100%;
-}
+    font-size:2rem;
 
-nav a.current{
-  color:var(--ink);
-}
+    text-decoration:none;
+  }
 
-nav a.current::after{
-  width:100%;
-}
+  .wordmark,
+  .wordmark:visited,
+  .wordmark:hover,
+  .wordmark:active,
+  .wordmark span{
+    color:#000000 !important;
+    text-decoration:none;
+  }
 
-.instagram-icon{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:58px;
-  height:18px;
-  padding:0;
-  margin-left:-1rem;
-  transform:translateY(-2px);
-}
+  /* ---------- Navigation ---------- */
 
-.instagram-icon::after{
-  display:none !important;
-}
+  nav{
+    display:flex;
+    align-items:center;
 
-.instagram-icon svg{
-  width:16px;
-  height:16px;
-  stroke:#000000;
-  fill:none;
-  stroke-width:1.6;
-}
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
 
-.instagram-icon:hover svg{
-  opacity:0.5;
-}
+  nav a{
+    text-decoration:none;
+
+    font-family:'Courier Prime', monospace;
+
+    font-size:0.85rem;
+    font-weight:400;
+
+    letter-spacing:0.06em;
+
+    text-transform:uppercase;
+
+    color:var(--ink-soft);
+
+    position:relative;
+
+    padding-bottom:2px;
+  }
+
+  nav a::after{
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-3px;
+
+    width:0;
+    height:1px;
+
+    background:var(--ochre);
+
+    transition:width 0.25s ease;
+  }
+
+  nav a:hover{
+    color:var(--ink);
+  }
+
+  nav a:hover::after{
+    width:100%;
+  }
+
+  nav a.current{
+    color:var(--ink);
+  }
+
+  nav a.current::after{
+    width:100%;
+  }
+
+  /* ---------- Instagram ---------- */
+
+  .instagram-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:58px;
+    height:18px;
+
+    padding:0;
+
+    margin-left:-1rem;
+
+    transform:translateY(-2px);
+  }
+
+  .instagram-icon::after{
+    display:none !important;
+  }
+
+  .instagram-icon svg{
+    width:16px;
+    height:16px;
+
+    stroke:#000000;
+
+    fill:none;
+
+    stroke-width:1.6;
+  }
+
+  .instagram-icon:hover svg{
+    opacity:0.5;
+  }
 
   /* ---------- Page intro ---------- */
+
   .page-intro{
-    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.2rem, 4vw, 3rem) 1rem;
+    padding:
+      clamp(2.5rem, 6vw, 3.5rem)
+      clamp(1.2rem, 4vw, 3rem)
+      1rem;
+
     max-width:720px;
   }
 
   .page-intro h1{
     font-family:'Courier Prime', serif;
     font-weight:600;
+
     font-size:clamp(1.9rem, 4.5vw, 2.5rem);
+
     margin:0 0 0.6rem;
   }
 
   .page-intro p{
     color:var(--ink-soft);
+
     line-height:1.6;
+
     margin:0;
+
     max-width:56ch;
   }
 
   /* ---------- Gallery grid ---------- */
+
   .gallery{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    padding: 2rem clamp(1.2rem, 4vw, 3rem) 4rem;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:clamp(1.5rem, 3vw, 2.5rem);
+
+    padding:
+      2rem
+      clamp(1.2rem, 4vw, 3rem)
+      4rem;
   }
 
   @media (max-width:1000px){
-  .gallery{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
 
- @media (max-width:600px){
-  .gallery{
-    grid-template-columns:1fr;
+    .gallery{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
   }
-}
-  
- .piece{
-  display:flex;
-  flex-direction:column;
-  text-decoration:none;
-  color:inherit;
-  cursor:pointer;
-}
+
+  @media (max-width:600px){
+
+    .gallery{
+      grid-template-columns:1fr;
+    }
+
+  }
+
+  /* ---------- Individual piece ---------- */
+
+  .piece{
+    display:flex;
+
+    flex-direction:column;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    cursor:pointer;
+  }
 
   .piece-image{
-    aspect-ratio: 4 / 5;
+    aspect-ratio:4 / 5;
+
     width:100%;
+
     background:
-      linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
-    background-size: cover;
-    background-position: center;
+      linear-gradient(
+        160deg,
+        #d8cfbc 0%,
+        #c2a98a 45%,
+        #8f6a4a 100%
+      );
+
+    background-size:cover;
+
+    background-position:center;
+
     overflow:hidden;
+
     margin-bottom:0.9rem;
-    transition: opacity 0.2s ease;
+
+    transition:opacity 0.2s ease;
   }
 
   .piece-image img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
   }
 
-  .piece:hover .piece-image{ opacity:0.88; }
+  .piece:hover .piece-image{
+    opacity:0.88;
+  }
 
   .piece-title{
     font-family:'Courier Prime', serif;
+
     font-weight:500;
+
     font-style:italic;
+
     font-size:1.05rem;
+
     margin-bottom:0.2rem;
   }
 
   .piece-meta{
     font-size:0.85rem;
+
     color:var(--ink-soft);
+
     letter-spacing:0.02em;
+
     margin-bottom:0.7rem;
   }
 
   .piece button{
     align-self:flex-start;
+
     background:none;
+
     border:none;
+
     border-bottom:1px solid var(--ink);
+
     padding:0 0 2px;
+
     font-size:0.8rem;
+
     letter-spacing:0.05em;
+
     text-transform:uppercase;
+
     color:var(--ink);
+
     cursor:pointer;
+
     font-family:inherit;
-    transition: color 0.2s ease, border-color 0.2s ease;
+
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .piece button:hover{
     color:var(--ochre);
+
     border-color:var(--ochre);
   }
 
-  /* ---------- Footer (matches homepage) ---------- */
+  /* ---------- Footer ---------- */
+
   footer{
+    position:relative;
+
     border-top:1px solid var(--line);
-    padding: 2rem clamp(1.2rem, 4vw, 3rem);
+
+    padding:
+      2rem
+      clamp(1.2rem, 4vw, 3rem);
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:0.6rem 2rem;
+
     justify-content:space-between;
+
+    align-items:center;
+
     font-size:0.82rem;
+
     color:#000000;
+
     letter-spacing:0.02em;
   }
 
   footer a{
-  color:#000000;
-  text-decoration:none;
-}
+    color:#000000;
 
-footer a:visited{
-  color:#000000;
-}
-
-footer a:hover{
-  color:#000000;
-}
-
-  @media (max-width: 640px){
-    header{ flex-wrap:wrap; gap:0.9rem; }
-    nav{ gap:1rem; flex-wrap:wrap; }
+    text-decoration:none;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    nav a::after{ transition:none; }
+  footer a:visited{
+    color:#000000;
   }
+
+  footer a:hover{
+    color:#000000;
+  }
+
+  /* ---------- Centre Legal Links ---------- */
+
+  footer .legal-link{
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    white-space:nowrap;
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width:640px){
+
+    header{
+      padding:1rem 1.2rem;
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      gap:0.8rem;
+    }
+
+    .wordmark{
+      font-size:1rem;
+
+      white-space:nowrap;
+
+      line-height:1;
+    }
+
+    nav{
+      width:100%;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:flex-start;
+
+      gap:1.25rem;
+
+      flex-wrap:nowrap;
+    }
+
+    nav a{
+      font-size:0.68rem;
+
+      letter-spacing:0.04em;
+
+      white-space:nowrap;
+
+      padding-bottom:2px;
+    }
+
+    .instagram-icon{
+      width:18px;
+
+      height:18px;
+
+      margin-left:0;
+
+      flex-shrink:0;
+
+      transform:none;
+    }
+
+    .instagram-icon svg{
+      width:17px;
+
+      height:17px;
+    }
+
+    .page-intro{
+      padding:
+        2.5rem
+        1.2rem
+        1rem;
+    }
+
+    .gallery{
+      grid-template-columns:1fr;
+
+      gap:2.5rem;
+
+      padding:
+        2rem
+        1.2rem
+        4rem;
+    }
+
+    footer{
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      justify-content:flex-start;
+
+      gap:0.75rem;
+    }
+
+    footer .legal-link{
+      position:static;
+
+      transform:none;
+
+      white-space:normal;
+
+      order:2;
+    }
+
+  }
+
+  /* ---------- Reduced Motion ---------- */
+
+  @media (prefers-reduced-motion:reduce){
+
+    html{
+      scroll-behavior:auto;
+    }
+
+    nav a::after{
+      transition:none;
+    }
+
+  }
+
 </style>
+
 </head>
+
 <body>
 
-  <header>
-    <a class="wordmark" href="/ArtPortfolio/index.html">George <span>Denver</span></a>
-    
-<nav>
-  <a href="/ArtPortfolio/gallery.html">Gallery</a>
-  <a href="/ArtPortfolio/portfolio.html">Portfolio</a>
-  <a href="/ArtPortfolio/commissions.html">Commissions</a>
-  <a href="/ArtPortfolio/contact.html">Contact</a>
+  <!-- Header -->
 
-  <a class="instagram-icon"
-     href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
-     aria-label="Instagram"
-     target="_blank"
-     rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17.5" cy="6.5" r="1" fill="#000000" stroke="none"></circle>
-    </svg>
-  </a>
-</nav>
+  <header>
+
+    <a
+      class="wordmark"
+      href="/ArtPortfolio/index.html"
+    >
+      George <span>Denver</span>
+    </a>
+
+    <nav>
+
+      <a
+        class="current"
+        href="/ArtPortfolio/gallery.html"
+      >
+        Gallery
+      </a>
+
+      <a
+        href="/ArtPortfolio/portfolio.html"
+      >
+        Portfolio
+      </a>
+
+      <a
+        href="/ArtPortfolio/commissions.html"
+      >
+        Commissions
+      </a>
+
+      <a
+        href="/ArtPortfolio/contact.html"
+      >
+        Contact
+      </a>
+
+      <a
+        class="instagram-icon"
+        href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+          ></rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
+
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+            fill="#000000"
+            stroke="none"
+          ></circle>
+        </svg>
+      </a>
+
+    </nav>
 
   </header>
 
+
+  <!-- Page Intro -->
+
   <section class="page-intro">
-    <p>A curated selection of original paintings. Each piece is available to purchase, with UK shipping.</p>
+
+    <p>
+      A curated selection of original paintings. Each piece is available to purchase, with UK shipping.
+    </p>
+
   </section>
 
- <section class="gallery">
 
-  <!-- PAINTING 1 -->
-  <div class="piece">
+  <!-- Gallery -->
 
-    <a href="/ArtPortfolio/painting1.html" class="piece-image">
-      <img src="andanotherround.JPG" alt="And Another Round" loading="lazy">
-    </a>
+  <section class="gallery">
 
-    <div class="piece-title">And Another Round</div>
+    <!-- PAINTING 1 -->
 
-    <div class="piece-meta">
-      £300 · Acrylic + Pastel + Pencil
-    </div>
-    
-  </div>
+    <div class="piece">
 
+      <a
+        href="/ArtPortfolio/painting1.html"
+        class="piece-image"
+      >
+        <img
+          src="andanotherround.JPG"
+          alt="And Another Round"
+          loading="lazy"
+        >
+      </a>
 
-  <!-- PAINTING 2 -->
-  <div class="piece">
+      <div class="piece-title">
+        And Another Round
+      </div>
 
-    <a href="/ArtPortfolio/painting2.html" class="piece-image">
-      <img src="andanotherround.JPG" alt="Painting 2" loading="lazy">
-    </a>
+      <div class="piece-meta">
+        £300 · Acrylic + Pastel + Pencil
+      </div>
 
-    <div class="piece-title">Painting 2</div>
-
-    <div class="piece-meta">
-      £90 · Acrylic on Canvas
-    </div>
-
-  </div>
-
-
-  <!-- PAINTING 3 -->
-  <div class="piece">
-
-    <a href="/ArtPortfolio/painting3.html" class="piece-image">
-      <img src="andanotherround.JPG" alt="Painting 3" loading="lazy">
-    </a>
-
-    <div class="piece-title">Painting 3</div>
-
-    <div class="piece-meta">
-      £120 · Acrylic on canvas
     </div>
 
-  </div>
 
+    <!-- PAINTING 2 -->
 
-  <!-- PAINTING 4 -->
-  <div class="piece">
+    <div class="piece">
 
-    <a href="/ArtPortfolio/painting4.html" class="piece-image">
-      <img src="andanotherround.JPG" alt="Painting 4" loading="lazy">
-    </a>
+      <a
+        href="/ArtPortfolio/painting2.html"
+        class="piece-image"
+      >
+        <img
+          src="andanotherround.JPG"
+          alt="Painting 2"
+          loading="lazy"
+        >
+      </a>
 
-    <div class="piece-title">Painting 4</div>
+      <div class="piece-title">
+        Painting 2
+      </div>
 
-    <div class="piece-meta">
-      £120 · Acrylic on canvas
+      <div class="piece-meta">
+        £90 · Acrylic on Canvas
+      </div>
+
     </div>
 
-  </div>
 
-</section>
-    
+    <!-- PAINTING 3 -->
+
+    <div class="piece">
+
+      <a
+        href="/ArtPortfolio/painting3.html"
+        class="piece-image"
+      >
+        <img
+          src="andanotherround.JPG"
+          alt="Painting 3"
+          loading="lazy"
+        >
+      </a>
+
+      <div class="piece-title">
+        Painting 3
+      </div>
+
+      <div class="piece-meta">
+        £120 · Acrylic on canvas
+      </div>
+
+    </div>
+
+
+    <!-- PAINTING 4 -->
+
+    <div class="piece">
+
+      <a
+        href="/ArtPortfolio/painting4.html"
+        class="piece-image"
+      >
+        <img
+          src="andanotherround.JPG"
+          alt="Painting 4"
+          loading="lazy"
+        >
+      </a>
+
+      <div class="piece-title">
+        Painting 4
+      </div>
+
+      <div class="piece-meta">
+        £120 · Acrylic on canvas
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- Footer -->
 
-<footer>
+  <footer>
 
-  <span>Kent, United Kingdom</span>
+    <span>
+      Kent, United Kingdom
+    </span>
 
+    <a
+      class="legal-link"
+      href="/ArtPortfolio/legal.html"
+    >
+      Terms &amp; Conditions · Privacy Policy · Cookies
+    </a>
 
-  <a
-    class="legal-link"
-    href="/ArtPortfolio/legal.html"
-  >
-    Terms &amp; Conditions · Privacy Policy · Cookies
-  </a>
+    <a
+      href="mailto:enquire.georgedenverstudio@gmail.com"
+    >
+      enquire.georgedenverstudio@gmail.com
+    </a>
 
-
-  <a
-    href="mailto:enquire.georgedenverstudio@gmail.com"
-  >
-    enquire.georgedenverstudio@gmail.com
-  </a>
-
-</footer>
-
+  </footer>
 
 </body>
 
