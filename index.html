@@ -1,410 +1,857 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8" />
+
 <title>George Denver — Painter</title>
-<link rel="icon" type="logo.png" href="logo.png" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<meta name="description" content="George Denver is a painter based in Kent, UK. Original artwork, commissions, and gallery works." />
+
+<link rel="icon" type="image/png" href="logo.png" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+/>
+
+<meta
+  name="description"
+  content="George Denver is a painter based in Kent, UK. Original artwork, commissions, and gallery works."
+/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link
   href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Courier+Prime:wght@400;700&display=swap"
   rel="stylesheet"
 >
 
 <style>
+
   :root{
-    --paper:      #ffffff;
-    --ink:        #000000;
-    --ink-soft:   #000000;
-    --line:       #000000;
-    --ochre:      #000000;
+    --paper:#f7f7f5;
+    --ink:#000000;
+    --ink-soft:#000000;
+    --line:#000000;
+    --ochre:#000000;
   }
 
-  *{ box-sizing:border-box; }
 
-  html{ scroll-behavior:smooth; }
+  /* =====================================================
+     BASE
+  ===================================================== */
 
- body{
-  margin:0;
-  padding-top:5.5rem;
+  *{
+    box-sizing:border-box;
+  }
 
-  background-color:#f7f7f5;
+  html{
+    scroll-behavior:smooth;
+  }
 
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+  body{
+    margin:0;
+    padding-top:5.5rem;
 
-  color:var(--ink);
-  font-family:'Courier Prime', system-ui, sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
+    background-color:var(--paper);
 
-  a{ color:inherit; }
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
 
-  /* ---------- Header ---------- */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
+    color:var(--ink);
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    font-family:'Courier Prime', monospace;
 
-  padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+    -webkit-font-smoothing:antialiased;
+  }
 
-  /* OPAQUE paper background */
-  background-color:#f7f7f5;
+  a{
+    color:inherit;
+  }
 
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
 
-  border-bottom:1px solid var(--line);
-}
+  /* =====================================================
+     HEADER
+  ===================================================== */
+
+  header{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+
+    background-color:var(--paper);
+
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+
+    border-bottom:1px solid var(--line);
+  }
+
+
   .wordmark{
-  font-family:'Courier Prime', monospace;
-  font-weight:400;
-  text-transform:uppercase;
-  letter-spacing:0.03em;
-  font-size:2.0rem;
-  text-decoration:none;
+    font-family:'Courier Prime', monospace;
 
+    font-weight:400;
+
+    color:#000;
+
+    text-transform:uppercase;
+
+    letter-spacing:0.03em;
+
+    font-size:2rem;
+
+    text-decoration:none;
+
+    white-space:nowrap;
   }
+
 
   .wordmark span{
-    color:var(--ink);
+    color:#000;
+
     font-style:normal;
   }
 
+
   nav{
-  display:flex;
-  align-items:center;
-  gap:clamp(1rem, 3vw, 2.2rem);
-}
+    display:flex;
+
+    align-items:center;
+
+    gap:clamp(1rem, 3vw, 2.2rem);
+  }
+
 
   nav a{
     text-decoration:none;
+
+    font-family:'Courier Prime', monospace;
+
     font-size:0.85rem;
+
+    font-weight:400;
+
     letter-spacing:0.06em;
+
     text-transform:uppercase;
-    color:var(--ink-soft);
+
+    color:#000;
+
     position:relative;
+
     padding-bottom:2px;
+
+    white-space:nowrap;
   }
+
 
   nav a::after{
     content:'';
+
     position:absolute;
-    left:0; bottom:-3px;
-    width:0; height:1px;
-    background:var(--ochre);
+
+    left:0;
+
+    bottom:-3px;
+
+    width:0;
+
+    height:1px;
+
+    background:#000;
+
     transition:width 0.25s ease;
   }
 
-  nav a:hover{ color:var(--ink); }
-  nav a:hover::after{ width:100%; }
 
-.instagram-icon{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:58px;
-  height:18px;
-  padding:0;
-  margin-left:-1rem;
-  transform:translateY(-2px);
-}
+  nav a:hover::after{
+    width:100%;
+  }
 
-.instagram-icon::after{
-  display:none !important;
-}
 
-.instagram-icon svg{
-  width:16px;
-  height:16px;
-  stroke:#000000;
-  fill:none;
-  stroke-width:1.6;
-}
+  nav a.current::after{
+    width:100%;
+  }
 
-.instagram-icon:hover svg{
-  opacity:0.5;
-}
 
-  /* ---------- Hero ---------- */
- .hero{
-  position:relative;
-  margin:clamp(1.2rem, 4vw, 2.4rem);
-  height:min(65vh, 700px);
-  min-height:420px;
-  overflow:hidden;
+  .instagram-icon{
+    display:flex;
 
-  background-image:
-    url('andanotherround.JPG'),
-    linear-gradient(160deg, #d8cfbc 0%, #c2a98a 45%, #8f6a4a 100%);
+    align-items:center;
 
-  background-size:cover;
-  background-position:70% center;
-}
+    justify-content:center;
 
-.hero-caption{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
+    width:58px;
 
-  z-index:2;
-  text-align:center;
-  color:#ffffff;
-  white-space:nowrap;
-}
+    height:18px;
 
-.hero-title{
-  font-family:'Bodoni Moda', Georgia, serif;
-  font-weight:600;
-  font-size:clamp(5rem, 13vw, 12rem);
-  line-height:0.75;
-  letter-spacing:-0.055em;
-}
+    padding:0;
 
-.hero-the{
-  font-style:italic;
-  font-weight:600;
-}
+    margin-left:-1rem;
 
-.hero-subtitle{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    transform:translateY(-2px);
+  }
 
-  width:230px;
-  height:72px;
 
-  margin:2rem auto 0;
+  .instagram-icon::after{
+    display:none !important;
+  }
 
-  border:2px solid #f7f7f5;
-  border-radius:50%;
 
-  font-family:'Courier Prime', monospace;
-  font-size:1.25rem;
-  letter-spacing:0.04em;
-}
-  /* ---------- Intro ---------- */
+  .instagram-icon svg{
+    width:16px;
+
+    height:16px;
+
+    stroke:#000;
+
+    fill:none;
+
+    stroke-width:1.6;
+  }
+
+
+  .instagram-icon:hover svg{
+    opacity:0.5;
+  }
+
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+
+  .hero{
+    position:relative;
+
+    margin:clamp(1.2rem, 4vw, 2.4rem);
+
+    height:min(65vh, 700px);
+
+    min-height:420px;
+
+    overflow:hidden;
+
+    background-image:
+      url('andanotherround.JPG'),
+      linear-gradient(
+        160deg,
+        #d8cfbc 0%,
+        #c2a98a 45%,
+        #8f6a4a 100%
+      );
+
+    background-size:cover;
+
+    background-position:70% center;
+  }
+
+
+  .hero-caption{
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    z-index:2;
+
+    text-align:center;
+
+    color:#ffffff;
+
+    white-space:nowrap;
+  }
+
+
+  .hero-title{
+    font-family:'Bodoni Moda', Georgia, serif;
+
+    font-weight:600;
+
+    font-size:clamp(5rem, 13vw, 12rem);
+
+    line-height:0.75;
+
+    letter-spacing:-0.055em;
+  }
+
+
+  .hero-the{
+    font-style:italic;
+
+    font-weight:600;
+  }
+
+
+  .hero-subtitle{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:230px;
+
+    height:72px;
+
+    margin:2rem auto 0;
+
+    border:2px solid #f7f7f5;
+
+    border-radius:50%;
+
+    font-family:'Courier Prime', monospace;
+
+    font-size:1.25rem;
+
+    letter-spacing:0.04em;
+  }
+
+
+  /* =====================================================
+     INTRO
+  ===================================================== */
+
   .intro{
-  text-align:center;
-  padding:clamp(4rem, 8vw, 7rem) 1.5rem 10rem;
-  max-width:640px;
-  margin:0 auto;
-}
+    text-align:center;
+
+    padding:clamp(4rem, 8vw, 7rem) 1.5rem 10rem;
+
+    max-width:640px;
+
+    margin:0 auto;
+  }
+
 
   .intro h1{
-    font-family:'Courier Prime', serif;
+    font-family:'Courier Prime', monospace;
+
     font-weight:600;
+
     font-size:clamp(2rem, 5vw, 2.8rem);
+
     margin:0 0 0.6rem;
+
     letter-spacing:0.01em;
   }
 
+
   .intro p{
     color:var(--ink-soft);
+
     font-size:1.02rem;
+
     line-height:1.6;
+
     margin:0 0 1.8rem;
   }
 
+
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
+
   .cta-row{
     display:flex;
+
     justify-content:center;
+
     gap:1rem;
+
     flex-wrap:wrap;
   }
 
+
   .cta{
-  display:inline-block;
-  padding:0.7rem 1.5rem;
-  border:1px solid #000000;
-  background:transparent;
-  color:#000000;
-  text-decoration:none;
-  font-size:0.85rem;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  transition:background 0.2s ease, color 0.2s ease;
-}
+    display:inline-block;
 
-.cta:hover{
-  background:#000000;
-  color:#ffffff;
-}
-  .cta.primary:hover{ background:var(--ochre); border-color:var(--ochre); }
-  .cta:not(.primary):hover{ background:var(--ink); color:var(--paper); }
+    padding:0.7rem 1.5rem;
 
-  /* ---------- Footer ---------- */
+    border:1px solid #000;
+
+    background:transparent;
+
+    color:#000;
+
+    text-decoration:none;
+
+    font-family:'Courier Prime', monospace;
+
+    font-size:0.85rem;
+
+    letter-spacing:0.05em;
+
+    text-transform:uppercase;
+
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+
+  .cta:hover{
+    background:#000;
+
+    color:#fff;
+  }
+
+
+  .cta.primary:hover{
+    background:#000;
+
+    border-color:#000;
+
+    color:#fff;
+  }
+
+
+  .cta:not(.primary):hover{
+    background:#000;
+
+    color:#fff;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ===================================================== */
+
   footer{
-    border-top:1px solid var(--line);
-    padding: 2rem clamp(1.2rem, 4vw, 3rem);
+    border-top:1px solid #000;
+
+    padding:2rem clamp(1.2rem, 4vw, 3rem);
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:0.6rem 2rem;
+
     justify-content:space-between;
+
     font-size:0.82rem;
-    color:var(--ink-soft);
+
+    color:#000;
+
     letter-spacing:0.02em;
   }
 
-  footer a{ text-decoration:none; }
-  footer a:hover{ color:var(--ochre); }
 
-/* ---------- Responsive ---------- */
-@media (max-width:640px){
+  footer a{
+    color:#000;
 
-  header{
-    padding:1rem 1.2rem;
-    flex-wrap:nowrap;
-    gap:1rem;
-    align-items:center;
+    text-decoration:none;
   }
 
-  .wordmark{
-    font-size:0.95rem;
-    white-space:nowrap;
-    flex-shrink:0;
+
+  footer a:visited{
+    color:#000;
   }
 
-  nav{
-    margin-left:auto;
-    gap:0.9rem;
-    flex-wrap:nowrap;
-    align-items:center;
+
+  footer a:hover{
+    color:#000;
   }
 
-  nav a{
-    font-size:0.7rem;
-    letter-spacing:0.04em;
-    white-space:nowrap;
+
+  /* =====================================================
+     MOBILE
+  ===================================================== */
+
+  @media(max-width:700px){
+
+    body{
+      padding-top:4.8rem;
+    }
+
+
+    header{
+      padding:1rem 1.2rem;
+
+      flex-wrap:nowrap;
+
+      gap:1rem;
+
+      align-items:center;
+    }
+
+
+    .wordmark{
+      font-size:0.95rem;
+
+      white-space:nowrap;
+
+      flex-shrink:0;
+    }
+
+
+    nav{
+      margin-left:auto;
+
+      gap:0.9rem;
+
+      flex-wrap:nowrap;
+
+      align-items:center;
+    }
+
+
+    nav a{
+      font-size:0.7rem;
+
+      letter-spacing:0.04em;
+
+      white-space:nowrap;
+    }
+
+
+    .instagram-icon{
+      width:18px;
+
+      height:18px;
+
+      margin-left:0;
+
+      flex-shrink:0;
+    }
+
+
+    .instagram-icon svg{
+      width:17px;
+
+      height:17px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+      margin:1.25rem;
+
+      height:58vh;
+
+      min-height:380px;
+
+      background-position:70% center;
+    }
+
+
+    .hero-caption{
+      left:50%;
+
+      top:50%;
+
+      transform:translate(-50%, -50%);
+    }
+
+
+    .hero-title{
+      font-size:clamp(4rem, 18vw, 6rem);
+    }
+
+
+    .hero-subtitle{
+      width:170px;
+
+      height:52px;
+
+      margin-top:1.4rem;
+
+      font-size:0.9rem;
+    }
+
+
+    /* INTRO */
+
+    .intro{
+      padding:2.5rem 1.25rem 5rem;
+
+      max-width:640px;
+    }
+
+
+    .intro h1{
+      font-size:1.5rem;
+
+      margin-bottom:1rem;
+    }
+
+
+    .intro p{
+      font-size:0.9rem;
+
+      line-height:1.65;
+    }
+
+
+    .cta-row{
+      flex-direction:column;
+
+      align-items:center;
+
+      gap:0.75rem;
+
+      margin-top:1.75rem;
+    }
+
+
+    .cta{
+      font-size:0.72rem;
+
+      padding:0.75rem 1rem;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+      padding:1.5rem 1.25rem;
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      gap:0.75rem;
+    }
+
   }
 
-  .instagram-icon{
-    width:18px;
-    height:18px;
-    margin-left:0;
-    flex-shrink:0;
-  }
 
-  .instagram-icon svg{
-    width:17px;
-    height:17px;
-  }
+  /* =====================================================
+     REDUCED MOTION
+  ===================================================== */
 
-  .hero{
-    height:58vh;
-  }
+  @media(prefers-reduced-motion:reduce){
 
-  .hero-caption{
-    left:50%;
-    top:50%;
-    transform:translate(-50%, -50%);
-  }
+    html{
+      scroll-behavior:auto;
+    }
 
-  .hero-title{
-    font-size:clamp(4rem, 18vw, 6rem);
-  }
+    nav a::after{
+      transition:none;
+    }
 
-  .hero-subtitle{
-    width:170px;
-    height:52px;
-    margin-top:1.4rem;
-    font-size:0.9rem;
-  }
-}
-   @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    nav a::after{ transition:none; }
   }
 
 </style>
+
 </head>
+
+
 <body>
 
-  <header>
-  <a class="wordmark" href="/ArtPortfolio/index.html">
-  George <span>Denver</span>
-</a>
- 
-<nav>
-  <a href="/ArtPortfolio/gallery.html">Gallery</a>
-  <a href="/ArtPortfolio/portfolio.html">Portfolio</a>
-  <a href="/ArtPortfolio/commissions.html">Commissions</a>
-  <a href="/ArtPortfolio/contact.html">Contact</a>
 
-  <a class="instagram-icon"
-     href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
-     aria-label="Instagram"
-     target="_blank"
-     rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17.5" cy="6.5" r="1" fill="#000000" stroke="none"></circle>
-    </svg>
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+  <a
+    class="wordmark"
+    href="/ArtPortfolio/index.html"
+  >
+    George <span>Denver</span>
   </a>
-</nav>
 
-  </header>
 
-<div class="hero">
-  <div class="hero-caption">
-    <div class="hero-title">
-  <span class="hero-the">Studio</span>
-</div>
-    <div class="hero-subtitle">EST. 2026</div>
+  <nav>
+
+    <a
+      class="current"
+      href="/ArtPortfolio/gallery.html"
+    >
+      Gallery
+    </a>
+
+    <a
+      href="/ArtPortfolio/portfolio.html"
+    >
+      Portfolio
+    </a>
+
+    <a
+      href="/ArtPortfolio/commissions.html"
+    >
+      Commissions
+    </a>
+
+    <a
+      href="/ArtPortfolio/contact.html"
+    >
+      Contact
+    </a>
+
+
+    <a
+      class="instagram-icon"
+      href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+      aria-label="Instagram"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        ></rect>
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        ></circle>
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="#000"
+          stroke="none"
+        ></circle>
+
+      </svg>
+
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+  <div class="hero">
+
+    <div class="hero-caption">
+
+      <div class="hero-title">
+        <span class="hero-the">Studio</span>
+      </div>
+
+      <div class="hero-subtitle">
+        EST. 2026
+      </div>
+
+    </div>
+
   </div>
-</div>
 
-<section class="intro">
-  <h1>GEORGE DENVER</h1>
-  <p>
-    Painter based in Kent, UK. Creating original artwork exploring life,
-    texture, and colour — available to view, buy, or commission.
-  </p>
 
-  <div class="cta-row">
-    <a class="cta primary" href="/ArtPortfolio/gallery.html">View Gallery</a>
-    <a class="cta" href="/ArtPortfolio/commissions.html">Commission a Piece</a>
-  </div>
-</section>
-  <footer>
-    <span>Kent, United Kingdom</span>
-    <a href="mailto:enquire.georgedenverstudio@gmail.com">enquire.georgedenverstudio@gmail.com</a>
-  </footer>
+  <!-- ===================================================
+       INTRO
+  ==================================================== -->
+
+  <section class="intro">
+
+    <h1>
+      GEORGE DENVER
+    </h1>
+
+    <p>
+      Painter based in Kent, UK. Creating original artwork exploring life,
+      texture, and colour — available to view, buy, or commission.
+    </p>
+
+
+    <div class="cta-row">
+
+      <a
+        class="cta primary"
+        href="/ArtPortfolio/gallery.html"
+      >
+        View Gallery
+      </a>
+
+      <a
+        class="cta"
+        href="/ArtPortfolio/commissions.html"
+      >
+        Commission a Piece
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <span>
+    Kent, United Kingdom
+  </span>
+
+  <a href="/ArtPortfolio/legal.html">
+    Legal
+  </a>
+
+  <a href="mailto:enquire.georgedenverstudio@gmail.com">
+    enquire.georgedenverstudio@gmail.com
+  </a>
+
+</footer>
+
 
 </body>
+
 </html>
