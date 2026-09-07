@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8" />
-<link rel="icon" type="logo.png" href="logo.png" />
+<link rel="icon" type="image/png" href="logo.png" />
 
 <title>Painting 1 — George Denver</title>
 
@@ -39,32 +39,31 @@
   }
 
   body{
-  margin:0;
-  padding-top:5.5rem;
+    margin:0;
+    padding-top:5.5rem;
 
-  background-color:#f7f7f5;
+    background-color:#f7f7f5;
 
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,0,0,0.018) 0px,
-      rgba(0,0,0,0.018) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0,0,0,0.012) 0px,
-      rgba(0,0,0,0.012) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
 
-  color:var(--ink);
-  font-family:'Courier Prime', system-ui, sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-
+    color:var(--ink);
+    font-family:'Courier Prime', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
 
 
   /* ---------- Header ---------- */
@@ -80,61 +79,65 @@
     align-items:center;
     justify-content:space-between;
 
-    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+    padding:1.6rem clamp(1.2rem,4vw,3rem);
 
     background-color:#f7f7f5;
 
-background-image:
-  repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0.018) 0px,
-    rgba(0,0,0,0.018) 1px,
-    transparent 1px,
-    transparent 3px
-  ),
-  repeating-linear-gradient(
-    90deg,
-    rgba(0,0,0,0.012) 0px,
-    rgba(0,0,0,0.012) 1px,
-    transparent 1px,
-    transparent 4px
-  );
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.018) 0px,
+        rgba(0,0,0,0.018) 1px,
+        transparent 1px,
+        transparent 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.012) 0px,
+        rgba(0,0,0,0.012) 1px,
+        transparent 1px,
+        transparent 4px
+      );
 
-border-bottom:1px solid var(--line);
-}
+    border-bottom:1px solid var(--line);
+  }
+
 
   .wordmark{
-  font-family:'Courier Prime', monospace;
-  font-weight:400;
-  text-transform:uppercase;
-  letter-spacing:0.03em;
-  font-size:2rem;
-  text-decoration:none;
-}
+    font-family:'Courier Prime',monospace;
+    font-weight:400;
+    color:#000000;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:2rem;
+    text-decoration:none;
+  }
 
-.wordmark,
-.wordmark:visited,
-.wordmark:hover,
-.wordmark:active,
-.wordmark span{
-  color:#000000 !important;
-  text-decoration:none;
-}
+  .wordmark,
+  .wordmark:visited,
+  .wordmark:hover,
+  .wordmark:active,
+  .wordmark span{
+    color:#000000 !important;
+    text-decoration:none;
+  }
+
 
   nav{
     display:flex;
     align-items:center;
-    gap:clamp(1rem, 3vw, 2.2rem);
+    gap:clamp(1rem,3vw,2.2rem);
   }
 
 
   nav a{
     text-decoration:none;
+    font-family:'Courier Prime',monospace;
     font-size:0.85rem;
+    font-weight:400;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    color:var(--ink);
-
+    color:var(--ink-soft, #000000);
     position:relative;
     padding-bottom:2px;
   }
@@ -156,6 +159,11 @@ border-bottom:1px solid var(--line);
   }
 
 
+  nav a:hover{
+    color:#000000;
+  }
+
+
   nav a:hover::after{
     width:100%;
   }
@@ -168,11 +176,13 @@ border-bottom:1px solid var(--line);
     align-items:center;
     justify-content:center;
 
-    width:18px;
+    width:58px;
     height:18px;
 
     padding:0;
     margin-left:-1rem;
+
+    transform:translateY(-2px);
   }
 
 
@@ -199,20 +209,18 @@ border-bottom:1px solid var(--line);
   /* ---------- Artwork Page ---------- */
 
   .artwork-page{
-
     max-width:1200px;
 
     margin:0 auto;
 
     padding:
-      clamp(3rem, 7vw, 6rem)
-      clamp(1.2rem, 4vw, 3rem)
+      clamp(3rem,7vw,6rem)
+      clamp(1.2rem,4vw,3rem)
       5rem;
   }
 
 
   .back-link{
-
     display:inline-block;
 
     margin-bottom:3rem;
@@ -235,93 +243,70 @@ border-bottom:1px solid var(--line);
     opacity:0.5;
   }
 
-/* ---------- Images ---------- */
 
-.artwork-images{
-  display:grid;
-  grid-template-columns:repeat(2, 400px);
-  gap:2.5rem;
-  justify-content:center;
-  align-items:start;
-}
+  /* ---------- Images ---------- */
 
-
-/* ---------- Image Magnifier ---------- */
-
-.artwork-image-zoom{
-  width:400px;
-  height:400px;
-  position:relative;
-  overflow:hidden;
-  cursor:zoom-in;
-  background:#ffffff;
-}
-
-.artwork-image-zoom img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  transform:scale(1);
-  transform-origin:center center;
-  transition:transform 0.08s ease-out;
-  will-change:transform;
-}
-
-/* ---------- Desktop Magnification ---------- */
-
-@media (hover:hover) and (pointer:fine){
-
-  .artwork-image-zoom:hover{
-    cursor:zoom-in;
+  .artwork-images{
+    display:grid;
+    grid-template-columns:repeat(2,400px);
+    gap:2.5rem;
+    justify-content:center;
+    align-items:start;
   }
 
-  .artwork-image-zoom.is-zoomed img{
-    transform:scale(2);
-  }
-
-}
-
-
-/* ---------- Touch Devices ---------- */
-
-@media (hover:none), (pointer:coarse){
 
   .artwork-image-zoom{
-    cursor:default;
+    width:400px;
+    height:400px;
+    position:relative;
+    overflow:hidden;
+    cursor:zoom-in;
+    background:#ffffff;
   }
 
-}
 
-/* Magnification only on devices with a mouse */
-
-@media (hover: hover) and (pointer: fine) {
-
-  .artwork-image-zoom:hover {
-    cursor: zoom-in;
+  .artwork-image-zoom img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1);
+    transform-origin:center center;
+    transition:transform 0.08s ease-out;
+    will-change:transform;
   }
 
-  .artwork-image-zoom.is-zoomed img {
-    transform: scale(2);
+
+  /* ---------- Desktop Magnification ---------- */
+
+  @media (hover:hover) and (pointer:fine){
+
+    .artwork-image-zoom:hover{
+      cursor:zoom-in;
+    }
+
+    .artwork-image-zoom.is-zoomed img{
+      transform:scale(2);
+    }
+
   }
 
-}
 
-/* On touch devices, keep the normal image */
+  /* ---------- Touch Devices ---------- */
 
-@media (hover: none), (pointer: coarse) {
+  @media (hover:none), (pointer:coarse){
 
-  .artwork-image-zoom {
-    cursor: default;
+    .artwork-image-zoom{
+      cursor:default;
+    }
+
   }
 
-}
 
   /* ---------- Information ---------- */
 
   .artwork-info{
-
     max-width:650px;
 
     margin-top:4rem;
@@ -329,10 +314,9 @@ border-bottom:1px solid var(--line);
 
 
   .artwork-info h1{
+    font-family:'Courier Prime',monospace;
 
-    font-family:'Courier Prime', monospace;
-
-    font-size:clamp(2rem, 4vw, 3rem);
+    font-size:clamp(2rem,4vw,3rem);
 
     font-weight:400;
 
@@ -341,7 +325,6 @@ border-bottom:1px solid var(--line);
 
 
   .artwork-meta{
-
     font-size:0.9rem;
 
     line-height:1.7;
@@ -351,7 +334,6 @@ border-bottom:1px solid var(--line);
 
 
   .artwork-description{
-
     font-size:0.95rem;
 
     line-height:1.7;
@@ -361,7 +343,6 @@ border-bottom:1px solid var(--line);
 
 
   .enquire{
-
     display:inline-block;
 
     text-decoration:none;
@@ -384,60 +365,159 @@ border-bottom:1px solid var(--line);
 
 
   /* ---------- Footer ---------- */
-  
-footer{
-  border-top:1px solid var(--line);
-  padding:2rem clamp(1.2rem, 4vw, 3rem);
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.6rem 2rem;
-  justify-content:space-between;
-  font-size:0.82rem;
-  letter-spacing:0.02em;
-}
 
-footer a,
-footer a:visited,
-footer a:hover,
-footer a:active{
-  color:#000000 !important;
-  text-decoration:none;
-}
+  footer{
+    border-top:1px solid var(--line);
+
+    padding:2rem clamp(1.2rem,4vw,3rem);
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 2rem;
+
+    justify-content:space-between;
+
+    font-size:0.82rem;
+
+    letter-spacing:0.02em;
+  }
+
+
+  footer a,
+  footer a:visited,
+  footer a:hover,
+  footer a:active{
+    color:#000000 !important;
+    text-decoration:none;
+  }
+
+
+  footer .legal-link{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+  }
+
 
   /* ---------- Mobile ---------- */
 
-@media (max-width:700px){
+  @media (max-width:640px){
 
-  header{
-    flex-wrap:wrap;
-    gap:0.9rem;
+    header{
+      padding:1rem 1.2rem;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0.8rem;
+    }
+
+
+    .wordmark{
+      font-size:1rem;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+
+    nav{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:1.25rem;
+      flex-wrap:nowrap;
+    }
+
+
+    nav a{
+      font-size:0.68rem;
+      letter-spacing:0.04em;
+      white-space:nowrap;
+      padding-bottom:2px;
+    }
+
+
+    .instagram-icon{
+      width:18px;
+      height:18px;
+      margin-left:0;
+      flex-shrink:0;
+      transform:none;
+    }
+
+
+    .instagram-icon svg{
+      width:17px;
+      height:17px;
+    }
+
+
+    .artwork-page{
+      padding-top:3rem;
+      padding-left:1.2rem;
+      padding-right:1.2rem;
+      padding-bottom:4rem;
+    }
+
+
+    .back-link{
+      margin-bottom:2.5rem;
+    }
+
+
+    .artwork-images{
+      grid-template-columns:1fr;
+      gap:2rem;
+      justify-items:center;
+    }
+
+
+    .artwork-image-zoom{
+      width:min(400px,100%);
+      height:400px;
+    }
+
+
+    .artwork-info{
+      margin-top:3rem;
+      max-width:500px;
+    }
+
+
+    .artwork-info h1{
+      font-size:2.2rem;
+    }
+
+
+    .artwork-meta{
+      font-size:0.88rem;
+    }
+
+
+    .artwork-description{
+      font-size:0.9rem;
+      line-height:1.8;
+    }
+
+
+    footer{
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      gap:0.75rem;
+    }
+
+
+    footer .legal-link{
+      position:static;
+      transform:none;
+      white-space:normal;
+      order:2;
+    }
+
   }
 
-  nav{
-    gap:1rem;
-    flex-wrap:wrap;
-  }
 
-  .artwork-images{
-    grid-template-columns:1fr;
-    justify-items:center;
-  }
-
-  .artwork-image-zoom{
-    width:min(400px, 100%);
-    height:400px;
-  }
-
-  .artwork-page{
-    padding-top:3rem;
-  }
-
-  .artwork-info{
-    margin-top:3rem;
-  }
-
-}
-  
   /* ---------- Force artwork links black ---------- */
 
   .back-link,
@@ -450,6 +530,25 @@ footer a:active{
   .enquire:active{
     color:#000000 !important;
     text-decoration:none;
+  }
+
+
+  /* ---------- Reduced Motion ---------- */
+
+  @media (prefers-reduced-motion:reduce){
+
+    html{
+      scroll-behavior:auto;
+    }
+
+    nav a::after{
+      transition:none;
+    }
+
+    .artwork-image-zoom img{
+      transition:none;
+    }
+
   }
 
 </style>
@@ -471,24 +570,65 @@ footer a:active{
     George <span>Denver</span>
   </a>
 
-<nav>
-  <a href="/ArtPortfolio/gallery.html">Gallery</a>
-  <a href="/ArtPortfolio/portfolio.html">Portfolio</a>
-  <a href="/ArtPortfolio/commissions.html">Commissions</a>
-  <a href="/ArtPortfolio/contact.html">Contact</a>
 
-  <a class="instagram-icon"
-     href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
-     aria-label="Instagram"
-     target="_blank"
-     rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17.5" cy="6.5" r="1" fill="#000000" stroke="none"></circle>
-    </svg>
-  </a>
-</nav>
+  <nav>
+
+    <a href="/ArtPortfolio/gallery.html">
+      Gallery
+    </a>
+
+    <a href="/ArtPortfolio/portfolio.html">
+      Portfolio
+    </a>
+
+    <a href="/ArtPortfolio/commissions.html">
+      Commissions
+    </a>
+
+    <a href="/ArtPortfolio/contact.html">
+      Contact
+    </a>
+
+    <a
+      class="instagram-icon"
+      href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+      aria-label="Instagram"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        ></rect>
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        ></circle>
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="#000000"
+          stroke="none"
+        ></circle>
+
+      </svg>
+
+    </a>
+
+  </nav>
 
 </header>
 
@@ -511,28 +651,28 @@ footer a:active{
 
     <!-- Two images -->
 
-   <div class="artwork-images">
+    <div class="artwork-images">
 
-  <div class="artwork-image-zoom">
+      <div class="artwork-image-zoom">
 
-    <img
-      src="andanotherround.JPG"
-      alt="Painting 1 — George Denver"
-    >
+        <img
+          src="andanotherround.JPG"
+          alt="Painting 1 — George Denver"
+        >
 
-  </div>
+      </div>
 
 
-  <div class="artwork-image-zoom">
+      <div class="artwork-image-zoom">
 
-    <img
-      src="andanotherround.JPG"
-      alt="Painting 1 detail — George Denver"
-    >
+        <img
+          src="andanotherround.JPG"
+          alt="Painting 1 detail — George Denver"
+        >
 
-  </div>
+      </div>
 
-</div>
+    </div>
 
 
     <!-- Information -->
@@ -546,7 +686,7 @@ footer a:active{
 
         £300<br>
 
-        Acrylic + Oil Pastel + Pencil 
+        Acrylic + Oil Pastel + Pencil
 
       </div>
 
@@ -561,12 +701,13 @@ footer a:active{
 
       </div>
 
-<a
-  class="enquire"
-  href="mailto:enquire.georgedenverstudio@gmail.com?subject=Painting%201"
->
-  Enquire →
-</a>
+
+      <a
+        class="enquire"
+        href="mailto:enquire.georgedenverstudio@gmail.com?subject=Painting%201"
+      >
+        Enquire →
+      </a>
 
     </div>
 
@@ -585,34 +726,52 @@ footer a:active{
     Kent, United Kingdom
   </span>
 
+  <a
+    class="legal-link"
+    href="/ArtPortfolio/legal.html"
+  >
+    Terms &amp; Conditions · Privacy Policy · Cookies
+  </a>
+
   <a href="mailto:enquire.georgedenverstudio@gmail.com">
     enquire.georgedenverstudio@gmail.com
   </a>
 
 </footer>
 
+
 <script>
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const zoomImages = document.querySelectorAll('.artwork-image-zoom');
+  const zoomImages =
+    document.querySelectorAll('.artwork-image-zoom');
+
 
   zoomImages.forEach(container => {
 
-    const image = container.querySelector('img');
+    const image =
+      container.querySelector('img');
 
     if (!image) return;
 
 
     container.addEventListener('mousemove', (event) => {
 
-      const rect = container.getBoundingClientRect();
+      const rect =
+        container.getBoundingClientRect();
 
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const x =
+        event.clientX - rect.left;
 
-      const xPercent = (x / rect.width) * 100;
-      const yPercent = (y / rect.height) * 100;
+      const y =
+        event.clientY - rect.top;
+
+      const xPercent =
+        (x / rect.width) * 100;
+
+      const yPercent =
+        (y / rect.height) * 100;
 
       image.style.transformOrigin =
         `${xPercent}% ${yPercent}%`;
@@ -633,7 +792,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       container.classList.remove('is-zoomed');
 
-      image.style.transformOrigin = 'center center';
+      image.style.transformOrigin =
+        'center center';
 
     });
 
@@ -646,4 +806,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
-
