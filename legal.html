@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8" />
-<link rel="icon" type="logo.png" href="logo.png" />
+<link rel="icon" type="image/png" href="logo.png" />
 
 <title>Legal — George Denver</title>
 
@@ -41,7 +41,6 @@
     scroll-behavior:smooth;
   }
 
-
   /* ---------- Body ---------- */
 
   body{
@@ -73,7 +72,6 @@
 
     -webkit-font-smoothing:antialiased;
   }
-
 
   /* ---------- Header ---------- */
 
@@ -111,7 +109,6 @@
     border-bottom:1px solid var(--line);
   }
 
-
   /* ---------- Wordmark ---------- */
 
   .wordmark{
@@ -128,7 +125,6 @@
     text-decoration:none;
   }
 
-
   .wordmark,
   .wordmark:visited,
   .wordmark:hover,
@@ -138,7 +134,6 @@
     text-decoration:none;
   }
 
-
   /* ---------- Navigation ---------- */
 
   nav{
@@ -147,7 +142,6 @@
 
     gap:clamp(1rem, 3vw, 2.2rem);
   }
-
 
   nav a{
     text-decoration:none;
@@ -168,7 +162,6 @@
     padding-bottom:2px;
   }
 
-
   nav a::after{
     content:'';
 
@@ -185,16 +178,13 @@
     transition:width 0.25s ease;
   }
 
-
   nav a:hover::after{
     width:100%;
   }
 
-
   nav a.current::after{
     width:100%;
   }
-
 
   /* ---------- Instagram ---------- */
 
@@ -213,11 +203,9 @@
     transform:translateY(-2px);
   }
 
-
   .instagram-icon::after{
     display:none !important;
   }
-
 
   .instagram-icon svg{
     width:16px;
@@ -230,11 +218,9 @@
     stroke-width:1.6;
   }
 
-
   .instagram-icon:hover svg{
     opacity:0.5;
   }
-
 
   /* ---------- Legal ---------- */
 
@@ -246,7 +232,6 @@
       clamp(5rem, 8vw, 8rem);
   }
 
-
   .legal-content{
 
     width:100%;
@@ -255,7 +240,6 @@
 
     margin:0 auto;
   }
-
 
   .legal h1{
 
@@ -269,7 +253,6 @@
 
     margin:0 0 4rem;
   }
-
 
   .legal h2{
 
@@ -288,7 +271,6 @@
     border-top:1px solid var(--line);
   }
 
-
   .legal h3{
 
     font-family:'Courier Prime', monospace;
@@ -302,7 +284,6 @@
     margin:2.5rem 0 1rem;
   }
 
-
   .legal p{
 
     font-size:0.9rem;
@@ -312,14 +293,12 @@
     margin:0 0 1.3rem;
   }
 
-
   .legal ul{
 
     margin:0 0 1.5rem;
 
     padding-left:1.4rem;
   }
-
 
   .legal li{
 
@@ -331,7 +310,6 @@
 
     padding-left:0.3rem;
   }
-
 
   .legal a{
 
@@ -346,12 +324,10 @@
     transition:opacity 0.2s ease;
   }
 
-
   .legal a:hover{
 
     opacity:0.5;
   }
-
 
   .last-updated{
 
@@ -363,7 +339,6 @@
 
     opacity:0.7;
   }
-
 
   /* ---------- Footer ---------- */
 
@@ -388,7 +363,6 @@
     letter-spacing:0.02em;
   }
 
-
   footer a{
 
     color:#000000;
@@ -396,38 +370,79 @@
     text-decoration:none;
   }
 
-
   footer a:visited{
 
     color:#000000;
   }
-
 
   footer a:hover{
 
     color:#000000;
   }
 
-
   /* ---------- Mobile ---------- */
 
   @media (max-width:640px){
 
     header{
+      padding:1rem 1.2rem;
 
-      flex-wrap:wrap;
+      flex-direction:column;
 
-      gap:0.9rem;
+      align-items:flex-start;
+
+      gap:0.8rem;
     }
 
+    .wordmark{
+      font-size:1rem;
+
+      white-space:nowrap;
+
+      line-height:1;
+    }
 
     nav{
+      width:100%;
 
-      gap:1rem;
+      display:flex;
 
-      flex-wrap:wrap;
+      align-items:center;
+
+      justify-content:flex-start;
+
+      gap:1.25rem;
+
+      flex-wrap:nowrap;
     }
 
+    nav a{
+      font-size:0.68rem;
+
+      letter-spacing:0.04em;
+
+      white-space:nowrap;
+
+      padding-bottom:2px;
+    }
+
+    .instagram-icon{
+      width:18px;
+
+      height:18px;
+
+      margin-left:0;
+
+      flex-shrink:0;
+
+      transform:none;
+    }
+
+    .instagram-icon svg{
+      width:17px;
+
+      height:17px;
+    }
 
     .legal{
 
@@ -437,12 +452,10 @@
         4rem;
     }
 
-
     .legal-content{
 
       max-width:100%;
     }
-
 
     .legal h1{
 
@@ -450,7 +463,6 @@
 
       margin-bottom:3rem;
     }
-
 
     .legal h2{
 
@@ -461,14 +473,12 @@
       padding-top:1.2rem;
     }
 
-
     .legal h3{
 
       font-size:1rem;
 
       margin-top:2rem;
     }
-
 
     .legal p,
     .legal li{
@@ -478,8 +488,27 @@
       line-height:1.8;
     }
 
-  }
+    footer{
+      flex-direction:column;
 
+      align-items:flex-start;
+
+      justify-content:flex-start;
+
+      gap:0.75rem;
+    }
+
+    footer .legal-link{
+      position:static;
+
+      transform:none;
+
+      white-space:normal;
+
+      order:2;
+    }
+
+  }
 
   /* ---------- Reduced Motion ---------- */
 
@@ -501,9 +530,7 @@
 
 </head>
 
-
 <body>
-
 
 <!-- Header -->
 
@@ -516,24 +543,37 @@
     George <span>Denver</span>
   </a>
 
-<nav>
-  <a href="/ArtPortfolio/gallery.html">Gallery</a>
-  <a href="/ArtPortfolio/portfolio.html">Portfolio</a>
-  <a href="/ArtPortfolio/commissions.html">Commissions</a>
-  <a href="/ArtPortfolio/contact.html">Contact</a>
+  <nav>
 
-  <a class="instagram-icon"
-     href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
-     aria-label="Instagram"
-     target="_blank"
-     rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17.5" cy="6.5" r="1" fill="#000000" stroke="none"></circle>
-    </svg>
-  </a>
-</nav>
+    <a href="/ArtPortfolio/gallery.html">Gallery</a>
+
+    <a href="/ArtPortfolio/portfolio.html">Portfolio</a>
+
+    <a href="/ArtPortfolio/commissions.html">Commissions</a>
+
+    <a href="/ArtPortfolio/contact.html">Contact</a>
+
+    <a
+      class="instagram-icon"
+      href="https://www.instagram.com/g.denverstudio?igsi=djhrYTJnMWdpNWZ1&utm_source=qr"
+      aria-label="Instagram"
+      target="_blank"
+      rel="noopener"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="#000000"
+          stroke="none"
+        ></circle>
+      </svg>
+    </a>
+
+  </nav>
 
 </header>
 
@@ -545,7 +585,6 @@
   <section class="legal">
 
     <div class="legal-content">
-
 
       <h1>Legal</h1>
 
@@ -577,8 +616,8 @@
       </p>
 
       <p>
-        Our business address is provided to you directly, 
-        as part of the order confirmation process, before your order is placed, 
+        Our business address is provided to you directly,
+        as part of the order confirmation process, before your order is placed,
         in line with our legal obligations under the Consumer Contracts Regulations 2013.
       </p>
 
@@ -593,7 +632,7 @@
       <p>
         Artwork may contain natural variations in colour, texture, brushwork and
         finish. Colours may also appear slightly different depending on your
-        screen or device. Some artworks may show characteristics typical of the medium and technique used (e.g. brush texture, canvas grain), 
+        screen or device. Some artworks may show characteristics typical of the medium and technique used (e.g. brush texture, canvas grain),
         which are not considered defects.
       </p>
 
@@ -616,7 +655,7 @@
       </p>
 
       <p>
-       Before you purchase, we will confirm the total price payable, which includes delivery.
+        Before you purchase, we will confirm the total price payable, which includes delivery.
         The total price confirmed to you before purchase is the full price you will pay,
         including any mandatory fees or charges — we do not add undisclosed charges after you have agreed to
         buy.
@@ -630,8 +669,8 @@
       <p>
         We are not currently VAT registered, so no VAT is added to the prices shown.
         If this changes, prices will be updated to reflect any VAT due and our VAT
-        registration number will be displayed here. Any change to our VAT status will apply 
-        to new orders  confirmed after the change takes effect, and will not affect the price of an order 
+        registration number will be displayed here. Any change to our VAT status will apply
+        to new orders confirmed after the change takes effect, and will not affect the price of an order
         you have already agreed to purchase.
       </p>
 
@@ -650,7 +689,7 @@
 
       <p>
         A contract is formed when we confirm acceptance of your purchase, normally
-        following successful payment. If we are unable to accept your order, 
+        following successful payment. If we are unable to accept your order,
         we will notify you and refund any payment already made in full
       </p>
 
@@ -692,7 +731,7 @@
       </p>
 
       <p>
-        Delivery is included in the price of the artwork at no separate charge. 
+        Delivery is included in the price of the artwork at no separate charge.
         Estimated delivery times will be confirmed before purchase
       </p>
 
@@ -721,25 +760,57 @@
         if it has already been dispatched or delivered to you.
       </p>
 
-<h3>8. Cancellation and Returns</h3>
 
-<p>If you are a consumer purchasing artwork online, you have a statutory right to cancel your purchase within 14 days of receiving the artwork without giving a reason, subject to any applicable legal exceptions.</p>
+      <h3>8. Cancellation and Returns</h3>
 
-<p>To cancel, contact us at:</p>
+      <p>
+        If you are a consumer purchasing artwork online, you have a statutory right
+        to cancel your purchase within 14 days of receiving the artwork without
+        giving a reason, subject to any applicable legal exceptions.
+      </p>
 
-<p><a href="mailto:enquire.georgedenverstudio@gmail.com"><strong>enquire.georgedenverstudio@gmail.com</strong></a></p>
+      <p>
+        To cancel, contact us at:
+      </p>
 
-<p>You must notify us within 14 days of receiving the artwork and return it within a further 14 days. These cancellation rights may not apply to commissioned or personalised artwork where the artwork is made to your specific requirements or is clearly personalised.</p>
+      <p>
+        <a href="mailto:enquire.georgedenverstudio@gmail.com">
+          <strong>enquire.georgedenverstudio@gmail.com</strong>
+        </a>
+      </p>
 
-<p>Unless the artwork is faulty, damaged or not as described, you will normally be responsible for the direct cost of returning it, provided you were informed of this before purchase.</p>
+      <p>
+        You must notify us within 14 days of receiving the artwork and return it
+        within a further 14 days. These cancellation rights may not apply to
+        commissioned or personalised artwork where the artwork is made to your
+        specific requirements or is clearly personalised.
+      </p>
 
-<p>Where you validly cancel, we will refund the full purchase price originally paid.</p>
+      <p>
+        Unless the artwork is faulty, damaged or not as described, you will normally
+        be responsible for the direct cost of returning it, provided you were
+        informed of this before purchase.
+      </p>
 
-<p>We may withhold the refund until the artwork is returned or you provide evidence that it has been sent back, whichever occurs first.</p>
+      <p>
+        Where you validly cancel, we will refund the full purchase price originally paid.
+      </p>
 
-<p>You are responsible for taking reasonable care of the artwork while it is in your possession. Where permitted by law, we may deduct an amount from your refund if the artwork has been diminished in value through handling beyond what is reasonably necessary to inspect it.</p>
+      <p>
+        We may withhold the refund until the artwork is returned or you provide
+        evidence that it has been sent back, whichever occurs first.
+      </p>
 
-<p>These cancellation rights do not affect your statutory rights.</p>
+      <p>
+        You are responsible for taking reasonable care of the artwork while it is
+        in your possession. Where permitted by law, we may deduct an amount from
+        your refund if the artwork has been diminished in value through handling
+        beyond what is reasonably necessary to inspect it.
+      </p>
+
+      <p>
+        These cancellation rights do not affect your statutory rights.
+      </p>
 
 
       <h3>9. Faulty, Damaged or Misdescribed Artwork</h3>
@@ -765,25 +836,58 @@
       </p>
 
 
-<h3>10. Commissioned Artwork</h3>
+      <h3>10. Commissioned Artwork</h3>
 
-<p>Separate terms may apply to commissioned or personalised artwork.</p>
+      <p>
+        Separate terms may apply to commissioned or personalised artwork.
+      </p>
 
-<p>Before work begins, we will agree the artwork specifications, price, payment arrangements and estimated completion time. We may require a deposit of 30% of the agreed commission price before starting work, unless otherwise agreed with you. The deposit will be applied towards the total price of the commissioned artwork.</p>
+      <p>
+        Before work begins, we will agree the artwork specifications, price, payment
+        arrangements and estimated completion time. We may require a deposit of 30%
+        of the agreed commission price before starting work, unless otherwise agreed
+        with you. The deposit will be applied towards the total price of the
+        commissioned artwork.
+      </p>
 
-<p>If you cancel a commission before work has begun, we will refund the deposit in full.</p>
+      <p>
+        If you cancel a commission before work has begun, we will refund the deposit
+        in full.
+      </p>
 
-<p>If you cancel a commission after work has begun, we may retain an amount of the deposit (up to the full deposit amount) to cover work completed and materials or other reasonable costs specifically incurred for your commission. Any remaining balance of the deposit will be refunded to you.</p>
+      <p>
+        If you cancel a commission after work has begun, we may retain an amount of
+        the deposit (up to the full deposit amount) to cover work completed and
+        materials or other reasonable costs specifically incurred for your
+        commission. Any remaining balance of the deposit will be refunded to you.
+      </p>
 
-<p>Where commissioned artwork is made to your specific requirements or is clearly personalised, the statutory 14-day cancellation right may not apply. We will confirm whether this applies to your commission before you place the order. Where the statutory cancellation right does not apply, completed commissioned artwork cannot be returned simply because you have changed your mind.</p>
+      <p>
+        Where commissioned artwork is made to your specific requirements or is clearly
+        personalised, the statutory 14-day cancellation right may not apply. We will
+        confirm whether this applies to your commission before you place the order.
+        Where the statutory cancellation right does not apply, completed commissioned
+        artwork cannot be returned simply because you have changed your mind.
+      </p>
 
-<p>We will agree an approval process with you before completion. Requests for changes based on personal preference, rather than a fault or misdescription, may be subject to additional time or cost, which we will agree with you before carrying out the additional work.</p>
+      <p>
+        We will agree an approval process with you before completion. Requests for
+        changes based on personal preference, rather than a fault or misdescription,
+        may be subject to additional time or cost, which we will agree with you
+        before carrying out the additional work.
+      </p>
 
-<p>Unless otherwise agreed, any remaining balance will be payable before the completed artwork is dispatched.</p>
+      <p>
+        Unless otherwise agreed, any remaining balance will be payable before the
+        completed artwork is dispatched.
+      </p>
 
-<p>Your statutory rights regarding faulty or misdescribed commissioned artwork are not affected.</p>
+      <p>
+        Your statutory rights regarding faulty or misdescribed commissioned artwork
+        are not affected.
+      </p>
 
-    
+
       <h3>11. Copyright</h3>
 
       <p>
@@ -799,8 +903,8 @@
       <p>
         We may photograph artwork before the sale and use photographs for
         portfolio, archival, website, social media or promotional purposes, unless
-        otherwise agreed in writing. We may also request photographs of the artwork 
-        in-situ for the same uses only if agreed in writing by the buyer 
+        otherwise agreed in writing. We may also request photographs of the artwork
+        in-situ for the same uses only if agreed in writing by the buyer
       </p>
 
       <p>
@@ -815,11 +919,11 @@
       <h3>12. International Orders</h3>
 
       <p>
-        We currently only sell and deliver artwork within the United Kingdom. 
+        We currently only sell and deliver artwork within the United Kingdom.
         We are not able to accept orders that require delivery outside the UK.
       </p>
 
-      
+
       <h3>13. Complaints</h3>
 
       <p>
@@ -844,10 +948,11 @@
         by the Digital Markets, Competition and Consumers Act 2024.
       </p>
 
-      <p> 
-        If we are unable to resolve your complaint directly, we will confirm this to you in writing 
-        and explain your options for taking the matter further.
+      <p>
+        If we are unable to resolve your complaint directly, we will confirm this
+        to you in writing and explain your options for taking the matter further.
       </p>
+
 
       <h3>14. Limitation of Liability</h3>
 
@@ -860,12 +965,12 @@
 
       <p>
         Subject to the paragraph above, our total liability to you for any single
-        order is limited to the price you paid for the artwork. 
+        order is limited to the price you paid for the artwork.
       </p>
 
       <p>
         Subject to the first paragraph of this section, we are not liable for any
-        indirect or consequential loss, including loss of income, loss of profit, 
+        indirect or consequential loss, including loss of income, loss of profit,
         arising from your purchase or use of the artwork.
       </p>
 
@@ -877,10 +982,14 @@
       <h3>15. Force Majeure</h3>
 
       <p>
-       We will not be liable for any delay or failure to perform our obligations under these Terms & Conditions where this is 
-       caused by events outside our reasonable control, including but not limited to postal or courier delays or strikes, extreme weather, 
-       fire, flood, or power failure. Where such an event occurs, we will contact you as soon as reasonably possible and take reasonable steps 
-       to minimise the delay. If a force majeure event continues for more than 30 days, you may cancel your order and receive a full refund.
+        We will not be liable for any delay or failure to perform our obligations
+        under these Terms &amp; Conditions where this is caused by events outside
+        our reasonable control, including but not limited to postal or courier
+        delays or strikes, extreme weather, fire, flood, or power failure. Where
+        such an event occurs, we will contact you as soon as reasonably possible
+        and take reasonable steps to minimise the delay. If a force majeure event
+        continues for more than 30 days, you may cancel your order and receive a
+        full refund.
       </p>
 
 
@@ -958,34 +1067,34 @@
       </p>
 
 
-    
-<h3>2. Information We May Collect</h3>
+      <h3>2. Information We May Collect</h3>
 
-<p>Depending on how you interact with the Website, we may collect:</p>
+      <p>Depending on how you interact with the Website, we may collect:</p>
 
-<ul>
-  <li>Your name</li>
-  <li>Your email address</li>
-  <li>Your telephone number, where provided</li>
-  <li>Your delivery address</li>
-  <li>Artwork and order information</li>
-  <li>Payment and transaction information, including payment status and transaction details</li>
-  <li>Correspondence between you and us</li>
-  <li>Information relating to returns, refunds or complaints</li>
-</ul>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your telephone number, where provided</li>
+        <li>Your delivery address</li>
+        <li>Artwork and order information</li>
+        <li>Payment and transaction information, including payment status and transaction details</li>
+        <li>Correspondence between you and us</li>
+        <li>Information relating to returns, refunds or complaints</li>
+      </ul>
 
-      
-<h3>3. How We Collect Information</h3>
 
-<p>We may collect information when you:</p>
+      <h3>3. How We Collect Information</h3>
 
-<ul>
-  <li>Contact us by email</li>
-  <li>Ask about or purchase artwork</li>
-  <li>Complete a payment through Stripe</li>
-  <li>Arrange delivery or returns</li>
-  <li>Use the Website</li>
-</ul>
+      <p>We may collect information when you:</p>
+
+      <ul>
+        <li>Contact us by email</li>
+        <li>Ask about or purchase artwork</li>
+        <li>Complete a payment through Stripe</li>
+        <li>Arrange delivery or returns</li>
+        <li>Use the Website</li>
+      </ul>
+
 
       <h3>4. How We Use Your Information</h3>
 
@@ -1126,9 +1235,11 @@
       </p>
 
       <p>
-        <strong>We will acknowledge your request within 30 days and work with you
-        to resolve it. If you are not satisfied with our response, you have the
-        right to escalate your complaint, as set out in Section 18 below.</strong>
+        <strong>
+          We will acknowledge your request within 30 days and work with you
+          to resolve it. If you are not satisfied with our response, you have the
+          right to escalate your complaint, as set out in Section 18 below.
+        </strong>
       </p>
 
 
@@ -1210,11 +1321,14 @@
       <h3>18. Complaints</h3>
 
       <p>
-        <strong>If you have concerns about how we handle your personal information,
-        you must contact us first, using the details below, before raising a
-        complaint with the regulator — this is now a legal requirement under the
-        Data (Use and Access) Act 2025.</strong> We will acknowledge your complaint
-        within 30 days and aim to resolve it as quickly as possible.
+        <strong>
+          If you have concerns about how we handle your personal information,
+          you must contact us first, using the details below, before raising a
+          complaint with the regulator — this is now a legal requirement under
+          the Data (Use and Access) Act 2025.
+        </strong>
+        We will acknowledge your complaint within 30 days and aim to resolve it
+        as quickly as possible.
       </p>
 
       <p>
@@ -1224,15 +1338,19 @@
       </p>
 
 
-<p>
-  If you remain unsatisfied after contacting us, you have the right to
-  complain to the UK's data protection regulator — currently the
-  <strong>Information Commissioner's Office (ICO)</strong>, which is in the
-  process of being restructured into the <strong>Information Commission</strong>
-  under the Data (Use and Access) Act 2025. You can find current contact
-  details at
-  <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
-</p>
+      <p>
+        If you remain unsatisfied after contacting us, you have the right to
+        complain to the UK's data protection regulator — currently the
+        <strong>Information Commissioner's Office (ICO)</strong>, which is in the
+        process of being restructured into the <strong>Information Commission</strong>
+        under the Data (Use and Access) Act 2025. You can find current contact
+        details at
+        <a
+          href="https://ico.org.uk/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >ico.org.uk</a>.
+      </p>
 
 
     </div>
@@ -1241,13 +1359,17 @@
 
 </main>
 
+
 <!-- Footer -->
 
 <footer>
 
   <span>Kent, United Kingdom</span>
 
-  <a href="/ArtPortfolio/legal.html">
+  <a
+    class="legal-link"
+    href="/ArtPortfolio/legal.html"
+  >
     Terms &amp; Conditions · Privacy Policy · Cookies
   </a>
 
@@ -1261,3 +1383,4 @@
 </body>
 
 </html>
+
