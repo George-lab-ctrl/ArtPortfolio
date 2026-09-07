@@ -287,13 +287,41 @@ header{
 @media (max-width:640px){
 
   header{
-    flex-wrap:wrap;
-    gap:0.9rem;
+    padding:0.8rem 1rem;
+    flex-wrap:nowrap;
+    gap:0;
+    align-items:center;
+  }
+
+  .wordmark{
+    font-size:1rem;
+    white-space:nowrap;
+    flex-shrink:0;
   }
 
   nav{
-    gap:1rem;
-    flex-wrap:wrap;
+    margin-left:auto;
+    gap:0.7rem;
+    flex-wrap:nowrap;
+    align-items:center;
+  }
+
+  nav a{
+    font-size:0.68rem;
+    letter-spacing:0.04em;
+    white-space:nowrap;
+  }
+
+  .instagram-icon{
+    width:18px;
+    height:18px;
+    margin-left:0;
+    flex-shrink:0;
+  }
+
+  .instagram-icon svg{
+    width:16px;
+    height:16px;
   }
 
   .hero{
@@ -317,7 +345,6 @@ header{
     font-size:0.9rem;
   }
 }
-  }
 
    @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
@@ -329,7 +356,9 @@ header{
 <body>
 
   <header>
-    <a class="wordmark" href="/ArtPortfolio/index.html">George <span>Denver</span><span></a>
+  <a class="wordmark" href="/ArtPortfolio/index.html">
+  George <span>Denver</span>
+</a>
  
 <nav>
   <a href="/ArtPortfolio/gallery.html">Gallery</a>
@@ -355,7 +384,8 @@ header{
 <div class="hero">
   <div class="hero-caption">
     <div class="hero-title">
-  <span class="hero-the">Studio</div>
+  <span class="hero-the">Studio</span>
+</div>
     <div class="hero-subtitle">EST. 2026</div>
   </div>
 </div>
