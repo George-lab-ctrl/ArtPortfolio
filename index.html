@@ -103,7 +103,7 @@
 
     justify-content:space-between;
 
-    padding:1.6rem clamp(1.2rem, 4vw, 3rem);
+    padding:1.6rem clamp(1.2rem,4vw,3rem);
 
     background-color:var(--paper);
 
@@ -128,11 +128,11 @@
 
 
   .wordmark{
-    font-family:'Courier Prime', monospace;
+    font-family:'Courier Prime',monospace;
 
     font-weight:400;
 
-    color:#000;
+    color:#000000;
 
     text-transform:uppercase;
 
@@ -147,7 +147,7 @@
 
 
   .wordmark span{
-    color:#000;
+    color:#000000;
 
     font-style:normal;
   }
@@ -158,14 +158,14 @@
 
     align-items:center;
 
-    gap:clamp(1rem, 3vw, 2.2rem);
+    gap:clamp(1rem,3vw,2.2rem);
   }
 
 
   nav a{
     text-decoration:none;
 
-    font-family:'Courier Prime', monospace;
+    font-family:'Courier Prime',monospace;
 
     font-size:0.85rem;
 
@@ -175,7 +175,7 @@
 
     text-transform:uppercase;
 
-    color:#000;
+    color:#000000;
 
     position:relative;
 
@@ -198,7 +198,7 @@
 
     height:1px;
 
-    background:#000;
+    background:#000000;
 
     transition:width 0.25s ease;
   }
@@ -243,7 +243,7 @@
 
     height:16px;
 
-    stroke:#000;
+    stroke:#000000;
 
     fill:none;
 
@@ -263,9 +263,9 @@
   .hero{
     position:relative;
 
-    margin:clamp(1.2rem, 4vw, 2.4rem);
+    margin:clamp(1.2rem,4vw,2.4rem);
 
-    height:min(65vh, 700px);
+    height:min(65vh,700px);
 
     min-height:420px;
 
@@ -293,7 +293,7 @@
 
     top:50%;
 
-    transform:translate(-50%, -50%);
+    transform:translate(-50%,-50%);
 
     z-index:2;
 
@@ -306,11 +306,11 @@
 
 
   .hero-title{
-    font-family:'Bodoni Moda', Georgia, serif;
+    font-family:'Bodoni Moda',Georgia,serif;
 
     font-weight:600;
 
-    font-size:clamp(5rem, 13vw, 12rem);
+    font-size:clamp(5rem,13vw,12rem);
 
     line-height:0.75;
 
@@ -342,7 +342,7 @@
 
     border-radius:50%;
 
-    font-family:'Courier Prime', monospace;
+    font-family:'Courier Prime',monospace;
 
     font-size:1.25rem;
 
@@ -357,7 +357,7 @@
   .intro{
     text-align:center;
 
-    padding:clamp(4rem, 8vw, 7rem) 1.5rem 10rem;
+    padding:clamp(4rem,8vw,7rem) 1.5rem 10rem;
 
     max-width:640px;
 
@@ -366,11 +366,11 @@
 
 
   .intro h1{
-    font-family:'Courier Prime', monospace;
+    font-family:'Courier Prime',monospace;
 
     font-weight:600;
 
-    font-size:clamp(2rem, 5vw, 2.8rem);
+    font-size:clamp(2rem,5vw,2.8rem);
 
     margin:0 0 0.6rem;
 
@@ -409,15 +409,15 @@
 
     padding:0.7rem 1.5rem;
 
-    border:1px solid #000;
+    border:1px solid #000000;
 
     background:transparent;
 
-    color:#000;
+    color:#000000;
 
     text-decoration:none;
 
-    font-family:'Courier Prime', monospace;
+    font-family:'Courier Prime',monospace;
 
     font-size:0.85rem;
 
@@ -432,25 +432,25 @@
 
 
   .cta:hover{
-    background:#000;
+    background:#000000;
 
-    color:#fff;
+    color:#ffffff;
   }
 
 
   .cta.primary:hover{
-    background:#000;
+    background:#000000;
 
-    border-color:#000;
+    border-color:#000000;
 
-    color:#fff;
+    color:#ffffff;
   }
 
 
   .cta:not(.primary):hover{
-    background:#000;
+    background:#000000;
 
-    color:#fff;
+    color:#ffffff;
   }
 
 
@@ -459,136 +459,138 @@
   ===================================================== */
 
   footer{
-    border-top:1px solid #000;
+    position:relative;
 
-    padding:2rem clamp(1.2rem, 4vw, 3rem);
+    border-top:1px solid #000000;
+
+    padding:2rem clamp(1.2rem,4vw,3rem);
 
     display:flex;
 
-    flex-wrap:wrap;
-
-    gap:0.6rem 2rem;
+    align-items:center;
 
     justify-content:space-between;
 
+    flex-wrap:nowrap;
+
+    gap:1.5rem;
+
     font-size:0.82rem;
 
-    color:#000;
+    color:#000000;
 
     letter-spacing:0.02em;
   }
 
 
   footer a{
-    color:#000;
+    color:#000000;
 
     text-decoration:none;
   }
 
 
   footer a:visited{
-    color:#000;
+    color:#000000;
   }
 
 
   footer a:hover{
-    color:#000;
+    color:#000000;
   }
 
 
- /* ---------- Mobile ---------- */
-@media (max-width:640px){
+  footer .legal-link{
+    position:absolute;
 
-  header{
-    padding:1rem 1.2rem;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:0.8rem;
-  }
-
-  .wordmark{
-    font-size:1rem;
-    white-space:nowrap;
-    line-height:1;
-  }
-
-  nav{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:1.25rem;
-    flex-wrap:nowrap;
-  }
-
-  nav a{
-    font-size:0.68rem;
-    letter-spacing:0.04em;
-    white-space:nowrap;
-    padding-bottom:2px;
-  }
-
-  .instagram-icon{
-    width:18px;
-    height:18px;
-    margin-left:0;
-    flex-shrink:0;
-    transform:none;
-  }
-
-  .instagram-icon svg{
-    width:17px;
-    height:17px;
-  }
-
-  /* Hero */
-  .hero{
-    margin:1.2rem;
-    height:58vh;
-    min-height:360px;
-  }
-
-  .hero-caption{
     left:50%;
-    top:50%;
-    transform:translate(-50%, -50%);
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
   }
 
-  .hero-title{
-    font-size:clamp(4rem, 18vw, 6rem);
-  }
 
-  .hero-subtitle{
-    width:170px;
-    height:52px;
-    margin-top:1.4rem;
-    font-size:0.9rem;
-  }
+  /* =====================================================
+     MOBILE
+  ===================================================== */
 
-  /* Intro */
-  .intro{
-    padding:4rem 1.25rem 7rem;
-  }
+  @media (max-width:640px){
 
-  .intro h1{
-    font-size:1.8rem;
-  }
+    body{
+      padding-top:5.5rem;
+    }
 
-  .intro p{
-    font-size:0.95rem;
-    line-height:1.6;
-  }
 
-  /* Footer */
-  footer{
-    padding:1.5rem 1.25rem;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:0.75rem;
-  }
-}
+    /* Header */
 
-    /* HERO */
+    header{
+      padding:1rem 1.2rem;
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      gap:0.8rem;
+    }
+
+
+    .wordmark{
+      font-size:1rem;
+
+      white-space:nowrap;
+
+      line-height:1;
+    }
+
+
+    nav{
+      width:100%;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:flex-start;
+
+      gap:1.25rem;
+
+      flex-wrap:nowrap;
+    }
+
+
+    nav a{
+      font-size:0.68rem;
+
+      letter-spacing:0.04em;
+
+      white-space:nowrap;
+
+      padding-bottom:2px;
+    }
+
+
+    .instagram-icon{
+      width:18px;
+
+      height:18px;
+
+      margin-left:0;
+
+      flex-shrink:0;
+
+      transform:none;
+    }
+
+
+    .instagram-icon svg{
+      width:17px;
+
+      height:17px;
+    }
+
+
+    /* Hero */
 
     .hero{
       margin:1.25rem;
@@ -606,12 +608,12 @@
 
       top:50%;
 
-      transform:translate(-50%, -50%);
+      transform:translate(-50%,-50%);
     }
 
 
     .hero-title{
-      font-size:clamp(4rem, 18vw, 6rem);
+      font-size:clamp(4rem,18vw,6rem);
     }
 
 
@@ -626,7 +628,7 @@
     }
 
 
-    /* INTRO */
+    /* Intro */
 
     .intro{
       padding:2.5rem 1.25rem 5rem;
@@ -667,16 +669,33 @@
     }
 
 
-    /* FOOTER */
+    /* Footer */
 
     footer{
       padding:1.5rem 1.25rem;
 
-      flex-direction:column;
+      flex-direction:row;
 
-      align-items:flex-start;
+      align-items:center;
 
-      gap:0.75rem;
+      justify-content:space-between;
+
+      gap:0.8rem;
+
+      flex-wrap:nowrap;
+
+      font-size:0.58rem;
+    }
+
+
+    footer .legal-link{
+      position:static;
+
+      transform:none;
+
+      white-space:nowrap;
+
+      order:initial;
     }
 
   }
@@ -869,13 +888,14 @@
     Terms &amp; Conditions · Privacy Policy · Cookies
   </a>
 
-   <a
+  <a
     href="mailto:enquire.georgedenverstudio@gmail.com"
   >
     enquire.georgedenverstudio@gmail.com
   </a>
 
 </footer>
+
 
 </body>
 
