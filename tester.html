@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<title>Test — George Denver</title>
+
+<link rel="icon" type="image/png" href="logo.png" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+/>
+
+<meta
+  name="description"
+  content="George Denver — painter based in Kent, UK."
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+  --paper:#f7f7f5;
+  --cream:#f1df8c;
+  --ink:#000000;
+  --line:#000000;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  padding:0;
+
+  background-color:var(--paper);
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.018) 0px,
+      rgba(0,0,0,0.018) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.012) 0px,
+      rgba(0,0,0,0.012) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  color:var(--ink);
+
+  font-family:'Courier Prime', monospace;
+
+  -webkit-font-smoothing:antialiased;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+
+  width:100%;
+  height:100vh;
+  min-height:600px;
+
+  overflow:hidden;
+
+  background:#222;
+}
+
+
+/* Hero image */
+
+.hero-image{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+}
+
+
+/* Slight darkening layer */
+
+.hero::after{
+  content:'';
+
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.18);
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   HERO NAVIGATION
+========================================================= */
+
+.hero-nav{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  z-index:10;
+
+  width:100%;
+
+  padding:
+    1.1rem
+    clamp(1.2rem, 4vw, 3rem);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+}
+
+
+/* Wordmark */
+
+.hero-wordmark{
+  color:#ffffff;
+
+  text-decoration:none;
+
+  font-size:0.85rem;
+
+  letter-spacing:0.04em;
+
+  text-transform:uppercase;
+}
+
+.hero-wordmark:hover{
+  color:#ffffff;
+}
+
+
+/* Navigation */
+
+.hero-links{
+  display:flex;
+
+  align-items:center;
+
+  gap:clamp(1rem, 3vw, 2rem);
+}
+
+.hero-links a{
+  position:relative;
+
+  color:#ffffff;
+
+  text-decoration:none;
+
+  font-size:0.68rem;
+
+  letter-spacing:0.05em;
+
+  text-transform:uppercase;
+}
+
+.hero-links a::after{
+  content:'';
+
+  position:absolute;
+
+  left:0;
+  bottom:-4px;
+
+  width:0;
+  height:1px;
+
+  background:#ffffff;
+
+  transition:width 0.25s ease;
+}
+
+.hero-links a:hover::after{
+  width:100%;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-title{
+  position:absolute;
+
+  z-index:5;
+
+  left:50%;
+  bottom:8%;
+
+  transform:translateX(-50%);
+
+  width:90%;
+
+  text-align:center;
+
+  color:#ffffff;
+}
+
+.hero-title-small{
+  display:block;
+
+  margin-bottom:0.35rem;
+
+  font-size:0.75rem;
+
+  letter-spacing:0.04em;
+}
+
+.hero-title h1{
+  margin:0;
+
+  font-family:'Courier Prime', monospace;
+
+  font-size:clamp(2rem, 5vw, 4rem);
+
+  font-weight:400;
+
+  letter-spacing:0.02em;
+
+  line-height:1;
+}
+
+.hero-title-sub{
+  display:block;
+
+  margin-top:0.6rem;
+
+  font-size:0.75rem;
+
+  letter-spacing:0.04em;
+}
+
+
+/* =========================================================
+   INFORMATION SECTION
+========================================================= */
+
+.info-section{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0, 1.6fr)
+    minmax(180px, 0.7fr)
+    minmax(220px, 0.8fr);
+
+  min-height:430px;
+
+  background:var(--cream);
+
+  border-bottom:1px solid var(--line);
+}
+
+
+/* =========================================================
+   INFO TEXT
+========================================================= */
+
+.info-copy{
+  display:flex;
+
+  align-items:center;
+
+  padding:
+    5rem
+    clamp(1.5rem, 6vw, 5rem);
+}
+
+.info-copy-inner{
+  max-width:560px;
+}
+
+.info-copy p{
+  margin:0 0 1.5rem;
+
+  font-size:0.88rem;
+
+  line-height:1.55;
+
+  letter-spacing:0.015em;
+}
+
+.info-copy p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.info-details{
+  display:flex;
+
+  align-items:center;
+
+  padding:3rem;
+
+  border-left:1px solid rgba(0,0,0,0.25);
+}
+
+.info-details-inner{
+  width:100%;
+}
+
+.detail-label{
+  font-size:0.62rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.08em;
+
+  margin-bottom:0.35rem;
+}
+
+.detail-text{
+  font-size:0.75rem;
+
+  line-height:1.5;
+
+  margin-bottom:1.8rem;
+}
+
+.detail-text:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   SECONDARY IMAGE
+========================================================= */
+
+.info-image{
+  position:relative;
+
+  min-height:430px;
+
+  overflow:hidden;
+
+  border-left:1px solid var(--line);
+}
+
+.info-image img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  object-position:center;
+}
+
+
+/* Small vertical label */
+
+.info-image-label{
+  position:absolute;
+
+  top:0;
+  left:-1.5rem;
+
+  transform:rotate(-90deg);
+
+  transform-origin:top right;
+
+  font-size:0.6rem;
+
+  letter-spacing:0.08em;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  position:relative;
+
+  border-top:1px solid var(--line);
+
+  padding:
+    2rem
+    clamp(1.2rem, 4vw, 3rem);
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:0.6rem 2rem;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  font-size:0.82rem;
+
+  color:#000000;
+
+  letter-spacing:0.02em;
+}
+
+footer a{
+  color:#000000;
+
+  text-decoration:none;
+}
+
+footer a:visited{
+  color:#000000;
+}
+
+footer a:hover{
+  color:#000000;
+}
+
+
+/* Centre legal links */
+
+footer .legal-link{
+  position:absolute;
+
+  left:50%;
+
+  top:50%;
+
+  transform:translate(-50%, -50%);
+
+  white-space:nowrap;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:700px){
+
+  /* Hero */
+
+  .hero{
+    height:82vh;
+
+    min-height:560px;
+  }
+
+
+  /* Navigation */
+
+  .hero-nav{
+    padding:1rem 1.2rem;
+
+    align-items:flex-start;
+  }
+
+  .hero-wordmark{
+    font-size:0.72rem;
+  }
+
+  .hero-links{
+    gap:0.85rem;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+  }
+
+  .hero-links a{
+    font-size:0.57rem;
+  }
+
+
+  /* Hero title */
+
+  .hero-title{
+    bottom:7%;
+
+    width:92%;
+  }
+
+  .hero-title-small{
+    font-size:0.62rem;
+  }
+
+  .hero-title h1{
+    font-size:clamp(1.8rem, 10vw, 3rem);
+  }
+
+  .hero-title-sub{
+    font-size:0.62rem;
+  }
+
+
+  /* Information */
+
+  .info-section{
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:0;
+  }
+
+
+  /* Copy */
+
+  .info-copy{
+    padding:
+      3.5rem
+      1.4rem;
+
+    display:block;
+  }
+
+  .info-copy p{
+    font-size:0.8rem;
+
+    line-height:1.55;
+
+    margin-bottom:1.4rem;
+  }
+
+
+  /* Details */
+
+  .info-details{
+    border-left:none;
+
+    border-top:1px solid rgba(0,0,0,0.25);
+
+    padding:
+      2rem
+      1.4rem;
+  }
+
+  .info-details-inner{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:1.5rem;
+  }
+
+  .detail-text{
+    margin-bottom:0;
+
+    font-size:0.7rem;
+  }
+
+
+  /* Image */
+
+  .info-image{
+    min-height:350px;
+
+    border-left:none;
+
+    border-top:1px solid var(--line);
+  }
+
+  .info-image-label{
+    display:none;
+  }
+
+
+  /* Footer */
+
+  footer{
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    justify-content:flex-start;
+
+    gap:0.75rem;
+  }
+
+  footer .legal-link{
+    position:static;
+
+    transform:none;
+
+    white-space:normal;
+
+    order:2;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .hero-links a::after{
+    transition:none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HERO
+======================================================== -->
+
+<section class="hero">
+
+
+  <!--
+    CHANGE THIS IMAGE
+
+    Example:
+    hero.jpg
+    painting.jpg
+    studio.jpg
+  -->
+
+  <img
+    class="hero-image"
+    src="hero.jpg"
+    alt="George Denver painting"
+  >
+
+
+  <!-- Navigation -->
+
+  <div class="hero-nav">
+
+    <a
+      class="hero-wordmark"
+      href="/ArtPortfolio/index.html"
+    >
+      George Denver
+    </a>
+
+
+    <nav class="hero-links">
+
+      <a href="/ArtPortfolio/gallery.html">
+        Gallery
+      </a>
+
+      <a href="/ArtPortfolio/portfolio.html">
+        Portfolio
+      </a>
+
+      <a href="/ArtPortfolio/commissions.html">
+        Commissions
+      </a>
+
+      <a href="/ArtPortfolio/contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
+
+
+  <!-- Hero title -->
+
+  <div class="hero-title">
+
+    <span class="hero-title-small">
+      George Denver
+    </span>
+
+    <h1>
+      Selected Works
+    </h1>
+
+    <span class="hero-title-sub">
+      Original paintings · Kent, UK
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     INFORMATION
+======================================================== -->
+
+<section class="info-section">
+
+
+  <!-- Main description -->
+
+  <div class="info-copy">
+
+    <div class="info-copy-inner">
+
+      <p>
+        A collection of original paintings exploring colour,
+        atmosphere and the everyday spaces that surround us.
+      </p>
+
+      <p>
+        Each work is painted by hand in the studio, combining
+        acrylic, pastel and pencil to create layered and
+        expressive surfaces.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- Details -->
+
+  <div class="info-details">
+
+    <div class="info-details-inner">
+
+
+      <div>
+
+        <div class="detail-label">
+          Studio
+        </div>
+
+        <div class="detail-text">
+          Kent<br>
+          United Kingdom
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="detail-label">
+          Enquiries
+        </div>
+
+        <div class="detail-text">
+          Available for<br>
+          commissions
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="detail-label">
+          Works
+        </div>
+
+        <div class="detail-text">
+          Original paintings<br>
+          Available to purchase
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="detail-label">
+          Shipping
+        </div>
+
+        <div class="detail-text">
+          UK shipping<br>
+          available
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- Secondary image -->
+
+  <div class="info-image">
+
+    <!--
+      CHANGE THIS IMAGE
+
+      Example:
+      detail.jpg
+      painting-detail.jpg
+      studio-detail.jpg
+    -->
+
+    <img
+      src="detail.jpg"
+      alt="Detail of an original George Denver painting"
+    >
+
+    <span class="info-image-label">
+      George Denver Studio
+    </span>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================== -->
+
+<footer>
+
+  <span>
+    Kent, United Kingdom
+  </span>
+
+
+  <a
+    class="legal-link"
+    href="/ArtPortfolio/legal.html"
+  >
+    Terms &amp; Conditions · Privacy Policy · Cookies
+  </a>
+
+
+  <a
+    href="mailto:enquire.georgedenverstudio@gmail.com"
+  >
+    enquire.georgedenverstudio@gmail.com
+  </a>
+
+</footer>
+
+
+</body>
+
+</html>
